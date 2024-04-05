@@ -35,17 +35,17 @@ command to run if program contains helper info
 
 ## Authors
 
-ex. Ashley Rojas Pérez
-ex. [@DomPizzie](ashleycr33@gmail.com)
+Ashley Rojas Pérez
+[@DomPizzie](ashleycr33@gmail.com)
 
-ex. Benjamín José Paniagua Rojas  
-ex. [@DomPizzie](benjaminjosepaniaguarojas@gmail.com )
+Benjamín José Paniagua Rojas  
+[@DomPizzie](benjaminjosepaniaguarojas@gmail.com )
 
-ex. Ian Andres Miranda Castellon 
-ex. [@DomPizzie](ianxd03@gmail.com)
+Ian Andres Miranda Castellon 
+[@DomPizzie](ianxd03@gmail.com)
 
-ex. Krisly Daniela Arias Hidalgo 
-ex. [@DomPizzie](krisariash@gmail.com)
+Krisly Daniela Arias Hidalgo 
+[@DomPizzie](krisariash@gmail.com)
 
 ## Version History
 
