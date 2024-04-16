@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*,
+*::before,
+*::after {
+  @apply box-border m-0 p-0;
+}
+
+body,
+input {font-family: "Poppins", sans-serif;}
+main {
+  @apply w-full min-h-screen overflow-hidden bg-[#292E47] flex items-center justify-center p-8;
+}
+
+label {
+  @apply absolute -translate-y-2/4 text-[0.95rem] text-[#bbb] pointer-events-none transition-[0.4s] left-0 top-2/4;
+}
+
+form {
+  @apply max-w-[revert] pt-6 pb-8 px-10 transition: transform 0.8s ease-in-out, opacity 0.45s linear;
+}
+
+form.sign-up-form {
+  @apply opacity-0 pointer-events-none;
+}
+
+main.sign-up-mode form.sign-in-form {
+  @apply opacity-0 pointer-events-none;
+}
+main.sign-up-mode form.sign-up-form {
+  @apply opacity-100;
+  pointer-events: all;
+}
+main.sign-up-mode .forms-wrap {
+  @apply left-[55%];
+}
+main.sign-up-mode .carousel {
+  @apply left-[0%];
+}  
+
+.toggle {
+    @apply text-[#151111] no-underline text-xs font-medium transition-[0.3s];
+}
+.forms-wrap {
+    @apply absolute h-full w-[45%] grid grid-cols-[1fr] grid-rows-[1fr] transition-[0.8s] duration-[ease-in-out] left-0 top-0;
+}
+
+.input-field {
+    @apply absolute w-full h-full text-[0.95rem] text-[#151111] transition-[0.4s] p-0 border-b-[#bbb] border-[none] border-b border-solid;
+    background: none;
+    outline: none;
+}
+
+.input-field.active {
+    @apply border-b-[#151111];
+}
+.input-field.active + label {
+    @apply text-xs -top-0.5;
+}
+
+.carousel {
+    @apply absolute h-full w-[55%] bg-[#3532e6] grid grid-rows-[auto_1fr] overflow-hidden transition-[0.8s] duration-[ease-in-out] pb-8 rounded-[2rem] left-[45%] top-0;
+}
+
+/* .carousel {
+    @apply absolute h-full w-[55%] bg-[#c4c4c4] grid grid-rows-[auto_1fr] overflow-hidden transition-[0.8s] duration-[ease-in-out] pb-8 rounded-[2rem] left-[45%] top-0;
+} */
+.images-wrapper {
+    @apply grid grid-cols-[1fr] grid-rows-[1fr];
+}
+.image {
+    @apply w-full col-[1/2] row-[1/2] opacity-0 transition-opacity duration-[0.3s,transform] delay-[0.5s];
+}
+.img-1 {
+    @apply translate-x-0 translate-y-[-50px];
+}
+.img-2 {
+    @apply scale-x-[0.4] scale-y-50;
+}
+.img-3 {
+    @apply rotate-[-20deg] scale-[0.3];
+}
+.image.show {
+    @apply opacity-100;
+    transform: none;
+}
+.text-slider {
+    @apply flex items-center justify-center flex-col;
+}
+.text-wrap {
+    @apply max-h-[2.2rem] overflow-hidden mb-10;
+}
+.text-group {
+    @apply flex flex-col text-center translate-y-0 transition-[0.5s];
+}
+
+.bullets {
+    @apply flex items-center justify-center;
+}
+.bullets span {
+    @apply block w-2 h-2 bg-[#c22dc7] cursor-pointer transition-[0.3s] mx-1 my-0 rounded-[50%];
+}
+.bullets span.active {
+    @apply w-[1.1rem] bg-[#37e24e] rounded-2xl;
+}
+
+/* 
+.bullets span {
+    @apply block w-2 h-2 bg-[#aaa] cursor-pointer transition-[0.3s] mx-1 my-0 rounded-[50%];
+}
+.bullets span.active {
+    @apply w-[1.1rem] bg-[#151111] rounded-2xl;
+} */
