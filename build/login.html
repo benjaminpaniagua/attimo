@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in & Sign up</title>
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body>
+    <main class="main-authentification bg-clr-dark-blue w-full min-h-screen max-h-[90vh] overflow-hidden flex items-center justify-center p-8"> 
+      <div class="box relative w-full max-w-[1020px] h-[640px] bg-white rounded-[3.3rem]">
+        <div class="inner-box absolute w-[calc(100%_-_4.1rem)] h-[calc(100%_-_4.1rem)] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4">
+          <div class="forms-wrap absolute h-full w-[45%] grid grid-cols-[1fr] grid-rows-[1fr] ease-in duration-300 left-0 top-0">
+            
+            <!--Sign In Form-->
+            <form action="index.html" autocomplete="off" class="forms-authentification sign-in-form px-10 py0 w-full h-full flex flex-col justify-center gap-8 col-[1_/_2] row-[1_/_2] transition-opacity duration-[0.02s] delay-[0.3s] mx-auto my-0">
+              <section class="heading">
+                <h1>Welcome Back</h1>
+                <p class="text-clr-dark-gray font-light text-[clamp(fs-xsmall,fs-small,fs-normal)">Not registred yet? <span class="toggle cursor-pointer hover:text-blue-900 text-clr-dark-blue no-underline font-medium transition-[0.3s] text-[clamp(fs-xsmall,fs-small,fs-normal)">Sign Up</span></p>
+              </section>
+
+              <div>
+                <div class="input-wrap relative h-[37px] mb-8">
+                  <input type="text" name="username" minlength="4" class="input-field absolute w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-b border-solid bg-none outline-none " autocomplete="off" required>
+                  <label class="absolute -translate-y-2/4 text-[0.95rem] text-clr-light-gray pointer-events-none transition-[0.4s] left-0 top-2/4">Username</label>
+                </div>
+
+                <div class="input-wrap relative h-[37px] mb-8">
+                  <input type="password" name="password" minlength="4" class="input-field absolute w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-b border-solid bg-none outline-none" autocomplete="off" required>
+                  <label class="absolute -translate-y-2/4 text-[0.95rem] text-clr-light-gray pointer-events-none transition-[0.4s] left-0 top-2/4">Password</label>
+                </div>
+              </div>
+
+              <div>
+                <input type="submit" value="Sign In" class="sign-btn inline-block w-full p-4 bg-clr-dark-blue text-white cursor-pointer text-fs-small transition-[0.3s] mb-4 rounded-[0.5rem] border-[none] hover:bg-clr-blue">
+                <p class="text-clr-dark-gray font-light text-[clamp(fs-xsmall,fs-small,fs-normal)">Forgot password? <span class="cursor-pointer hover:text-blue-900 text-clr-dark-blue no-underline font-medium transition-[0.3s] text-[clamp(fs-xsmall,fs-small,fs-normal)">Recover it</span></p>
+              </div>
+            </form>
+
+            <!--Sign Up Form-->
+            <form action="login.html" autocomplete="off" class="sign-up-form px-10 py-0 w-full h-full flex flex-col justify-center gap-8 col-[1_/_2] row-[1_/_2] transition-opacity duration-[0.02s] delay-[0.3s] mx-auto my-0 opacity-0 pointer-events-none">
+              <section class="heading">
+                <h1>Get Started</h1>
+                <p class="text-clr-dark-gray font-light text-[clamp(fs-xsmall,fs-small,fs-normal)">Already have an account? <span class="toggle cursor-pointer hover:text-blue-900 text-clr-dark-blue no-underline font-medium transition-[0.3s] text-[clamp(fs-xsmall,fs-small,fs-normal)">Sign In</span></p>
+              </section>
+
+              <div class="actual-form">
+                <div class="input-wrap relative h-[37px] mb-8">
+                  <input type="text" name="fullname" class="input-field absolute w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-[none] border-b border-solid bg-none outline-none" autocomplete="off" pattern="([^\d\s]{3,}\s){2}[^\d\s]{3,}" title="Example: Julio Céspedes Villalobos. At least 3 letters per word." required>
+                  <label class="absolute -translate-y-2/4 text-[0.95rem] text-clr-light-gray pointer-events-none transition-[0.4s] left-0 top-2/4">Fullname</label>
+                </div>
+
+                <div class="input-wrap relative h-[37px] mb-8">
+                  <input type="text" name="username" minlength="4" class="input-field absolute w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-[none] border-b border-solid bg-none outline-none" autocomplete="off" required>
+                  <label class="absolute -translate-y-2/4 text-[0.95rem] text-clr-light-gray pointer-events-none transition-[0.4s] left-0 top-2/4">Username</label>
+                </div>
+
+                <div class="input-wrap relative h-[37px] mb-8">
+                  <input type="email" name="email" class="input-field absolute w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-[none] border-b border-solid bg-none outline-none" autocomplete="off" required>
+                  <label class="absolute -translate-y-2/4 text-[0.95rem] text-clr-light-gray pointer-events-none transition-[0.4s] left-0 top-2/4">Email</label>
+                </div>
+
+                <div class="input-wrap relative h-[37px] mb-8">
+                  <input type="password" name="password" minlength="4" class="input-field absolute w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-[none] border-b border-solid bg-none outline-none" autocomplete="off" required>
+                  <label class="absolute -translate-y-2/4 text-[0.95rem] text-clr-light-gray pointer-events-none transition-[0.4s] left-0 top-2/4">Password</label>
+                </div>
+                <input type="submit" value="Sign Up" class="sign-btn inline-block w-full p-4 bg-clr-dark-blue text-white cursor-pointer text-fs-small transition-[0.3s] mb-4 rounded-[0.5rem] border-[none] hover:bg-clr-blue">
+                <p class="text-clr-dark-gray font-light text-[clamp(fs-xsmall,fs-small,fs-normal)">By signing up, I agree to the <span class="cursor-pointer hover:text-blue-900 text-clr-dark-blue no-underline font-medium transition-[0.3s] text-[clamp(fs-xsmall,fs-small,fs-normal)">Terms of services</span></p>
+              </div>
+            </form>
+          </div>
+
+          <!--Carousel-->
+          <div class="carousel absolute h-full w-[55%] bg-clr-light-gray grid grid-rows-[auto_1fr] overflow-hidden pb-8 rounded-3xl left-[45%] duration-[0.3s,transform] ease-in-out top-0">
+            <div class="images-wrapper grid grid-cols-[1fr] grid-rows-[1fr]">
+              <img src="./img/carousel1.webp" class="image img-1 show w-full col-[1/2] row-[1/2] opacity-0 transition-opacity duration-[0.3s,transform] delay-[0.2s] translate-x-" alt="Carousel">
+              <img src="./img/carousel2.webp" class="image img-2 w-full col-[1/2] row-[1/2] opacity-0 transition-opacity duration-[0.3s,transform] delay-[0.2s] translate-x-0" alt="Carousel">
+              <img src="./img/carousel3.webp" class="image img-3 w-full col-[1/2] row-[1/2] opacity-0 transition-opacity duration-[0.3s,transform] delay-[0.2s] translate-x-0" alt="Carousel">
+            </div>
+
+            <div class="text-slider flex items-center justify-center flex-col">
+              <div class="text-wrap max-h-[2.2rem] overflow-hidden mb-10">
+                <section class="text-group flex flex-col text-center translate-y-0 transition-[0.5s]">
+                  <h2>Never forget a carryover</h2>
+                  <h2>Stay up-to-date</h2>
+                  <h2>Organize your life</h2>
+                </section>
+              </div>
+
+              <div class="bullets flex items-center justify-centerflex justify-center">
+                <span class="active block w-2 h-2 bg-hsla(240, 11%, 66%, 1) cursor-pointer transition-[0.3s] mx-1 my-0 rounded-[50%]" data-value="1"></span>
+                <span data-value="2" class="block w-2 h-2 bg-hsla(240, 11%, 66%, 1) cursor-pointer transition-[0.3s] mx-1 my-0 rounded-[50%]"></span>
+                <span data-value="3" class="block w-2 h-2 bg-hsla(240, 11%, 66%, 1) cursor-pointer transition-[0.3s] mx-1 my-0 rounded-[50%]"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Javascript file -->
+    <script src="login.js"></script>
+  </body>
+</html>
