@@ -36,16 +36,16 @@ command to run if program contains helper info
 ## Authors
 
 Ashley Rojas Pérez
-[@DomPizzie](ashleycr33@gmail.com)
+[@allyprz](ashleycr33@gmail.com)
 
 Benjamín José Paniagua Rojas  
-[@DomPizzie](benjaminjosepaniaguarojas@gmail.com )
+[@benjaminpaniagua](benjaminjosepaniaguarojas@gmail.com )
 
 Ian Andres Miranda Castellon 
 [@DomPizzie](ianxd03@gmail.com)
 
 Krisly Daniela Arias Hidalgo 
-[@DomPizzie](krisariash@gmail.com)
+[@PuzzledStone](krisariash@gmail.com)
 
 ## Version History
 
