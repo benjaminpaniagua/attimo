@@ -1,9 +1,10 @@
+import { EventsReport } from './components/activity/EventsReport';
 import './index.css';
 
-export function LogIn() {
+export function App() {
     return (
         <>
-        <h1 className="text-9xl">Hola</h1>
+        <EventsReport />
         </>
     );
 }
