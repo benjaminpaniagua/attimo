@@ -1,5 +1,6 @@
 
 import React from "react";
+import "./index.css"
 import { Events } from "./components/UI/Events.jsx";
 import { Search } from "./components/UI/Search.jsx";
 import { Sidebar } from "./components/UI/Sidebar.jsx";
@@ -17,8 +18,10 @@ export function App(){
    
         return (
           <div className="flex">
+            <div className="hide">
             <Sidebar />
-            <div className="ml-32 w-2/3">
+            </div>
+            <div className="ml-32 w-2/3 w-mobile">
               <Search /> 
               <Events items={events}/> 
             </div>
