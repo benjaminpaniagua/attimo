@@ -3,7 +3,7 @@ import "../../index.css";
 export function Search() {
     return (
         <div className="grid">
-            <h1>Your Events</h1>
+            <h1 className="mt-12 mb-7">Your Events</h1>
             <div className="flex justify-between">
                 <div className="flex">
                     <form action="/search" method="get">

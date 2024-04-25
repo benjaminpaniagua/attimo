@@ -35,6 +35,16 @@ h2{
  background: #354075;
 }
 
+.btn-green-white{
+  background: #1CA092;
+  color: #BAFFF6;
+}
+
+.btn-pink-white{
+  background: #D54D8E;
+  color: #FFDFF0;
+}
+
 /*.input-field.active {
   @apply border-b-hsla(245, 11%, 43%, 1);
 }

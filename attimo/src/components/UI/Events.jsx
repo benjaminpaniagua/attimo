@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export function Events({ items }){
     return (
-        <div className="container grid grid-cols-3 pt-10 m-auto gap-5 grid-rows-2 my-5">
+        <div className="grid grid-cols-3 pt-10 gap-5 grid-rows-2">
             {items.map(item => (
                 <section key={item.id} className="bg-white rounded-lg">
                     <img className="rounded-t-lg w-full" src={item.image} alt="Event"/>
