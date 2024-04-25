@@ -60,6 +60,8 @@ h2{
   font-weight: 300;
 }
 
+
+
 /*.input-field.active {
   @apply border-b-hsla(245, 11%, 43%, 1);
 }
@@ -143,3 +145,25 @@ h2{
   }
 }*/
 
+@media (max-width: 768px) {
+  .grid-cols-3 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .hide {
+    display: none;
+  }
+
+  .ml-32 {
+    margin-left: 1.25rem;
+  }
+
+  .w-mobile {
+    width: 92%;
+  }
+
+  .w-80{
+    width: 28.5rem;
+  }
+
+}

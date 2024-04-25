@@ -10,7 +10,7 @@ export function Search() {
                         <input className="w-80 h-10 rounded-3xl" type="search" name="q" placeholder="Search by name" />
                     </form>
                 </div>
-                <div className="flex gap-5">
+                <div className="flex gap-5 hide">
                     <label className="pl-5 pt-2" htmlFor="Category">Short by:</label>
                     <input className="pl-2" list="Categories" id="category" name="category" placeholder="Category >"/>
                     <datalist id="Categories">
