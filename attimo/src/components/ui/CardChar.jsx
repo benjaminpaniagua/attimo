@@ -1,19 +1,12 @@
-import PropTypes from "prop-types";
-
-export function CardChar({ input, char }) {
+import { SelectChar } from "../UI/EventsReport/BtnSelect.jsx";
+export function CardChar() {
   return (
-    <div className="card">
-      <div>
-        <h2>Hola Mundo</h2>
-        <p>{input}</p>
+    <div className="bg-clr-white rounded-lg p-10 mt-10">
+      <div className="flex justify-between items-center gap-12">
+        <h2 className="fs-med">Events Report</h2>
+        <SelectChar />
       </div>
-      <div>{char}</div>
     </div>
   );
+  
 }
-
-CardChar.propTypes = {
-    // title: PropTypes.string.isRequired,
-    input: PropTypes.string.isRequired,
-    char: PropTypes.node.isRequired,
-};

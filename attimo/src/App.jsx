@@ -2,7 +2,9 @@
 import React from "react";
 import { Events } from "./components/UI/Events.jsx";
 import { Search } from "./components/UI/Search.jsx";
+import { CardChar } from "./components/UI/CardChar.jsx";
 import { Sidebar } from "./components/UI/Sidebar.jsx";
+
 
 export function App(){
     const events = [
@@ -18,11 +20,15 @@ export function App(){
         return (
           <div className="flex">
             <Sidebar />
+            <div className="flex gap-10 justify-center">
             <div className="ml-32 w-2/3">
               <Search /> 
               <Events items={events}/> 
             </div>
-              
+            <div className="w-1/3">
+            <CardChar />
+            </div>
+            </div>
           </div>
         );
       
