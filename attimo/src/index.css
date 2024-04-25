@@ -52,6 +52,14 @@ h2{
   color: #646279;
 }
 
+.fw-md{
+  font-weight: 500;
+}
+
+.fw-light{
+  font-weight: 300;
+}
+
 /*.input-field.active {
   @apply border-b-hsla(245, 11%, 43%, 1);
 }

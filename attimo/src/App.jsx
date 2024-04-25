@@ -10,8 +10,8 @@ export function App(){
         {"id":2, "image":"/imgs/image_card.png", "title": "Quizz React","percentage": "5%", "description":"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...", "dateHour": "10 May, 10:00 AM", "btn1":"Course", "btn2":"Events"  },
         {"id":3, "image":"/imgs/image_card.png", "title": "Quizz React","percentage": "5%", "description":"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...", "dateHour": "10 May, 10:00 AM", "btn1":"Course", "btn2":"Events"  },
         {"id":4, "image":"/imgs/image_card.png", "title": "Quizz React","percentage": "5%", "description":"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...", "dateHour": "10 May, 10:00 AM", "btn1":"Course", "btn2":"Events"  },
-        {"id":5, "image":"/imgs/image_card.png", "title": "Quizz React","percentage": "5%", "description":"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...", "dateHour": "10 May, 10:00 AM", "btn1":"Course", "btn2":"Events"  },
-        {"id":6, "image":"/imgs/image_card.png", "title": "Quizz React","percentage": "5%", "description":"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...", "dateHour": "10 May, 10:00 AM", "btn1":"Course", "btn2":"Events"  },
+        {"id":5, "image":"/imgs/image_card.png", "title": "Investigacion","percentage": "5%", "description":"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...", "dateHour": "10 May, 10:00 AM", "btn1":"Course", "btn2":"Events"  },
+        {"id":6, "image":"/imgs/image_card.png", "title": "Matricula TCU","percentage": "5%", "description":"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...", "dateHour": "10 May, 10:00 AM", "btn1":"Course", "btn2":"Events"  },
     ]
 
    
@@ -22,6 +22,7 @@ export function App(){
               <Search /> 
               <Events items={events}/> 
             </div>
+              
           </div>
         );
       

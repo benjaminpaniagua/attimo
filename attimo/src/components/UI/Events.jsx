@@ -8,7 +8,7 @@ export function Events({ items }){
                 <section key={item.id} className="bg-white rounded-lg">
                     <img className="rounded-t-lg w-full" src={item.image} alt="Event"/>
                     <div className="flex justify-between mb-2.5">
-                        <h3 className="pl-5 pt-5 fc-main ff-main fw-md text-xl leading-none">{item.title}</h3>
+                        <h3 className="pl-5 pt-5 fc-main fw-md text-xl leading-none">{item.title}</h3>
                         <h3 className="pr-5 pt-5 justify-end fc-main fw-md text-xl leading-none">{item.percentage}</h3>
                     </div>
                     <p className="pl-5 pr-5 mb-2.5 fc-secondary fw-light text-base leading-none">{item.description}</p>
