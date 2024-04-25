@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export function Events({ items }){
     return (
-        <div className=" container grid grid-cols-3 pt-10 m-auto gap-5 grid-rows-2 my-5">
+        <div className="container grid grid-cols-3 pt-10 m-auto gap-5 grid-rows-2 my-5">
             {items.map(item => (
                 <section key={item.id} className="bg-white rounded-lg">
                     <img className="rounded-t-lg w-full" src={item.image} alt="Event"/>
@@ -18,19 +18,24 @@ export function Events({ items }){
                 </section>
             ))}
         </div>
-    );;
+    );
 }
 
 Events.propTypes = {
-    title: PropTypes.string.isRequired,
-    percentage: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    dateHour:PropTypes.string.isRequired,
-    btn1:PropTypes.string.isRequired,
-    btn2:PropTypes.string.isRequired,
-}
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        percentage: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        dateHour: PropTypes.string.isRequired,
+        btn1: PropTypes.string.isRequired,
+        btn2: PropTypes.string.isRequired,
+    })).isRequired,
+};
 
 Events.defaultProps = {
+    image:"https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png",
     title: "title",
     percentage: "percentage",
     description: "description",
