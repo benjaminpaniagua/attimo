@@ -36,13 +36,20 @@ h2{
 }
 
 .btn-green-white{
-  background: #1CA092;
-  color: #BAFFF6;
+  background: #BAFFF6;
+  color: #1CA092;
 }
 
 .btn-pink-white{
-  background: #D54D8E;
-  color: #FFDFF0;
+  background: #FFDFF0;
+  color: #D54D8E;
+}
+.fc-main{
+  color: #292E47;
+}
+
+.fc-secondary{
+  color: #646279;
 }
 
 /*.input-field.active {
