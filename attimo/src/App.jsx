@@ -24,6 +24,7 @@ export function App(){
             <div className="ml-32 w-2/3 w-mobile">
               <Search /> 
               <Events items={events}/> 
+              
             </div>
               
           </div>
