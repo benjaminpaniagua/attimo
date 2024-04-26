@@ -5,9 +5,11 @@ import { CardSummary } from "../UI/CardSummary.jsx";
 export function CardReports() {
   return (
     <>
+      <section className="grid gap-5">
       <CardChar />
       <CardTask />
       <CardSummary />
+      </section>
     </>
   );
 }
