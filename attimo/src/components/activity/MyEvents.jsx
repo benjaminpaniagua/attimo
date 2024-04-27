@@ -1,5 +1,6 @@
 import "../../index.css";
 import PropTypes from 'prop-types';
+import  {Search}  from "../UI/Search.jsx";
 
 export function MyEvents({ items }){
     return (
