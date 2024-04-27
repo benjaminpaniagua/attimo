@@ -15,24 +15,31 @@
 
 html,body{
   height: 100%;
-  font-size: 14px;
-  background: #E8E6EF;
+  font-size: 12px;
 }
 
 h1{
-  font-size: clamp(34px, 32px, 24px);
+  font-size: clamp(26px, 26px, 26px);
   font-weight: 600;
   color: hsla(230, 27%, 22%, 1);
 }
 
 h2{
-  font-size: clamp(24px, 24px, 20px);
+  font-size: clamp(20px, 20px, 20px);
   font-weight: 500;
   color: hsla(230, 27%, 22%, 1);
 }
 
-.sidebar-clr {
- background: #354075;
+h3{
+  font-size: clamp(16px, 16px, 16px);
+  font-weight: 500;
+  color: hsla(230, 27%, 22%, 1);
+}
+
+p{
+  font-size: clamp(14px, 14px, 14px);
+  font-weight: 400;
+  color: #646279;
 }
 
 .fc-main{
@@ -56,7 +63,9 @@ h2{
 
 
 
-/*.input-field.active {
+
+/*
+.input-field.active {
   @apply border-b-hsla(245, 11%, 43%, 1);
 }
 .input-field.active + label {
@@ -86,8 +95,7 @@ h2{
   @apply w-[1.1rem] bg-[hsla(230,_27%,_22%,_1)] rounded-2xl;
 }
 
-/*Media queries*/
-/*@media (max-width: 850px) {
+@media (max-width: 850px) {
   .box {
     @apply h-auto max-w-[550px] overflow-hidden;
   }
@@ -137,7 +145,7 @@ h2{
   .text-wrap {
     @apply mb-4;
   }
-}*/
+}
 
 @media (max-width: 768px) {
   .grid-cols-3 {
@@ -158,12 +166,6 @@ h2{
 
   .w-80{
     width: 28.5rem;
-  }
-
-  .display-mobile{
-    display: grid;
-  }
-  
-  
-
+  } 
 }
+*/

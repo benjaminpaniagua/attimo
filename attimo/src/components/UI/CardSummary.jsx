@@ -1,6 +1,6 @@
 export function CardSummary() {
   return (
-    <div className="bg-clr-white rounded-lg p-10 mt-5 mr-10 flex flex-col justify-center items-center">
+    <div className="bg-clr-white rounded-lg p-10 mr-10 flex flex-col justify-center items-center">
       <h2>
         You have a <span className="text-clr-light-bg">full</span> week of
         events

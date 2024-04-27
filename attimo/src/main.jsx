@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 
-import { App } from './App.jsx'
+import {HomePage} from './HomePage.jsx'
+import {Events} from './Events.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <>
-      <App />
+      <HomePage />
     </>
-    
 )
