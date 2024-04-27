@@ -2,6 +2,7 @@ import { LayoutDashboard, Home, StickyNote, Layers, Flag, LifeBuoy, Settings, Er
 import Sidebar, { SidebarItem } from "./components/UI/Sidebar.jsx"
 import React, { useState } from 'react';
 import { MyEvents } from "./components/activity/MyEvents.jsx"; 
+import { Search } from "./components/activity/Search.jsx";
 
 export function Events() {
 
@@ -86,9 +87,9 @@ export function Events() {
           <hr className="my-3"/>
           <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
         </Sidebar>
-
         <main className="min-h-screen w-full ml-20 flex gap-4 md:flex-col"> 
           <section className="w-[72%] p-2 pt-4  md:w-full">
+            <Search/>
             <MyEvents items={events}/>
           </section>
 

@@ -145,7 +145,7 @@ p{
   .text-wrap {
     @apply mb-4;
   }
-}
+}*/
 
 @media (max-width: 768px) {
   .grid-cols-3 {
@@ -166,6 +166,10 @@ p{
 
   .w-80{
     width: 28.5rem;
-  } 
+  }
+
+  .display-mobile{
+    display: grid;
+  }
+  
 }
-*/

@@ -1,6 +1,6 @@
 import "../../index.css";
 import PropTypes from 'prop-types';
-import  {Search}  from "../UI/Search.jsx";
+import  {Search}  from "./Search.jsx";
 
 export function MyEvents({ items }){
     return (
@@ -19,7 +19,7 @@ export function MyEvents({ items }){
                         <div className="mt-2.5">
                             <p className=" fc-secondary fw-light text-base leading-none">{item.dateHour}</p>
                         </div>
-                        <div className="mt-5 flex justify-between"> 
+                        <div className="mt-5 flex gap-4"> 
                             <label className=" flex bg-clr-light-green text-clr-dark-green rounded-md w-36 h-8 fw-light text-base leading-none justify-center items-center" htmlFor=""> {item.btn1}</label>  
                             <label className="flex bg-clr-light-pink text-clr-dark-pink rounded-md w-36 h-8 fw-light text-base leading-none justify-center items-center" htmlFor="">{item.btn2}</label> 
                         </div>         
