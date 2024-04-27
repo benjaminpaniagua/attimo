@@ -7,14 +7,22 @@ export function Events({ items }){
             {items.map(item => (
                 <section key={item.id} className="bg-white rounded-lg">
                     <img className="rounded-t-lg w-full" src={item.image} alt="Event"/>
-                    <div className="flex justify-between mb-2.5">
-                        <h3 className="pl-5 pt-5 fc-main fw-md text-xl leading-none">{item.title}</h3>
-                        <h3 className="pr-5 pt-5 justify-end fc-main fw-md text-xl leading-none">{item.percentage}</h3>
+                    <div className="p-5">   
+                        <div className="flex justify-between">
+                            <h3 className=" fc-main fw-md text-xl leading-none">{item.title}</h3>
+                            <h3 className=" justify-end fc-main fw-md text-xl leading-none">{item.percentage}</h3>
+                        </div>
+                        <div className="mt-3">
+                            <p className=" fc-secondary fw-light text-base leading-none">{item.description}</p>
+                        </div>
+                        <div className="mt-2.5">
+                            <p className=" fc-secondary fw-light text-base leading-none">{item.dateHour}</p>
+                        </div>
+                        <div className="mt-5 flex justify-between"> 
+                            <label className=" flex bg-clr-light-green rounded-md w-32 h-8 fw-light text-base leading-none justify-center items-center" htmlFor=""> {item.btn1}</label>  
+                            <label className="flex bg-clr-light-pink rounded-md w-32 h-8 fw-light text-base leading-none justify-center items-center" htmlFor="">{item.btn2}</label> 
+                        </div>         
                     </div>
-                    <p className="pl-5 pr-5 mb-2.5 fc-secondary fw-light text-base leading-none">{item.description}</p>
-                    <p className="pl-5 mb-2.5 fc-secondary fw-light text-base leading-none">{item.dateHour}</p>
-                    <button className="btn-green-white ml-5 rounded-md w-36 h-8 mb-5 fw-light text-base leading-none">{item.btn1}</button>
-                    <button className="btn-pink-white ml-5 rounded-md w-36 h-8 mb-5 fw-light text-base leading-none">{item.btn2}</button>
                 </section>
             ))}
         </div>
