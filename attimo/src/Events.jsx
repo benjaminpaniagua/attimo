@@ -1,11 +1,9 @@
-import React from "react";
-import "./index.css";
-import { Events } from "./components/UI/Events.jsx";
-import { Search } from "./components/UI/Search.jsx";
-import { CardReports } from "./components/UI/CardReports.jsx";
-import { Sidebar } from "./components/UI/Sidebar.jsx";
+import { LayoutDashboard, Home, StickyNote, Layers, Flag, LifeBuoy, Settings, Eraser, Filter, Bell, BarChart, SunDim, Sun, Moon, LogOut } from "lucide-react";
+import Sidebar, { SidebarItem } from "./components/UI/Sidebar.jsx"
+import React, { useState } from 'react';
 
-export function App() {
+export function Events() {
+
   const events = [
     {
       id: 1,
@@ -76,19 +74,31 @@ export function App() {
   ];
 
   return (
-    <div className="flex">
-      <div>
-        <Sidebar />
-        <div className="flex gap-10 justify-center">
-          <div className="ml-32 w-2/3">
-            <Search />
-            <Events items={events} />
-          </div>
-          <div className="w-1/3">
-            <CardReports />
-          </div>
-        </div>
-      </div>
+    <>
+    <div className="flex bg-clr-light-bg w-screen">
+      <Sidebar username="usuario" email="email@gmail.com" image='https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg'>
+          <SidebarItem icon={<Home size={20} />} text="Home" />
+          <SidebarItem icon={<LayoutDashboard size={20} />} text="Events" />
+          <SidebarItem icon={<BarChart size={20} />} text="Stadistics" />
+          <SidebarItem icon={<Bell size={20} />} text="Notifications" />
+          <SidebarItem icon={<Moon size={20} />} text="Dark Mode" />
+          <hr className="my-3"/>
+          <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
+        </Sidebar>
+
+        <main className="min-h-screen w-full ml-20 flex gap-4 md:flex-col"> 
+          <section className="w-[72%] p-2 pt-4  md:w-full">
+            <h1>Ian, acá va el my events</h1>
+          </section>
+
+          <section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full">
+            <h1>Calendario Acá</h1>
+
+          </section>
+        </main>
     </div>
-  );
+    </>
+  )
 }
+
+export default Events;
