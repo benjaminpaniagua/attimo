@@ -4,10 +4,10 @@ export function Search() {
     return (
         <div className="grid">
             <h1 className="">Your Events</h1>
-            <div className="flex justify-between display-mobile ">
+            <div className="flex justify-between display-mobile">
                 <div className="flex mt-8">
                     <form  action="/search" method="get">
-                            
+                        <input className="w-80 h-10 rounded-3xl" type="search" name="q" placeholder="Search by name" />
                     </form>
                 </div>
                 <div className="flex gap-5 mt-8">
