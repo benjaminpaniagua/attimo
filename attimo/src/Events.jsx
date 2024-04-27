@@ -1,6 +1,7 @@
 import { LayoutDashboard, Home, StickyNote, Layers, Flag, LifeBuoy, Settings, Eraser, Filter, Bell, BarChart, SunDim, Sun, Moon, LogOut } from "lucide-react";
 import Sidebar, { SidebarItem } from "./components/UI/Sidebar.jsx"
 import React, { useState } from 'react';
+import { MyEvents } from "./components/activity/MyEvents.jsx"; 
 
 export function Events() {
 
@@ -88,7 +89,7 @@ export function Events() {
 
         <main className="min-h-screen w-full ml-20 flex gap-4 md:flex-col"> 
           <section className="w-[72%] p-2 pt-4  md:w-full">
-            <h1>Ian, acá va el my events</h1>
+            <MyEvents items={events}/>
           </section>
 
           <section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full">

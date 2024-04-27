@@ -1,7 +1,7 @@
 import "../../index.css";
 import PropTypes from 'prop-types';
 
-export function Events({ items }){
+export function MyEvents({ items }){
     return (
         <div className="grid grid-cols-3 pt-10 gap-5 grid-rows-2">
             {items.map(item => (
@@ -19,8 +19,8 @@ export function Events({ items }){
                             <p className=" fc-secondary fw-light text-base leading-none">{item.dateHour}</p>
                         </div>
                         <div className="mt-5 flex justify-between"> 
-                            <label className=" flex bg-clr-light-green rounded-md w-32 h-8 fw-light text-base leading-none justify-center items-center" htmlFor=""> {item.btn1}</label>  
-                            <label className="flex bg-clr-light-pink rounded-md w-32 h-8 fw-light text-base leading-none justify-center items-center" htmlFor="">{item.btn2}</label> 
+                            <label className=" flex bg-clr-light-green text-clr-dark-green rounded-md w-36 h-8 fw-light text-base leading-none justify-center items-center" htmlFor=""> {item.btn1}</label>  
+                            <label className="flex bg-clr-light-pink text-clr-dark-pink rounded-md w-36 h-8 fw-light text-base leading-none justify-center items-center" htmlFor="">{item.btn2}</label> 
                         </div>         
                     </div>
                 </section>
@@ -29,7 +29,7 @@ export function Events({ items }){
     );
 }
 
-Events.propTypes = {
+MyEvents.propTypes = {
     items: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number.isRequired,
         image: PropTypes.string.isRequired,
@@ -42,7 +42,7 @@ Events.propTypes = {
     })).isRequired,
 };
 
-Events.defaultProps = {
+MyEvents.defaultProps = {
     image:"https://images.squarespace-cdn.com/content/v1/60794dbc8615125d3ad57026/adf94af6-7aab-4503-9569-527b9faec977/react1logo.png",
     title: "title",
     percentage: "percentage",
