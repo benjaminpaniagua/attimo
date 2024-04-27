@@ -1,4 +1,4 @@
-import { CardChar } from "../ui/CardChar";
+import { CardChar } from "../UI/CardChar";
 
 export function EventsReport() {
     return (

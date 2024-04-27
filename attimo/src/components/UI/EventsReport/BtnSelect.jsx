@@ -12,8 +12,4 @@ export const SelectChar = () => {
           </div>
         </>
       );
-      
-      
-      
-      
 }

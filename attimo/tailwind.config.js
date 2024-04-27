@@ -8,7 +8,7 @@ export default {
         'poppins': 'Poppins, Arial, sans-serif'
       },
       fontSize: {
-        'fs-xlarge': '2.25rem', //36px
+        'fs-xlarge': '1.625rem', //26px
         'fs-large': '1.5rem', //24px
         'fs-med': '1.25rem', //20px
         'fs-normal': '1rem', //16px
@@ -32,30 +32,22 @@ export default {
         'clr-light-pink': 'hsla(328, 100%, 94%, 1)',
         'clr-dark-pink': 'hsla(331, 48%, 44%, 1)',
         
-        'clr-light-bg': 'hsla(331, 48%, 44%, 1)',
+        'clr-light-bg': 'hsla(253, 22%, 92%, 1)',
         'clr-light-secondary-bg': 'hsla(245, 38%, 87%, 1)',
         'clr-white': 'hsla(0, 0%, 100%, 1)',
       },
       gridTemplateColumns: {
         'auto-150': 'repeat(auto-fit, minmax(150px, 1fr))',
         'auto-250': 'repeat(auto-fit, minmax(250px, 1fr))',
+        'auto-300': 'repeat(auto-fit, minmax(300px, 1fr))',
         'auto-350': 'repeat(auto-fit, minmax(350px, 1fr))',
       },
       screens: {
         '2xl': {'max': '1535px'},
-        // => @media (max-width: 1535px) { ... }
-  
         'xl': {'max': '1279px'},
-        // => @media (max-width: 1279px) { ... }
-  
         'lg': {'max': '1023px'},
-        // => @media (max-width: 1023px) { ... }
-  
         'md': {'max': '768px'},
-        // => @media (max-width: 767px) { ... }
-  
         'sm': {'max': '639px'},
-        // => @media (max-width: 639px) { ... }
       },
     },
   },
