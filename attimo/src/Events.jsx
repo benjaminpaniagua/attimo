@@ -100,9 +100,7 @@ export function Events() {
           </section>
           <section className="pt-10 m-auto p-2  w-[27%] md:w-full"> {/*<section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full"> en realidad es con p-4, yo se lo quite ya que rompe el sidebar, hay que preguntarle al profe para salir de la duda del por qué sucede esto.*/}
             <div className="grid gap-5">
-              <div className="bg-white h-[25rem] m-auto mb-4 w-full rounded-lg ">
-                  <Calendar/>
-              </div>
+
               <Reports />
               <Tasks />
               <Summary />
