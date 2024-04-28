@@ -4,7 +4,8 @@ import { EventSummary } from "../UI/EventSummary";
 export function UpcomingEvents({ items}) {
   return (
     <>
-      <section className="flex justify-between">
+    <div className="my-6 px-6">
+    <section className="flex justify-between">
         <h2 className="mb-2">Upcoming events</h2>
         <p className="cursor-pointer hover:text-clr-blue">View all</p>
       </section>
@@ -20,6 +21,7 @@ export function UpcomingEvents({ items}) {
           />
         ))}
         </div>
+    </div>
     </>
   )
 }

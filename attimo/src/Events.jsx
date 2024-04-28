@@ -16,101 +16,87 @@ export function Events() {
       id: 1,
       image: "/imgs/image_card.png",
       title: "Quizz React",
-      percentage: "5%",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
-      dateHour: "10 May, 10:00 AM",
-      btn1: "Course",
-      btn2: "Events",
+      description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+      percent: "5",
+      date: "10 May",
+      hour: "10:00",
+      category: "Course",
+      label: "Event",
+      status: "Active",
     },
     {
       id: 2,
       image: "/imgs/image_card.png",
-      title: "Quizz React",
-      percentage: "5%",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
-      dateHour: "10 May, 10:00 AM",
-      btn1: "Course",
-      btn2: "Events",
+      title: "Lecture Seminar",
+      description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+      date: "11 May",
+      hour: "8:00",
+      category: "Course",
+      label: "Homework",
     },
     {
       id: 3,
       image: "/imgs/image_card.png",
-      title: "Quizz React",
-      percentage: "5%",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
-      dateHour: "10 May, 10:00 AM",
-      btn1: "Course",
-      btn2: "Events",
+      title: "ID Card Photo Day",
+      description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+      date: "11 May",
+      hour: "9:30",
+      category: "University",
+      label: "Event",
+      status: "Active",
     },
     {
       id: 4,
       image: "/imgs/image_card.png",
-      title: "Quizz React",
-      percentage: "5%",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
-      dateHour: "10 May, 10:00 AM",
-      btn1: "Course",
-      btn2: "Events",
+      title: "Animation Logo",
+      description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+      percent: "15",
+      date: "11 May",
+      hour: "13:00",
+      category: "Course",
+      label: "Homework",
+      status: "Active",
     },
     {
       id: 5,
       image: "/imgs/image_card.png",
-      title: "Investigacion",
-      percentage: "5%",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
-      dateHour: "10 May, 10:00 AM",
-      btn1: "Course",
-      btn2: "Events",
-    },
-    {
-      id: 6,
-      image: "/imgs/image_card.png",
-      title: "Matricula TCU",
-      percentage: "5%",
-      description:
-        "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
-      dateHour: "10 May, 10:00 AM",
-      btn1: "Course",
-      btn2: "Events",
+      title: "Smash Tournament",
+      description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+      date: "12 May",
+      hour: "13:00",
+      category: "Students",
+      label: "Events",
+      status: "Active",
     },
   ];
 
   return (
     <>
-  
-    <div className="flex bg-clr-light-bg w-screen">
+    <div className="container flex gap-4 bg-clr-light-bg w-screen">
+      <div className="w-16">
       <Sidebar username="usuario" email="email@gmail.com" image='https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg'>
           <SidebarItem icon={<Home size={20} />} text="Home" />
-          <SidebarItem icon={<LayoutDashboard size={20} />} text="Events" />
+          <SidebarItem icon={<LayoutDashboard size={20} />} text="Events" active/>
           <SidebarItem icon={<BarChart size={20} />} text="Stadistics" />
           <SidebarItem icon={<Bell size={20} />} text="Notifications" />
           <SidebarItem icon={<Moon size={20} />} text="Dark Mode" />
           <hr className="my-3"/>
           <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
         </Sidebar>
-        <main className="min-h-screen w-full ml-20 flex gap-4 md:flex-col"> 
-          <section className="w-[72%] p-2 pt-4  md:w-full">
+      </div>
+        <main className="main-content px-4 min-h-screen w-full flex gap-4 lg:flex-col"> 
+          <section className="w-[70%] p-2 pt-4 lg:w-full">
             <Search/>
             <MyEvents items={events}/>
           </section>
-          <section className="pt-10 m-auto p-2  w-[27%] md:w-full"> {/*<section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full"> en realidad es con p-4, yo se lo quite ya que rompe el sidebar, hay que preguntarle al profe para salir de la duda del por qué sucede esto.*/}
-            <div className="grid gap-5">
-              <div className="bg-white h-[25rem] m-auto mb-4 w-full rounded-lg ">
-                  <Calendar/>
-              </div>
+          <section className="m-auto p-2 w-[30%] lg:w-full"> {/*<section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full"> en realidad es con p-4, yo se lo quite ya que rompe el sidebar, hay que preguntarle al profe para salir de la duda del por qué sucede esto.*/}
+            <div className="grid gap-4">
               <Reports />
               <Tasks />
               <Summary />
             </div>
           </section>
         </main>
-           
-        
     </div>
     </>
   )

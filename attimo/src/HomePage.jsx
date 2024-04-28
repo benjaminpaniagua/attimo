@@ -1,6 +1,6 @@
 import { LayoutDashboard, Home, StickyNote, Layers, Flag, LifeBuoy, Settings, Eraser, Filter, Bell, BarChart, SunDim, Sun, Moon, LogOut } from "lucide-react";
 import Sidebar, { SidebarItem } from "./components/UI/Sidebar.jsx"
-import { CardsSection } from "./components/activity/CardsSection.jsx";
+import { MyCourses } from "./components/activity/MyCourses.jsx";
 import {UpcomingEvents} from "./components/activity/UpcomingEvents.jsx";
 import myImage from './assets/image_card.png';
 import Calendar from './components/Calendar';
@@ -10,44 +10,72 @@ export function HomePage() {
         {
             id: 1,
             image: myImage,
-            title: "Diseño Web",
+            title: "Web Design",
             description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
             progress: 56,
         },
         {
             id: 2,
             image: myImage,
-            title: "Manipulación de audio y video",
+            title: "Fundamentals of Drawing",
             description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
             progress: 12,
         },
         {
             id: 3,
             image: myImage,
-            title: "Diseño Web",
+            title: "Photography Basics",
             description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
             progress: 76,
         },
         {
             id: 4,
             image: myImage,
-            title: "Programación",
+            title: "Programming",
             description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
             progress: 89,
         },
         {
             id: 5,
             image: myImage,
-            title: "Captura de imágenes digitales",
+            title: "Video Editing Techniques",
             description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
             progress: 22,
         },
         {
             id: 6,
             image: myImage,
-            title: "Diseño de bases de datos",
+            title: "Networking and Communications",
             description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
             progress: 38,
+        },
+        {
+            id: 7,
+            image: myImage,
+            title: "Database Design and Management",
+            description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+            progress: 45,
+        },
+        {
+            id: 8,
+            image: myImage,
+            title: "Mobile Application Development",
+            description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+            progress: 67,
+        },
+        {
+            id: 9,
+            image: myImage,
+            title: "Introduction to Cibersecurity",
+            description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+            progress: 81,
+        },
+        {
+            id: 10,
+            image: myImage,
+            title: "Digital Graphic Design",
+            description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+            progress: 93,
         }
     ];
 
@@ -63,49 +91,50 @@ export function HomePage() {
         {
             id: 2,
             image: myImage,
-            title: "Investigación Seminario",
+            title: "Smash Tournament",
+            date: "10 May",
+            hour: "17:00",
+            percent: null,
+        },
+        {
+            id: 3,
+            image: myImage,
+            title: "Seminar Investigation",
             date: "10 May",
             hour: "14:30",
             percent: 25,
         },
         {
-            id: 3,
-            image: myImage,
-            title: "Reunión Python",
-            date: "10 May",
-            hour: "17:00",
-        },
-        {
             id: 4,
             image: myImage,
-            title: "Reunión Python",
+            title: "Python Meet",
             date: "10 May",
             hour: "17:00",
+            percent: null,
         }
     ];
 
     return (
         <>
-        <div className="flex bg-clr-light-bg w-screen max-w-[100vw]">
-            <Sidebar username="usuario" email="email@gmail.com" image='https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg'>
-                <SidebarItem icon={<Home size={20} />} text="Home" />
-                <SidebarItem icon={<LayoutDashboard size={20} />} text="Events" />
-                <SidebarItem icon={<BarChart size={20} />} text="Stadistics" />
-                <SidebarItem icon={<Bell size={20} />} text="Notifications" />
-                <SidebarItem icon={<Moon size={20} />} text="Dark Mode" />
-                <hr className="my-3"/>
-                <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
-                </Sidebar>
-
-                <main className="min-h-screen w-full ml-20 flex gap-4 md:flex-col"> 
-                    <section className="w-[72%] p-2 pt-4  md:w-full">
-                        <CardsSection items={courses} title='Welcome back!' description='Have a nice day Valeria, are you ready for your next event?'/>
+        <div className="flex gap-4 bg-clr-light-bg w-screen">
+            <div className="w-16">
+                <Sidebar username="usuario" email="email@gmail.com" image='https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg'>
+                    <SidebarItem icon={<Home size={20} />} text="Home" active/>
+                    <SidebarItem icon={<LayoutDashboard size={20} />} text="Events"/>
+                    <SidebarItem icon={<BarChart size={20} />} text="Stadistics" />
+                    <SidebarItem icon={<Bell size={20} />} text="Notifications" />
+                    <SidebarItem icon={<Moon size={20} />} text="Dark Mode" />
+                    <hr className="my-3"/>
+                    <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
+                    </Sidebar>
+                </div>
+                <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col"> 
+                    <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6">
+                        <MyCourses className='w-full' items={courses} name='Valeria'/>
                     </section>
                     
-                    <section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full">
-                        <div className="bg-white h-[25rem] m-auto mb-4 w-full rounded-lg">
-                            <Calendar/>
-                        </div>
+                    <section className="bg-clr-light-secondary-bg m-auto h-full pt-4 w-[30%] lg:w-full">
+                        <div className="px-4"><Calendar/></div>
                         <UpcomingEvents items={upcomingEvents}/>
                     </section>
                 </main>
