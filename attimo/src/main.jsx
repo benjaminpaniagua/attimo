@@ -6,6 +6,6 @@ import {Events} from './Events.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <>
-      <HomePage />
+      <Events />
     </>
 )

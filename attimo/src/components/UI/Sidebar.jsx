@@ -19,7 +19,7 @@ export default function Sidebar({ children, image, username, email}) {
                     </div>
 
                     <SidebarContext.Provider value={{ expanded }}>
-                        <ul className="flex-1 flex flex-col gap-2 m-auto px-3">{children}</ul>
+                        <ul className="flex flex-col gap-4 m-auto px-3">{children}</ul>
                     </SidebarContext.Provider>
 
                     <div className="border-t flex p-3">

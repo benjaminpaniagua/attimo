@@ -21,7 +21,6 @@ function fakeFetch(date, { signal }) {
     const timeout = setTimeout(() => {
       const daysInMonth = date.daysInMonth();
       const daysToHighlight = [1, 2, 3].map(() => getRandomNumber(1, daysInMonth));
-
       resolve({ daysToHighlight });
     }, 500);
 
