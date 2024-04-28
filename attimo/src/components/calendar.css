@@ -1,0 +1,118 @@
+
+.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  color: #000 !important;
+  background-color: #BCC5F9 !important;
+  font-weight: 500 !important;
+  
+}
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
+  will-change: background-color !important;
+  background-color: #BCC5F9 !important;
+  
+}
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  color: #000 !important;
+  background-color: #BCC5F9 !important;
+  font-weight: 500;
+}
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+  border: none !important;
+}
+
+.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root {
+  border-radius: 0 !important;
+}
+
+.css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
+  cursor: pointer;
+  font-family: "Poppins","Poppins","Poppins",sans-serif !important;
+  font-size: 24px !important; 
+  color: #354075 !important;
+  font-weight: 24px !important;
+}
+
+.css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  color: #354075 !important;
+  background-color: rgba(188, 197, 249, 0.28) !important;
+  
+}
+.css-12p2adl-MuiDayCalendar-monthContainer {
+  font-size: large !important;
+}
+
+.css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  color: #354075 !important;
+  background-color: rgba(188, 197, 249, 0.28) !important;
+}
+
+.css-1r7ctd-MuiBadge-badge {
+  font-family: "Poppins","Poppins","Poppins",sans-serif !important;
+  background-color: rgba(188, 197, 249, 0.28) !important;
+  top: 50%   !important;
+  right: 50% !important;
+  border-radius: 0% !important;
+  z-index: 1 !important;
+  min-width: 36px !important;
+  height: 36px !important;
+}
+
+.css-innj4t-MuiPickersYear-yearButton.Mui-selected {
+  color: #354075 !important;
+  background-color: rgba(188, 197, 249, 0.28) !important;
+}
+
+.css-innj4t-MuiPickersYear-yearButton {
+  color: #354075 !important;
+}
+
+.css-1rtg91x-MuiDateCalendar-root {
+overflow: hidden;
+background-color: #ffffff   !important;
+border-radius: 5% !important;
+width: 475px !;
+height: 300px   !important;
+}
+
+.css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon {
+ display: none !important;
+}
+
+.css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel {
+  font-size: 1rem !important;
+  color: rgba(160, 160, 179, 1) !important;
+}
+/* .css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  @apply text-black bg-[#BCC5F9] font-medium;
+}
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
+  @apply will-change-[background-color] bg-[#BCC5F9];
+}
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  @apply text-black bg-[#BCC5F9] font-medium;
+}
+.css-23p0if-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
+  @apply border-[none];
+}
+.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root {
+  @apply rounded-none;
+}
+.css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
+  @apply cursor-pointer text-[#354075] font-[24px];
+  font-family: "Poppins", "Poppins", "Poppins", sans-serif !important;
+}
+.css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  @apply text-[#354075] bg-[rgba(188,197,249,0.28)];
+}
+.css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
+  @apply text-[#354075] bg-[rgba(188,197,249,0.28)];
+}
+.css-1r7ctd-MuiBadge-badge {
+  @apply bg-[rgba(188,197,249,0.28)] z-[1] min-w-[36px] h-9 rounded-[0%] right-2/4 top-2/4;
+  font-family: "Poppins", "Poppins", "Poppins", sans-serif !important;
+}
+.css-innj4t-MuiPickersYear-yearButton.Mui-selected {
+  @apply text-[#354075] bg-[rgba(188,197,249,0.28)];
+}
+.css-innj4t-MuiPickersYear-yearButton {
+  @apply text-[#354075];
+} */

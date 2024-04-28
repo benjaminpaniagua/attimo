@@ -6,6 +6,8 @@ import { Search } from "./components/activity/Search.jsx";
 import { Reports } from "./components/activity/SectionEventsReport.jsx"
 import { Tasks } from "./components/activity/SectionTasks.jsx"
 import { Summary } from "./components/activity/SectionSummary.jsx"
+import Calendar from './components/Calendar';
+
 
 export function Events() {
 
@@ -80,6 +82,7 @@ export function Events() {
 
   return (
     <>
+  
     <div className="flex bg-clr-light-bg w-screen">
       <Sidebar username="usuario" email="email@gmail.com" image='https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg'>
           <SidebarItem icon={<Home size={20} />} text="Home" />
@@ -95,14 +98,19 @@ export function Events() {
             <Search/>
             <MyEvents items={events}/>
           </section>
-          <section className="m-auto p-2  w-[27%] md:w-full"> {/*<section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full"> en realidad es con p-4, yo se lo quite ya que rompe el sidebar, hay que preguntarle al profe para salir de la duda del por qué sucede esto.*/}
-          <div className="grid gap-5">
-          <Reports />
-          <Tasks />
-          <Summary />
-          </div>
+          <section className="pt-10 m-auto p-2  w-[27%] md:w-full"> {/*<section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full"> en realidad es con p-4, yo se lo quite ya que rompe el sidebar, hay que preguntarle al profe para salir de la duda del por qué sucede esto.*/}
+            <div className="grid gap-5">
+              <div className="bg-white h-[25rem] m-auto mb-4 w-full rounded-lg ">
+                  <Calendar/>
+              </div>
+              <Reports />
+              <Tasks />
+              <Summary />
+            </div>
           </section>
         </main>
+           
+        
     </div>
     </>
   )

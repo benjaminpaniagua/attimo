@@ -3,6 +3,7 @@ import Sidebar, { SidebarItem } from "./components/UI/Sidebar.jsx"
 import { CardsSection } from "./components/activity/CardsSection.jsx";
 import {UpcomingEvents} from "./components/activity/UpcomingEvents.jsx";
 import myImage from './assets/image_card.png';
+import Calendar from './components/Calendar';
 
 export function HomePage() {
     const courses = [
@@ -102,7 +103,9 @@ export function HomePage() {
                     </section>
                     
                     <section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full">
-                        <div className="bg-white h-[25rem] m-auto mb-4 w-full rounded-lg"></div>
+                        <div className="bg-white h-[25rem] m-auto mb-4 w-full rounded-lg">
+                            <Calendar/>
+                        </div>
                         <UpcomingEvents items={upcomingEvents}/>
                     </section>
                 </main>
