@@ -1,6 +1,5 @@
 import "../../index.css";
 import PropTypes from 'prop-types';
-import  {Search}  from "./Search.jsx";
 
 export function MyEvents({ items }){
     return (
@@ -10,18 +9,18 @@ export function MyEvents({ items }){
                     <img className="rounded-t-lg w-full" src={item.image} alt="Event"/>
                     <div className="p-5">   
                         <div className="flex justify-between">
-                            <h3 className=" fc-main fw-md text-xl leading-none">{item.title}</h3>
-                            <h3 className=" justify-end fc-main fw-md text-xl leading-none">{item.percentage}</h3>
+                            <h3 className=" text-clr-dark-blue font-medium text-xl leading-none">{item.title}</h3>
+                            <h3 className=" justify-end text-clr-dark-blue font-medium text-xl leading-none">{item.percentage}</h3>
                         </div>
                         <div className="mt-3">
-                            <p className=" fc-secondary fw-light text-base leading-none">{item.description}</p>
+                            <p className="text-clr-dark-gray font-light text-base leading-none">{item.description}</p>
                         </div>
                         <div className="mt-2.5">
-                            <p className=" fc-secondary fw-light text-base leading-none">{item.dateHour}</p>
+                            <p className="text-clr-dark-gray font-light text-base leading-none">{item.dateHour}</p>
                         </div>
                         <div className="mt-5 flex gap-4"> 
-                            <label className=" flex bg-clr-light-green text-clr-dark-green rounded-md w-36 h-8 fw-light text-base leading-none justify-center items-center" htmlFor=""> {item.btn1}</label>  
-                            <label className="flex bg-clr-light-pink text-clr-dark-pink rounded-md w-36 h-8 fw-light text-base leading-none justify-center items-center" htmlFor="">{item.btn2}</label> 
+                            <label className="flex bg-clr-light-green text-clr-dark-green rounded-md w-36 h-8 font-light text-base leading-none justify-center items-center" htmlFor=""> {item.btn1}</label>  
+                            <label className="flex bg-clr-light-pink text-clr-dark-pink rounded-md w-36 h-8 font-light text-base leading-none justify-center items-center" htmlFor="">{item.btn2}</label> 
                         </div>         
                     </div>
                 </section>

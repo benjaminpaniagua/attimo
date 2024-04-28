@@ -6,7 +6,7 @@ export function Search() {
             <h1 className="">Your Events</h1>
             <div className="flex justify-between display-mobile">
                 <div className="flex mt-8">
-                    <form  action="/search" method="get">
+                    <form  action="/search" method="">
                         <input className="w-80 h-10 rounded-3xl" type="search" name="q" placeholder="Search by name" />
                     </form>
                 </div>
