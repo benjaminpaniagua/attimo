@@ -3,6 +3,9 @@ import Sidebar, { SidebarItem } from "./components/UI/Sidebar.jsx"
 import React, { useState } from 'react';
 import { MyEvents } from "./components/activity/MyEvents.jsx"; 
 import { Search } from "./components/activity/Search.jsx";
+import { Reports } from "./components/activity/SectionEventsReport.jsx"
+import { Tasks } from "./components/activity/SectionTasks.jsx"
+import { Summary } from "./components/activity/SectionSummary.jsx"
 
 export function Events() {
 
@@ -92,10 +95,12 @@ export function Events() {
             <Search/>
             <MyEvents items={events}/>
           </section>
-
-          <section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full">
-            <h1>Calendario Acá</h1>
-
+          <section className="m-auto p-2  w-[27%] md:w-full"> {/*<section className="p-4 bg-clr-light-secondary-bg w-[27%] md:w-full"> en realidad es con p-4, yo se lo quite ya que rompe el sidebar, hay que preguntarle al profe para salir de la duda del por qué sucede esto.*/}
+          <div className="grid gap-5">
+          <Reports />
+          <Tasks />
+          <Summary />
+          </div>
           </section>
         </main>
     </div>
