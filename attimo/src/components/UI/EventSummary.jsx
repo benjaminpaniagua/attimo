@@ -6,20 +6,14 @@ export function EventSummary({ title, date, hour, image, percent }) {
     <>
       <div className="rounded-lg bg-white p-3 flex gap-4 items-center">
         <div className="size-20 w-24 overflow-hidden rounded-lg">
-          <img
-            className="object-cover w-full h-full"
-            src={`${image}`}
-            alt="Event photo"
-          />
+          <img className="object-cover w-full h-full" src={`${image}`} alt="Event photo" />
         </div>
         <section className="w-full">
           <section className="flex justify-between">
             <h3>{title}</h3>
             {percent ? <h3>{percent}%</h3> : null}
           </section>
-          <p>
-            {date}, {hour}
-          </p>
+          <p>{date}, {hour}</p>
         </section>
       </div>
     </>
