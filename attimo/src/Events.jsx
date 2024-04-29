@@ -64,6 +64,17 @@ export const events = [
     label: "Events",
     status: "Active",
   },
+  {
+    id: 6,
+    image: "/imgs/image_card.png",
+    title: "Smash Tournament",
+    description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    date: "12 May",
+    hour: "13:00",
+    category: "Students",
+    label: "Events",
+    status: "Active",
+  },
 ];
 
 
