@@ -1,5 +1,5 @@
 import React from "react";
-import {BtnSelect} from "../UI/BtnSelect.jsx";
+import {FilterSelect} from "../UI/FilterSelect.jsx";
 import DonutChar from "../UI/DonutChar.jsx";
 import tailwindColors from '../../../tailwind.config.js'; // Asegúrate de importar tailwindColors aquí si es necesario
 
@@ -18,7 +18,7 @@ export function Reports() {
         <div className="bg-clr-white rounded-lg mt-10 pb-10">
           <div className="flex justify-between items-center p-10 pb-0">
             <h2 className="fs-med">Events Report</h2>
-            <BtnSelect />
+            <FilterSelect />
           </div>
           <DonutChar data={data} /> {/* Pasar los datos como propiedad */}
         </div>
