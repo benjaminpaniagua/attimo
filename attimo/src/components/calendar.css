@@ -26,9 +26,9 @@
 .css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
   cursor: pointer;
   font-family: "Poppins","Poppins","Poppins",sans-serif !important;
-  font-size: 24px !important; 
+  font-size: 18px !important; 
   color: #354075 !important;
-  font-weight: 24px !important;
+  font-weight: 500 !important;
 }
 
 .css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
