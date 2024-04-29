@@ -1,7 +1,7 @@
 import React from "react";
 import "../../index.css";
 
-export function FilterSelect({items }) {
+export function FilterSelect({items}) {
     return (
         <>
             <select className="bg-clr-light-gray py-2 px-4 cursor-pointer rounded-md focus:outline-none text-clr-white">

@@ -13,7 +13,7 @@ export function CardCourses({title, description, image, progress}) {
                         <p>Progress</p>
                         <p className='text-clr-dark-green'>{progress}%</p>
                     </div>
-                    <progress className="rounded-lg bg-clr-light-gray w-full" value={progress} max="100"></progress>
+                    <progress className="rounded-lg= bg-clr-light-gray w-full" value={progress} max="100"></progress>
                 </div>
             </section>
         </div>

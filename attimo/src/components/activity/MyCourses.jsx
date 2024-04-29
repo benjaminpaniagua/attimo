@@ -7,7 +7,7 @@ export function MyCourses({ items, name }) {
     <>
       <h1>My Courses</h1>
       <p className="mt-2 mb-5">Have a nice day {name}, are you ready for your next event?</p> 
-      <div className="grid grid-cols-auto-300 gap-4 w-full max-h-[50rem] overflow-scroll">
+      <div className="grid grid-cols-auto-300 gap-4 w-full max-h-[50rem] overflow-y-scroll">
         {items.map((item) => (
           <CardCourses
             key={item.id}

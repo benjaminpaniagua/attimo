@@ -3,7 +3,16 @@ import {FilterSelect} from "../UI/FilterSelect.jsx";
 import DonutChar from "../UI/DonutChar.jsx";
 import tailwindColors from '../../../tailwind.config.js'; // Asegúrate de importar tailwindColors aquí si es necesario
 
-
+export const select = [
+  {
+    id: 1,
+    title: "This Week",
+  },
+  {
+    id: 2,
+    title: "Today",
+  },
+];
 
 export function Reports() {
     const data = [
@@ -18,7 +27,7 @@ export function Reports() {
         <div className="bg-clr-white rounded-lg mt-10 pb-10">
           <div className="flex justify-between items-center p-10 pb-0">
             <h2 className="fs-med">Events Report</h2>
-            <FilterSelect />
+            <FilterSelect items={select}/>
           </div>
           <DonutChar data={data} /> {/* Pasar los datos como propiedad */}
         </div>
