@@ -1,7 +1,7 @@
 import React from "react";
 import {FilterSelect} from "../UI/FilterSelect.jsx";
 import DonutChar from "../UI/DonutChar.jsx";
-import tailwindColors from '../../../tailwind.config.js'; // Asegúrate de importar tailwindColors aquí si es necesario
+import tailwindColors from '../../../tailwind.config.js';
 
 export const select = [
   {
