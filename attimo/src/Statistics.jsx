@@ -1,5 +1,6 @@
 import { StatisticsCards } from "./components/activity/Statistics/SectionContainersStatistics.jsx";
 import { Graphs } from "./components/activity/Statistics/SectionGraphs.jsx";
+import { List } from "./components/activity/Statistics/SectionListStudents.jsx";
 import {
   LayoutDashboard,
   Home,
@@ -41,10 +42,11 @@ export function Statistics() {
             <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
           </Sidebar>
         </div>
-        <div className="">
+        
+        <div className="grid gap-5">
         <StatisticsCards />
         <Graphs />
-        <Graphs />
+        <List />
         </div>
       </div>
     </>
