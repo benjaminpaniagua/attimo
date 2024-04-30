@@ -98,7 +98,7 @@ export function Events() {
           <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6">
             <MyEvents items={events}/>
           </section>
-          <section className="m-auto h-full pt-4 w-[30%] lg:w-full">
+          <section className="grid h-full py-4 pr-4 w-[30%] lg:w-full lg:pr-0 lg:px-6">
             <div className="grid gap-4">
               <Reports />
               <Tasks />

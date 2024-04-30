@@ -3,7 +3,7 @@ import { PieChart } from '@mui/x-charts/PieChart';
 
 export default function DonutChar({ data }) {
   return (
-    <div className='mt-12'>
+    <div className='mt-10'>
     <PieChart
     margin={{ top: 0, bottom: 80, left: 0, right: 0 }}
       series={[
