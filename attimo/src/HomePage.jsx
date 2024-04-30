@@ -134,7 +134,7 @@ export function HomePage() {
                     </section>
                     
                     <section className="bg-clr-light-secondary-bg m-auto h-full pt-4 w-[30%] lg:w-full">
-                        <div className="px-4 w-[90%] m-auto bg-white rounded-lg"><Calendar/></div>
+                        <div className="px-4 w-[90%] m-auto bg-white rounded-lg lg:m-initial lg:px-0 lg:w-full"><Calendar/></div>
                         <UpcomingEvents items={upcomingEvents}/>
                     </section>
                 </main>

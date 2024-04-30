@@ -9,7 +9,7 @@ export function MyEvents({ items, categories, courses }){
                 <h1 className="mb-5">My Events</h1>
                 <EventsFilters/>
             </div>
-            <div className="grid grid-cols-auto-300 gap-4 w-full max-h-[54rem] overflow-scroll">
+            <div className="grid grid-cols-auto-300 gap-4 w-full max-h-[54rem] overflow-y-scroll">
                 {items.map(item => (
                     <CardEvents
                         key={item.title}

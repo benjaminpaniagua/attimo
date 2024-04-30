@@ -24,8 +24,8 @@ export function Reports() {
   
     return (
       <>
-        <div className="bg-clr-white rounded-lg mt-10 pb-10">
-          <div className="flex justify-between items-center p-10 pb-0">
+        <div className="bg-clr-white rounded-lg p-6 lg:p-4">
+          <div className="flex justify-between items-center pb-0">
             <h2 className="fs-med">Events Report</h2>
             <FilterSelect items={select}/>
           </div>

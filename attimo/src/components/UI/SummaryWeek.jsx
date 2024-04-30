@@ -1,7 +1,7 @@
 export function SummaryWeek() {
   return (
     <>
-      <div className="flex gap-8 items-center">
+      <div className="flex gap-4 items-center">
         <div className="flex items-center">
           <div className="w-3 h-3 rounded-full bg-clr-dark-green mr-2"></div>
           <p>Light(0-5)</p>
