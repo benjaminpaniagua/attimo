@@ -1,13 +1,11 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import {HomePage} from './HomePage.jsx'
-import {Events} from './Events.jsx'
-import { Home } from 'lucide-react'
-import { Statistics } from './Statistics.jsx'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { Events } from "./pages/Events.jsx";
+import { HomePage } from "./pages/HomePage.jsx";
+import { Statistics } from "./Statistics.jsx";
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <>
-      <HomePage />
-    </>
-)
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <>
+    < HomePage />
+  </>
+);

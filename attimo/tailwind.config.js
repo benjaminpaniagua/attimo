@@ -21,6 +21,7 @@ export default {
       },
       colors:{
         //Light Mode
+        'clr-white': 'hsla(264, 94%, 100%, 1)',
         'clr-blue': 'hsla(230, 37%, 33%, 1)',
         'clr-dark-blue': 'hsla(230, 27%, 22%, 1)',
 
@@ -40,7 +41,7 @@ export default {
         //Dark Mode
         'clr-dark-bg': 'hsla(210, 11%, 15%, 1)',
         'clr-dark-secondary-bg': 'hsla(210, 9%, 17%, 1)',
-        'clr-dark-third': '#2A2E32'
+        'clr-dark-third': 'hsla(210, 9%, 18%, 1)'
       },
       gridTemplateColumns: {
         'auto-150': 'repeat(auto-fit, minmax(150px, 1fr))',

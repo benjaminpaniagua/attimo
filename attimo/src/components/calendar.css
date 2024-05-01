@@ -12,7 +12,7 @@
 
 /*Today's selection*/
 .css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-  color: #354075 !important;
+  color: #332591 !important;
   background-color: #99a7ff !important;
   font-weight: 500;
 }
@@ -56,13 +56,17 @@
   z-index: 1 !important;
   min-width: 36px !important;
   height: 36px !important;
+  color: white !important;
 }
 
+/*Year selection*/
 .css-innj4t-MuiPickersYear-yearButton.Mui-selected {
   color: #354075 !important;
-  background-color: rgba(188, 197, 249, 0.28) !important;
+  background-color: #515c94 !important;
+  color: white !important;
 }
 
+/*Year options*/
 .css-innj4t-MuiPickersYear-yearButton {
   color: #354075 !important;
 }
@@ -85,8 +89,9 @@
   font-size: 1rem !important;
   color: #515c94 !important;
 }
+/*Selected day*/
 .css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-  color: white !important;
+  color: rgb(255, 255, 255) !important;
 }
 
 /* 
