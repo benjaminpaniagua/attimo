@@ -88,10 +88,10 @@ export function Events() {
           <Sidebar username="usuario" email="email@gmail.com" image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg"></Sidebar>
         </aside>
         <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
-          <section className="w-[70%] px-2 my-4 lg:w-full lg:px-4">
+          <section className="w-[70%] px-2 my-4 lg:w-full lg:px-4 ">
             <MyEvents items={events} />
           </section>
-          <section className="grid h-full py-4 pr-4 w-[30%] lg:w-full lg:pr-0 lg:px-4">
+          <section className="grid h-full py-4 pr-4 w-[30%] lg:w-full lg:px-4 ">
             <div className="grid gap-4">
               <Reports />
               <Tasks />

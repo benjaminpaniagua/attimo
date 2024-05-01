@@ -134,11 +134,11 @@ export function HomePage() {
           ></Sidebar>
         </aside>
         <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
-          <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6">
+          <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">
             <MyCourses className="w-full" items={courses} name="Valeria" />
           </section>
-          <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full">
-            <div className="px-4 w-[90%] m-auto  rounded-lg lg:m-initial lg:px-0 lg:w-full">
+          <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
+            <div className="w-[90%] m-auto rounded-lg ">
               <Calendar />
             </div>
             <UpcomingEvents items={upcomingEvents} />

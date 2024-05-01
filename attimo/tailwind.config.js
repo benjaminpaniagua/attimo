@@ -55,6 +55,8 @@ export default {
         'lg': {'max': '1023px'},
         'md': {'max': '768px'},
         'sm': {'max': '639px'},
+
+        'tablet': {'min': '1024px', 'max': '1200px'},
       },
     },
   },

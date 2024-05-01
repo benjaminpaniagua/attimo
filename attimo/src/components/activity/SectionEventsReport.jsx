@@ -24,12 +24,12 @@ export function Reports() {
   
     return (
       <>
-        <div className="bg-white dark:bg-clr-dark-third rounded-lg p-6 lg:p-4">
+        <div className="grid bg-white dark:bg-clr-dark-third rounded-lg p-6 lg:p-4">
           <div className="flex justify-between items-center pb-0">
             <h2 className="fs-med dark:text-white">Events Report</h2>
             <FilterSelect items={select}/>
           </div>
-          <DonutChar data={data} /> {/* Pasar los datos como propiedad */}
+          <DonutChar data={data} /> {/* Send data as property */}
         </div>
       </>
     );
