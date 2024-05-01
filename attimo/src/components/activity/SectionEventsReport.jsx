@@ -24,9 +24,9 @@ export function Reports() {
   
     return (
       <>
-        <div className="bg-clr-white rounded-lg p-6 lg:p-4">
+        <div className="bg-white dark:bg-clr-dark-third rounded-lg p-6 lg:p-4">
           <div className="flex justify-between items-center pb-0">
-            <h2 className="fs-med">Events Report</h2>
+            <h2 className="fs-med dark:text-white">Events Report</h2>
             <FilterSelect items={select}/>
           </div>
           <DonutChar data={data} /> {/* Pasar los datos como propiedad */}

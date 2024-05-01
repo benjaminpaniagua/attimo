@@ -1,4 +1,3 @@
-import { LayoutDashboard, Home, StickyNote, Layers, Flag, LifeBuoy, Settings, Eraser, Filter, Bell, BarChart, SunDim, Sun, Moon, LogOut } from "lucide-react";
 import Sidebar, { SidebarItem } from "./components/UI/Sidebar.jsx"
 import { MyCourses } from "./components/activity/MyCourses.jsx";
 import {UpcomingEvents} from "./components/activity/UpcomingEvents.jsx";
@@ -93,7 +92,7 @@ const upcomingEvents = [
         title: "Smash Tournament",
         date: "10 May",
         hour: "17:00",
-        percent: null,
+        percent: 0,
     },
     {
         id: 3,
@@ -109,35 +108,28 @@ const upcomingEvents = [
         title: "Python Meet",
         date: "10 May",
         hour: "17:00",
-        percent: null,
+        percent: 0,
     }
 ];
 
 export function HomePage() {
+
     return (
         <>
-        <div className="flex gap-4 bg-clr-light-bg w-screen">
+        <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-screen">
             <div className="w-16">
-                <Sidebar username="usuario" email="email@gmail.com" image='https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg'>
-                    <SidebarItem icon={<Home size={20} />} text="Home" active/>
-                    <SidebarItem icon={<LayoutDashboard size={20} />} text="Events"/>
-                    <SidebarItem icon={<BarChart size={20} />} text="Stadistics" />
-                    <SidebarItem icon={<Bell size={20} />} text="Notifications" />
-                    <SidebarItem icon={<Moon size={20} />} text="Dark Mode" />
-                    <hr className="my-3"/>
-                    <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
-                    </Sidebar>
-                </div>
-                <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col"> 
-                    <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6">
-                        <MyCourses className='w-full' items={courses} name='Valeria'/>
-                    </section>
+                <Sidebar username="usuario" email="email@gmail.com" image='https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg'></Sidebar>
+            </div>
+            <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col"> 
+                <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6">
+                    <MyCourses className='w-full' items={courses} name='Valeria'/>
+                </section>
                     
-                    <section className="bg-clr-light-secondary-bg m-auto h-full pt-4 w-[30%] lg:w-full">
-                        <div className="px-4 w-[90%] m-auto bg-white rounded-lg lg:m-initial lg:px-0 lg:w-full"><Calendar/></div>
-                        <UpcomingEvents items={upcomingEvents}/>
-                    </section>
-                </main>
+                <section className="bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full">
+                    <div className="px-4 w-[90%] m-auto bg-white dark:bg-clr-dark-bg rounded-lg lg:m-initial lg:px-0 lg:w-full"><Calendar/></div>
+                    <UpcomingEvents items={upcomingEvents}/>
+                </section>
+            </main>
             </div>
         </>
     )

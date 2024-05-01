@@ -6,13 +6,13 @@ export function UpcomingEvents({ items}) {
     <>
     <div className="my-6 px-6">
     <section className="flex justify-between">
-        <h2 className="mb-2">Upcoming events</h2>
-        <p className="cursor-pointer hover:text-clr-blue">View all</p>
+        <h2 className="mb-2 dark:text-white">Upcoming events</h2>
+        <p className="duration-300 cursor-pointer hover:text-clr-blue dark:text-clr-light-gray dark:hover:text-white">View all</p>
       </section>
         <div className="grid gap-4 w-full">
         {items.map((item) => (
           <EventSummary
-            key={1}
+            key={item.id}
             title={item.title}
             date={item.date}
             hour={item.hour}

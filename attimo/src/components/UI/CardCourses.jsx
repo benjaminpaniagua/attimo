@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 
 export function CardCourses({title, description, image, progress}) {
     return(
-        <div className="bg-white rounded-lg overflow-hidden">
+        <div className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden">
             <div className='h-40 overflow-hidden'><img className="w-full bg-cover" src={`${image}`} alt="Courses Image" /></div>
             <section className="mt-2 p-5">
-                <h3>{title}</h3>
-                <p className="my-3">{description}</p>
+                <h3 className='dark:text-white'>{title}</h3>
+                <p className="my-3 dark:text-clr-light-gray">{description}</p>
                 <div>
                     <div className='flex justify-between mb-2'>
-                        <p>Progress</p>
-                        <p className='text-clr-dark-green'>{progress}%</p>
+                        <p className="dark:text-clr-light-gray">Progress</p>
+                        <p className='text-clr-mint-green dark:text-clr-light-green'>{progress}%</p>
                     </div>
-                    <progress className="rounded-lg= bg-clr-light-gray w-full" value={progress} max="100"></progress>
+                    <progress className="rounded-lg bg-clr-light-gray w-full" value={progress} max="100"></progress>
                 </div>
             </section>
         </div>

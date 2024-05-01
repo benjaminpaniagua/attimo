@@ -3,19 +3,19 @@ import PropTypes from 'prop-types';
 
 export function CardEvents({title, description, date, hour, image, category, label, status, percent}) {
     return(
-        <div className="bg-white rounded-lg overflow-hidden">
+        <div className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden">
             <div className='h-40 overflow-hidden'><img className="w-full bg-cover" src={`${image}`} alt="Courses Image" /></div>
             <div className="mt-2 p-5">
                 <section className='flex justify-between'>
-                    <h3>{title}</h3>
-                    {percent ? <h3>{percent}%</h3> : null}
+                    <h3 className='dark:text-white'>{title}</h3>
+                    {percent ? <h3 className='dark:text-white'>{percent}%</h3> : null}
                 </section>
-                <p className="my-3">{description}</p>
-                <p className="my-3">{date}, {hour}</p>
+                <p className="dark:text-clr-light-gray my-3">{description}</p>
+                <p className="dark:text-clr-light-gray my-3">{date}, {hour}</p>
                 <div className='flex gap-4'>
-                    <span className='px-4 py-2 rounded-md bg-clr-light-green text-clr-dark-green'>{category}</span>
-                    <span className='px-4 py-2 rounded-md bg-clr-light-pink text-clr-dark-pink'>{label}</span>
-                    <span className='px-4 py-2 rounded-md bg-clr-light-bg text-clr-dark-gray'>{status}</span>
+                    <span className='px-4 py-2 rounded-md bg-clr-light-green text-clr-dark-green dark:bg-clr-dark-green dark:text-clr-light-green'>{category}</span>
+                    <span className='px-4 py-2 rounded-md bg-clr-light-pink text-clr-dark-pink dark:bg-clr-dark-pink dark:text-clr-light-pink'>{label}</span>
+                    <span className='px-4 py-2 rounded-md bg-clr-light-bg text-clr-dark-gray dark:bg-clr-dark-gray dark:text-clr-light-bg'>{status}</span>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@ CardEvents.defaultProps = {
     image: "https://images.unsplash.com/photo-1622834085294-0b1a1c7f2f0e",
     category: "University",
     label: "Event",
-    percent: null,
+    percent: 0,
     status: "Active"
 }
 
