@@ -14,7 +14,7 @@ export function EventsFilters(){
     return (
         <>
             <div className="flex flex-wrap gap-4 my-4">
-                <InputSearch />
+                <InputSearch placeholder="Search an event" />
                 <FilterSelect items={categories} />
                 <FilterSelect items={courses} />
             </div>

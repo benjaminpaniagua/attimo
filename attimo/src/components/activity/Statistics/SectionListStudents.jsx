@@ -1,4 +1,5 @@
 import ListStudents from "../../UI/StatisticsUI/ListStudents.jsx";
+import { InputSearch } from "../../UI/InputSearch.jsx";
 export function List() {
     const students = [
         {
@@ -60,9 +61,10 @@ export function List() {
     <section className="">
       <div className="bg-clr-white rounded-lg">
         <div className="flex justify-between items-center p-10 pb-0">
-          <h2 className="fs-med">List of Students</h2>
+        <h2 className="fs-med">List of Students</h2>
+        <InputSearch placeholder="Search a student" />
         </div>
-        <div className="p-12">
+        <div className="pl-6">
         <ListStudents students={students} />
         </div>
       </div>
