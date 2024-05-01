@@ -11,7 +11,7 @@ export function CardCourses({title, description, image, progress}) {
                 <div>
                     <div className='flex justify-between mb-2'>
                         <p className="dark:text-clr-light-gray">Progress</p>
-                        <p className='text-clr-mint-green dark:text-clr-light-green'>{progress}%</p>
+                        <p className='text-clr-dark-green dark:text-clr-mint-green'>{progress}%</p>
                     </div>
                     <progress className="rounded-lg bg-clr-light-gray w-full" value={progress} max="100"></progress>
                 </div>

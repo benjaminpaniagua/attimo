@@ -1,9 +1,9 @@
 import "../../index.css";
 import { LayoutDashboard, Home, Bell, BarChart, Sun, Moon, LogOut } from "lucide-react";
-import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react"
-import logo from "../../assets/attimo_light.svg"
-import { createContext, useContext, useState } from "react"
+import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
+import { createContext, useContext, useState } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
+import logo from "../../assets/imgs/attimo_light.svg";
 
 const SidebarContext = createContext();
 

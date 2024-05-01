@@ -1,13 +1,13 @@
 import "../../index.css";
 import { CardEvents } from "../UI/CardEvents.jsx";
-import { EventsFilters } from "./EventsFilters";
+import { EventsFilters } from "./EventsFilters.jsx";
 
 export function MyEvents({items}){
     return (
         <>
             <h1 className="dark:text-white">My Events</h1>
             <EventsFilters/>
-            <div className="grid grid-cols-auto-300 gap-4 w-full max-h-[54rem] overflow-y-scroll">
+            <div className="grid grid-cols-auto-300 gap-4 w-full max-h-[54rem] overflow-y-scroll no-scrollbar">
                 {items.map(item => (
                     <CardEvents
                         key={item.title}
