@@ -46,6 +46,15 @@ p{
   width: calc(100vw - 4rem);
 }
 
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 /*
 .input-field.active {
   @apply border-b-hsla(245, 11%, 43%, 1);

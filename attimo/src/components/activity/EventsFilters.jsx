@@ -13,10 +13,13 @@ export function EventsFilters(){
 
     return (
         <>
-            <div className="flex flex-wrap gap-4 my-4">
+            <div className="flex flex-wrap justify-between gap-4 my-4 w-full">
                 <InputSearch />
-                <FilterSelect items={categories} />
-                <FilterSelect items={courses} />
+                <div className="flex flex-wrap gap-4 items-center">
+                    <p className="dark:text-clr-light-gray ">Sort by:</p>
+                    <FilterSelect items={categories} responsive={true} />
+                    <FilterSelect items={courses} responsive={true} />
+                </div>
             </div>
         </>
     );

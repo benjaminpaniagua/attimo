@@ -8,6 +8,6 @@ import { Statistics } from './Statistics.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <>
-      <Statistics />
+      <HomePage />
     </>
 )

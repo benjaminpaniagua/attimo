@@ -4,9 +4,9 @@ import "../../index.css";
 
 export function InputSearch() {
     return (
-        <div className="flex justify-between bg-clr-light-gray rounded-md overflow-hidden text-clr-white">
-            <input className="w-full py-2 placeholder:text-white px-4 bg-transparent cursor-pointer focus:outline-none" type="text" placeholder="Search an event" name="search"/>
-            <Search size={24} className="px-2 bg-clr-dark-gray h-full" />
+        <div className="md:w-full w-72 flex justify-between bg-clr-light-gray/40 text-clr-dark-gray rounded-md overflow-hidden dark:bg-clr-dark-gray/30 dark:text-clr-light-gray">
+            <input className="w-full py-2 px-4 placeholder:text-clr-dark-gray bg-transparent cursor-pointer focus:outline-none" type="text" placeholder="Search an event" name="search"/>
+            <Search size={28} className="p-2 h-full bg-transparent" />
         </div>
     );
 }

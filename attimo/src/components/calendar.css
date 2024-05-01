@@ -1,28 +1,27 @@
-
+/*Calendar structure*/
 .css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-  color: #000 !important;
-  background-color: #BCC5F9 !important;
+  background-color: #515c94 !important;
   font-weight: 500 !important;
-  
 }
+
+/*Today's hover */
 .css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
   will-change: background-color !important;
-  background-color: #BCC5F9 !important;
-  
+  background-color: #d8ddff !important;
 }
+
+/*Today's selection*/
 .css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-  color: #000 !important;
-  background-color: #BCC5F9 !important;
+  color: #354075 !important;
+  background-color: #99a7ff !important;
   font-weight: 500;
 }
+
 .css-23p0if-MuiButtonBase-root-MuiPickersDay-root:not(.Mui-selected) {
-  border: none !important;
+  border: .15rem solid #515c94;
 }
 
-.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root {
-  border-radius: 0 !important;
-}
-
+/*Date title*/
 .css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
   cursor: pointer;
   font-family: "Poppins","Poppins","Poppins",sans-serif !important;
@@ -31,26 +30,29 @@
   font-weight: 500 !important;
 }
 
+/*Right Arrow*/
 .css-1nkg345-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
-  color: #354075 !important;
-  background-color: rgba(188, 197, 249, 0.28) !important;
-  
+  color: #d8ddff !important;
+  background-color: #354075 !important;
 }
 .css-12p2adl-MuiDayCalendar-monthContainer {
-  font-size: large !important;
+  font-size: medium !important;
 }
 
+/*Left arrow*/
 .css-kg9q0s-MuiButtonBase-root-MuiIconButton-root-MuiPickersArrowSwitcher-button {
-  color: #354075 !important;
-  background-color: rgba(188, 197, 249, 0.28) !important;
+  color: #d8ffdd !important;
+  background-color: #354075 !important;
+  margin-right: .1rem !important;
 }
 
+/*Events*/
 .css-1r7ctd-MuiBadge-badge {
   font-family: "Poppins","Poppins","Poppins",sans-serif !important;
-  background-color: rgba(188, 197, 249, 0.28) !important;
+  background-color: hsla(232, 89%, 74%, .3) !important;
   top: 50%   !important;
   right: 50% !important;
-  border-radius: 0% !important;
+  border-radius: 50% !important;
   z-index: 1 !important;
   min-width: 36px !important;
   height: 36px !important;
@@ -66,24 +68,28 @@
 }
 
 .css-1rtg91x-MuiDateCalendar-root {
-overflow: hidden;
-background-color: #ffffff   !important;
-border-radius: 5% !important;
-width: 475px !;
-height: 300px   !important;
+  overflow: hidden;
+  background-color: transparent !important;
+  border-radius: 5% !important;
+  width: 300px !important;
+  height: 300px   !important;
 }
 
+/*View Icon*/
 .css-1tkx1wf-MuiSvgIcon-root-MuiPickersCalendarHeader-switchViewIcon {
- display: none !important;
+  color: #354075 !important;
 }
 
+/*Días de la semana*/
 .css-rhmlg1-MuiTypography-root-MuiDayCalendar-weekDayLabel {
   font-size: 1rem !important;
-  color: rgba(160, 160, 179, 1) !important;
+  color: #515c94 !important;
 }
-/* .css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-  @apply text-black bg-[#BCC5F9] font-medium;
+.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  color: white !important;
 }
+
+/* 
 .css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected:hover {
   @apply will-change-[background-color] bg-[#BCC5F9];
 }
