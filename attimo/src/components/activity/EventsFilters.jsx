@@ -1,6 +1,6 @@
 import "../../index.css";
 import { FilterSelect } from "../UI/FilterSelect.jsx";
-import { courses } from "../../HomePage.jsx";
+import { courses } from "../../pages/HomePage.jsx";
 import { InputSearch } from "../UI/InputSearch.jsx";
 
 export function EventsFilters(){
@@ -13,10 +13,13 @@ export function EventsFilters(){
 
     return (
         <>
-            <div className="flex flex-wrap gap-4 my-4">
-                <InputSearch placeholder="Search an event" />
-                <FilterSelect items={categories} />
-                <FilterSelect items={courses} />
+            <div className="flex lg:flex-col justify-between gap-4 my-4 w-full">
+            <InputSearch placeholder="Search an event" />
+                <div className="flex gap-4 items-center">
+                    <p className="dark:text-clr-light-gray lg:hidden">Sort by:</p>
+                    <FilterSelect items={categories} responsive={true} />
+                    <FilterSelect items={courses} responsive={true} />
+                </div>
             </div>
         </>
     );

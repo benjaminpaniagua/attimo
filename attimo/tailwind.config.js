@@ -2,6 +2,7 @@
 export default {
   content: ["../index.html",
   "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: 'class', 
   theme: {
     extend: {
       fontFamily: {
@@ -20,12 +21,14 @@ export default {
       },
       colors:{
         //Light Mode
+        'clr-white': 'hsla(264, 94%, 100%, 1)',
         'clr-blue': 'hsla(230, 37%, 33%, 1)',
         'clr-dark-blue': 'hsla(230, 27%, 22%, 1)',
 
         'clr-light-gray': 'hsla(240, 11%, 66%, 1)',
         'clr-dark-gray': 'hsla(245, 11%, 43%, 1)',
 
+        'clr-mint-green': 'hsla(173, 68%, 54%, 1)',
         'clr-light-green': 'hsla(172, 100%, 86%, 1) ',
         'clr-dark-green': 'hsla(173, 63%, 28%, 1)',
 
@@ -34,7 +37,11 @@ export default {
         
         'clr-light-bg': 'hsla(253, 22%, 92%, 1)',
         'clr-light-secondary-bg': 'hsla(245, 38%, 87%, 1)',
-        'clr-white': 'hsla(0, 0%, 100%, 1)',
+
+        //Dark Mode
+        'clr-dark-bg': 'hsla(210, 11%, 15%, 1)',
+        'clr-dark-secondary-bg': 'hsla(210, 9%, 17%, 1)',
+        'clr-dark-third': 'hsla(210, 9%, 18%, 1)'
       },
       gridTemplateColumns: {
         'auto-150': 'repeat(auto-fit, minmax(150px, 1fr))',
@@ -48,6 +55,8 @@ export default {
         'lg': {'max': '1023px'},
         'md': {'max': '768px'},
         'sm': {'max': '639px'},
+
+        'tablet': {'min': '1024px', 'max': '1200px'},
       },
     },
   },

@@ -5,9 +5,9 @@ import { CardCourses } from "../UI/CardCourses.jsx";
 export function MyCourses({ items, name }) {
   return (
     <>
-      <h1>My Courses</h1>
-      <p className="mt-2 mb-5">Have a nice day {name}, are you ready for your next event?</p> 
-      <div className="grid grid-cols-auto-300 gap-4 w-full max-h-[48rem] overflow-y-scroll">
+      <h1 className="dark:text-white ">My Courses</h1>
+      <p className="mt-2 mb-5 dark:text-clr-light-gray">Have a nice day {name}, are you ready for your next event?</p> 
+      <div className="grid grid-cols-auto-300 tablet:grid-cols-auto-250 gap-4 w-full max-h-[48rem] overflow-y-scroll no-scrollbar">
         {items.map((item) => (
           <CardCourses
             key={item.id}
