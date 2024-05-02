@@ -13,9 +13,6 @@ function useLogin() {
         const bullets = document.querySelectorAll('.bullets span');
         const images = document.querySelectorAll(".image");
 
-        // Verificar si las imágenes se están seleccionando correctamente
-        console.log(images);
-
         inputElements.forEach((input) => {
             inputsRef.current.push(input);
 

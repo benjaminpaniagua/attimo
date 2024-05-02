@@ -5,7 +5,7 @@ import { Carousel } from "../components/UI/Carousel.jsx";
 import useLogin from "../components/hooks/useLogin.js";
 
 export function Login() {
-    const { inputsRef, toggleRef, bulletsRef, imgsRef, moveSlider } = useLogin();
+    useLogin();
 
     return (
         <main className="main-authentification bg-clr-dark-blue w-full min-h-screen max-h-[90vh] overflow-hidden flex items-center justify-center p-8">
