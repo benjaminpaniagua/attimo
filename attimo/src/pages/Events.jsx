@@ -89,6 +89,7 @@ export const profileInfo = [
 
 {
   id:1,
+  img:"/imgs/usr-default.png",
   name:"Ernest Du",
   mail: "ernest@gmail.com",
   usr: "erne12",
