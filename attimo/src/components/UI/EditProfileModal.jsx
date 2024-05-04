@@ -3,18 +3,7 @@ import ReactModal from 'react-modal';
 import { useState } from 'react';
 
 const EditProfileModal = ({ isOpen, onClose }) => {
-    const [name, setName] = useState(''); // Estado para almacenar el nombre editado
-
-    const handleNameChange = (e) => {
-        setName(e.target.value);
-    };
-
-    const handleSubmit = () => {
-        // Aquí puedes enviar el nuevo nombre al servidor o realizar cualquier acción necesaria
-        console.log("Nuevo nombre:", name);
-        onClose(); // Cierra el modal de edición
-    };
-
+    
     return (
         <ReactModal
             isOpen={isOpen}
