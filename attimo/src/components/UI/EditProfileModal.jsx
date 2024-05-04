@@ -15,7 +15,7 @@ const EditProfileModal = ({ isOpen, onClose }) => {
             className="fixed inset-0 flex items-center justify-center"
             overlayClassName="fixed inset-0" 
         >
-        <div className="bg-white p-8 rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] z-[101]">
+                    <div className="bg-white p-8 rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] z-[101]">
             <button onClick={handleClose} className="w-5">
                 <img src="/imgs/flecha-izquierda.png" alt="close" />
             </button>
