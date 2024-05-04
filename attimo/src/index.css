@@ -98,6 +98,8 @@ p{
   border-radius: 2rem;
 }
 
+
+
 @media (max-width: 768px){
   .box {
     height: auto;

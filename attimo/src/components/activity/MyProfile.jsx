@@ -16,7 +16,8 @@ export function MyProfile({ items }) {
             usr={item.usr}
             taskCompleted={item.taskCompleted}
             taskRemaining={item.taskRemaining}
-            courses={item.courses}          
+            courses={item.courses} 
+                   
           />
         ))}
       </div>
