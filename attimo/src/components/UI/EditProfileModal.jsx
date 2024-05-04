@@ -23,6 +23,7 @@ const EditProfileModal = ({ isOpen, onClose }) => {
                     </button>
                     <div className='grid justify-center'>
                         <h2 className="fs-large font-semibold text-center mb-4">Edit Profile</h2>
+                        <p className='fs-normal text-center font-medium mb-4'>Profile Picture</p>
                             <input type="file" accept="image/*" id="fileInput" class="hidden"/> 
                             <label for="fileInput" className=" block w-48 h-48 rounded-full overflow-hidden bg-gray-200 mb-4"> </label>
                     </div>

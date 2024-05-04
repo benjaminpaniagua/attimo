@@ -8,6 +8,6 @@ import { RecoverPassword } from "./pages/RecoverPassword.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <Events/>
+    <HomePage/>
   </>
 );
