@@ -16,8 +16,8 @@ export function MyProfile({ items }) {
             taskCompleted={item.taskCompleted}
             taskRemaining={item.taskRemaining}
             courses={item.courses}
-            isOpen={true} // Asegúrate de que el modal esté abierto
-            onClose={() => {}} // Asegúrate de tener una función onClose válida
+            
+            
           />
         ))}
       </div>
