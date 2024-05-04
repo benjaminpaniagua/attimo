@@ -3,6 +3,7 @@ import { MyCourses } from "../components/activity/MyCourses.jsx";
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
 import Calendar from "../components/UI/Calendar.jsx";
+import {MyProfile} from "../components/activity/MyProfile.jsx";
 
 export const courses = [
   {
@@ -122,6 +123,21 @@ const upcomingEvents = [
   },
 ];
 
+export const profileInfo = [
+
+  {
+    id:1,
+    name:"Ernest Du",
+    mail: "ernest@gmail.com",
+    usr: "erne12",
+    taskCompleted:"5",
+    taskRemaining:"43",
+    courses:
+    "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
+  }
+  
+  ]
+
 export function HomePage() {
   return (
     <>
@@ -132,6 +148,7 @@ export function HomePage() {
             email="email@gmail.com"
             image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg"
           ></Sidebar>
+          <MyProfile items={profileInfo}/>
         </aside>
         <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
           <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">

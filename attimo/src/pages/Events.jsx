@@ -4,8 +4,13 @@ import { Reports } from "../components/activity/SectionEventsReport.jsx";
 import { Tasks } from "../components/activity/SectionTasks.jsx";
 import { Summary } from "../components/activity/SectionSummary.jsx";
 import defaultImg from "../assets/imgs/image_card.png";
+import {MyProfile} from "../components/activity/MyProfile.jsx";
+
+
+
 
 export const events = [
+  
   {
     id: 1,
     image: defaultImg,
@@ -80,12 +85,29 @@ export const events = [
   },
 ];
 
+export const profileInfo = [
+
+{
+  id:1,
+  name:"Ernest Du",
+  mail: "ernest@gmail.com",
+  usr: "erne12",
+  taskCompleted:"5",
+  taskRemaining:"43",
+  courses:
+  "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
+}
+
+]
+
 export function Events() {
+  
   return (
     <>
       <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-screen">
         <aside className="w-16">
           <Sidebar username="usuario" email="email@gmail.com" image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg"></Sidebar>
+          <MyProfile items={profileInfo}/>
         </aside>
         <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
           <section className="w-[70%] px-2 my-4 lg:w-full lg:px-4 ">

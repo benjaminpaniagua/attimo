@@ -3,6 +3,7 @@ import { LayoutDashboard, Home, Bell, BarChart, Sun, Moon, LogOut } from "lucide
 import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
 import { createContext, useContext, useState } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
+import ProfileModal from './ProfileModal';
 import logo from "../../assets/imgs/attimo_light.svg";
 
 const SidebarContext = createContext();
@@ -10,6 +11,7 @@ const SidebarContext = createContext();
 export default function Sidebar({ children, image, username, email}) {
     const [expanded, setExpanded] = useState(false);
     const { theme, handleChangeTheme } = useDarkMode();
+    const [modalIsOpen, setModalIsOpen] = useState(false);
     
     return (
         <>
@@ -35,7 +37,10 @@ export default function Sidebar({ children, image, username, email}) {
                     </SidebarContext.Provider>
 
                     <div className="border-t flex p-3">
-                        <img src={`${image}`} className="w-10 h-10 rounded-md" />
+                    <button className="w-10 h-10 rounded-md overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-500" onClick={() => setModalIsOpen(true)}>
+                        <img src={image} className="w-full h-full" alt="Imagen" />
+                    </button>
+                        <ProfileModal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
                         <div className={`flex justify-between items-center overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"} `}>
                             <div className="leading-4">
                                 <h4 className="font-semibold font-regular">{username}</h4>
