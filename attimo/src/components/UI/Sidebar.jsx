@@ -37,7 +37,7 @@ export default function Sidebar({ children, image, username, email}) {
                     </SidebarContext.Provider>
 
                     <div className="border-t flex p-3">
-                    <button className="w-10 h-10 rounded-md overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-500" onClick={() => setModalIsOpen(true)}>
+                    <button className="w-10 h-10 rounded-md overflow-hidden" onClick={() => setModalIsOpen(true)}>
                         <img src={image} className="w-full h-full" alt="Imagen" />
                     </button>
                         <ProfileModal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
