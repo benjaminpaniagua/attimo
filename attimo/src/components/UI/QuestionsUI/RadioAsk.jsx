@@ -14,33 +14,37 @@ export function RadioAsk() {
 
     return (
         <FormControl>
-            <h3 className=" font-medium text-gray-900 ">What is your gender?</h3>
-            <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="row-radio-buttons-group"
-            value={value}
-                onChange={handleChange}
-            >
-                <FormControlLabel value="female" control={<Radio color="default"/>} label="Female" />
-                <FormControlLabel value="male" control={<Radio color="default"/>} label="Male" />
-                <FormControlLabel value="other" control={<Radio color="default"/>} label="Other" />
+            <div>
+                <section>
+                    <h3 className="font-medium text-clr-dark-blue">What is your gender?</h3>
+                    <RadioGroup
+                        row
+                        aria-labelledby="demo-row-radio-buttons-group-label"
+                        name="row-radio-buttons-group"
+                        value={value}
+                        onChange={handleChange}
+                    >
+                    <FormControlLabel value="female" control={<Radio color="default"/>} label="Female" />
+                    <FormControlLabel value="male" control={<Radio color="default"/>} label="Male" />
+                    <FormControlLabel value="other" control={<Radio color="default"/>} label="Other" />
+                    </RadioGroup>
+                </section>
 
-            </RadioGroup>
+                <section>
+                    <h3 className="mt-8 font-medium text-clr-dark-blue">Do you practice sport regularly?</h3>
+                    <RadioGroup
+                        row
+                        aria-labelledby="demo-row-radio-buttons-group-label"
+                        name="row-radio-buttons-group"
+                        value={value}
+                        onChange={handleChange}
+                    >
+                    <FormControlLabel value="athlete" control={<Radio color="default"/>} label="Yes, I do" />
+                    <FormControlLabel value="nathlete" control={<Radio color="default"/>} label="No, I don't" />
 
-            <h3 className="mt-8 font-medium text-gray-900 ">Do you practice sport regularly?</h3>
-            <RadioGroup
-                row
-                aria-labelledby="demo-row-radio-buttons-group-label"
-                name="row-radio-buttons-group"
-                value={value}
-                onChange={handleChange}
-            >
-                <FormControlLabel value="athlete" control={<Radio color="success"/>} label="Yes! I am an athlete" />
-                <FormControlLabel value="nathlete" control={<Radio color="error"/>} label="Not particularly" />
-
-            </RadioGroup>
-
+                    </RadioGroup>
+                </section>
+            </div>
         </FormControl>
     );
 }

@@ -27,13 +27,12 @@ function valuetext(value) {
 
 export default function Slider2() {
   return (
-    <Box className="flex justify-between px-4" sx={{ width: 250 }}>
+    <Box className="flex justify-between px-4" sx={{ width: 270 }}>
       <Slider
         aria-label="Restricted values"
         defaultValue={0}
         getAriaValueText={valuetext}
         step={null}
-       
         marks={marks}
         color="gray"
       />

@@ -10,32 +10,28 @@ import { SubmitButton } from "../components/UI/SubmitButton.jsx";
 export function Questions() {
 
     return (
-        <main className="main-authentification bg-clr-dark-blue w-full min-h-screen max-h-[90vh] overflow-hidden flex items-center justify-center">
-            <div className=" relative w-[30%] max-w-[1020px] min-w-[360px] h-[640px] bg-white rounded-[3.3rem]">
-                <div className="m-9 inner-box grid gap-4 absolute w-[calc(100%_-_4.1rem)] h-[calc(100%_-_4.1rem)] -translate-x-2/4 -translate-y-2/4 left-2/4 top-2/4">
-                    
-                    <div className='flex items-center'>
-                        <FormHeading title="Let us know you better!" subHeading="Please answear all questions"/>
-                    </div>
-                        <div>
-                         <RadioAsk />   
-                        <h3 className="mt-8 font-medium text-gray-900 ">Do you have a scholarship?</h3>
-                            <selectAsk/> 
-                            <select className="mt-3 text-base">
-                                <option value="noShol">No scholarship</option>
-                                <option value="partial">Partial scholarship</option>
-                                <option value="full">Full scholarship</option>
-                            </select>
-                        <h3 className="mt-8 font-medium text-gray-900 ">How many hours do you sleep?</h3>
-                        <Slider />
-                        </div>
-                        
-                    <div className="w-[30%]">
-                       <SubmitButton value="Next" /> 
-                    </div>
+        <div className="bg-clr-dark-blue flex justify-center items-center min-h-screen p-6">
+            <main className="bg-clr-white rounded-xl p-10 grid gap-4">
+                <div className="text-center">
+                    <FormHeading title="Let us know you better!"/>
                 </div>
-            </div>
-        </main>
+                <section>
+                    <RadioAsk />   
+                    <h3 className="mt-8 font-medium text-clr-dark-blue">Do you have a scholarship?</h3>
+                    <selectAsk/> 
+                    <select className="mt-3 text-base">
+                        <option value="noShol">No scholarship</option>
+                        <option value="partial">Partial scholarship</option>
+                        <option value="full">Full scholarship</option>
+                    </select>
+                    <h3 className="mt-8 font-medium text-clr-dark-blue">How many hours do you sleep?</h3>
+                    <Slider />
+                </section>
+                <div className="w-full">
+                    <SubmitButton value="Next" /> 
+                </div>
+            </main>
+        </div>
     );
 }
 
