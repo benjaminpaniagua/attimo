@@ -53,26 +53,27 @@ export function Graphs() {
 
   return (
     <>
-      <section className="grid grid-cols-3 gap-5">
+      <section className="grid grid-cols-3 md:grid-cols-1 gap-5">
         <div className="bg-clr-white rounded-lg">
-          <div className="flex justify-between items-center p-10 pb-0">
+          <div className="flex justify-between items-center p-5 pb-0">
             <h2 className="fs-med">To Qualify</h2>
           </div>
           <div>
-            <DonutChar data={toQualify} />{" "}
+            <DonutChar data={toQualify} />
+            
             {/* Pasar los datos como propiedad */}
           </div>
         </div>
 
         <div className="bg-clr-white rounded-lg">
-          <div className="flex justify-between items-center p-10 pb-0">
+          <div className="flex justify-between items-center p-5 pb-0">
             <h2 className="fs-med">Average hours of sleep</h2>
           </div>
           <BarChart data={hoursSleep}/>
         </div>
 
         <div className="bg-clr-white rounded-lg">
-          <div className="flex justify-between items-center p-10 pb-0">
+          <div className="flex justify-between items-center p-5 pb-0">
             <h2 className="fs-med">Gender</h2>
           </div>
           <DonutChar data={gender} />
