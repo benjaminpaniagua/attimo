@@ -5,9 +5,10 @@ import { HomePage } from "./pages/HomePage.jsx";
 import { Statistics } from "./Statistics.jsx";
 import { Login } from "./pages/Login.jsx";
 import { RecoverPassword } from "./pages/RecoverPassword.jsx";  
+import { Questions } from "./pages/Questions.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <Events/>
+    <RecoverPassword />
   </>
 );

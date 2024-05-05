@@ -9,15 +9,17 @@ export function RecoverPassword() {
 
     return (
         <div className="bg-clr-dark-blue flex justify-center items-center min-h-screen p-6">
-            <main className="bg-clr-white rounded-md p-6 grid gap-4">
-                <FormHeading className='mb-6' title="Recover Password" subHeading="Enter your data to update your password" />
-
-                <div>
-                    <SignInputs type="email" name="email" />
-                    <SignInputs type="password" name="New password" />
+            <main className="bg-clr-white rounded-xl p-10 grid gap-4">
+                <div className="text-center">
+                    <FormHeading title="Recover Password" subHeading="Enter your data to update your password" />
                 </div>
 
-                <SubmitButton value="Recover Password" subHeading='Remember password?' linkText='Sign In'/>
+                <div className="mt-4">
+                    <SignInputs type="email" name="email" />
+                    <SignInputs type="password" name="new password" />
+                </div>
+
+                <SubmitButton value="Change Password" subHeading='Remember password?' linkText='Sign In'/>
             </main>
         </div>
     );
