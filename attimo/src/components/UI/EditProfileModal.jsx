@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactModal from 'react-modal';
 import { SignInputs } from "../UI/SignInputs.jsx";
+import useLogin from '../hooks/useLogin.js';
 
 const EditProfileModal = ({ isOpen, onClose }) => {
-
+    useLogin();
     const handleClose = () => {
         onClose();
     };

@@ -88,7 +88,7 @@ export const events = [
 export const profileInfo = [
 
 {
-  id:1,
+  key:1,
   img:"/imgs/usr-default.png",
   name:"Ernest Du",
   mail: "ernest@gmail.com",

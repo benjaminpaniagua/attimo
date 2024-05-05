@@ -65,7 +65,6 @@ ProfileModal.propTypes = {
 };
 
 ProfileModal.defaultProps = {
-    
     img: "/imgs/usr-default.png",
     name: "Juan Solis",
     mail: "juanvasquez@gmail.com",

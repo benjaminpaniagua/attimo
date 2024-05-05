@@ -3,7 +3,7 @@ import { LayoutDashboard, Home, Bell, BarChart, Sun, Moon, LogOut } from "lucide
 import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
 import { createContext, useContext, useState } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
-import ProfileModal from './ProfileModal';
+import ProfileModal from "./ProfileModal";
 import logo from "../../assets/imgs/attimo_light.svg";
 
 const SidebarContext = createContext();
