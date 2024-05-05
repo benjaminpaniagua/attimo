@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import "../../index.css";
 import ReactModal from 'react-modal';
 import EditProfileModal from './EditProfileModal';
 import { useEditProfile} from '../hooks/useModal';
@@ -20,11 +20,11 @@ const ProfileModal = ({ isOpen, onClose, img, name, mail, usr, taskCompleted, ta
                 <img src="/imgs/x.png" alt="close" className='w-5'/>
             </button>
         <div className='text-center'>
-                <img src={img} className='w-48 mx-auto mb-4' alt="" />
-                <h2 className="mb-1">{name}</h2>
-                <p>{mail}</p>
-                <p className="mb-4">@{usr}</p>
-                <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4'/>
+            <img src={img} className='w-48 mx-auto mb-4' alt="" />
+            <h2 className="mb-1">{name}</h2>
+            <p>{mail}</p>
+            <p className="mb-4">@{usr}</p>
+            <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4'/>
             <div className='flex mb-4'>
                 <div className="flex-1 pr-4 relative">
                     <h2>{taskCompleted}</h2>
@@ -65,6 +65,7 @@ ProfileModal.propTypes = {
 };
 
 ProfileModal.defaultProps = {
+    
     img: "/imgs/usr-default.png",
     name: "Juan Solis",
     mail: "juanvasquez@gmail.com",
