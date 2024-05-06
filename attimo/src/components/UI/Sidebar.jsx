@@ -8,7 +8,7 @@ import logo from "../../assets/imgs/attimo_light.svg";
 
 const SidebarContext = createContext();
 
-export default function Sidebar({ children, image, username, email}) {
+export default function Sidebar({ children, image, username, email, items}) {
     const [expanded, setExpanded] = useState(false);
     const { theme, handleChangeTheme } = useDarkMode();
     const [modalIsOpen, setModalIsOpen] = useState(false);
@@ -40,7 +40,22 @@ export default function Sidebar({ children, image, username, email}) {
                     <button className="w-10 h-10 rounded-md overflow-hidden" onClick={() => setModalIsOpen(true)}>
                         <img src={image} className="w-full h-full" alt="Imagen" />
                     </button>
-                        <ProfileModal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)} />
+                    {items.map(item => (
+            <ProfileModal
+              key={item.id}
+              img={item.img}
+              name={item.name}
+              mail={item.mail}
+              usr={item.usr}
+              taskCompleted={item.taskCompleted}
+              taskRemaining={item.taskRemaining}
+              courses={item.courses} 
+              isOpen={modalIsOpen} 
+              onClose={() => setModalIsOpen(false)} 
+              
+            />
+          ))}
+                        
                         <div className={`flex justify-between items-center overflow-hidden transition-all ${expanded ? "w-52 ml-3" : "w-0"} `}>
                             <div className="leading-4">
                                 <h4 className="font-semibold font-regular">{username}</h4>

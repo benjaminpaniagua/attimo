@@ -4,7 +4,7 @@ import EditProfileModal from './EditProfileModal';
 import { useEditProfile} from '../hooks/useModal';
 import PropTypes from 'prop-types';
 
-const ProfileModal = ({ isOpen, onClose, img, name, mail, usr, taskCompleted, taskRemaining, courses }) => {
+const ProfileModal = ({ isOpen, onClose, img, name, mail, usr, taskCompleted, taskRemaining, courses  }) => {
     const { editModalIsOpen, handleEditProfileClick, closeEditModal } = useEditProfile();
 
 

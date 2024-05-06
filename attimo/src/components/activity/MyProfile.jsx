@@ -3,6 +3,7 @@ import "../../index.css";
 import ProfileModal from "../UI/ProfileModal";
 
 
+
 export function MyProfile({ items }) {
     return (
       <>
@@ -17,7 +18,6 @@ export function MyProfile({ items }) {
               taskCompleted={item.taskCompleted}
               taskRemaining={item.taskRemaining}
               courses={item.courses} 
-              
             />
           ))}
         </div>
