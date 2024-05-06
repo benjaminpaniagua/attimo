@@ -7,6 +7,7 @@ export function Statistics() {
   return (
     <>
       <div className="flex gap-4 bg-clr-light-bg">
+
         <aside className="w-16">
           <Sidebar
             username="usuario"
