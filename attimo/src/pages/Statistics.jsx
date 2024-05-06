@@ -1,8 +1,8 @@
-import Sidebar from "./components/UI/Sidebar.jsx";
-import { StatisticsCards } from "./components/activity/Statistics/SectionContainersStatistics.jsx";
-import { Graphs } from "./components/activity/Statistics/SectionGraphs.jsx";
-import { List } from "./components/activity/Statistics/SectionListStudents.jsx";
-import { Activities } from "./components/activity/Statistics/SectionActivities.jsx";
+import Sidebar from "../components/UI/Sidebar.jsx";
+import { StatisticsCards } from "../components/activity/Statistics/SectionContainersStatistics.jsx";
+import { Graphs } from "../components/activity/Statistics/SectionGraphs.jsx";
+import { List } from "../components/activity/Statistics/SectionListStudents.jsx";
+import { Activities } from "../components/activity/Statistics/SectionActivities.jsx";
 export function Statistics() {
   return (
     <>

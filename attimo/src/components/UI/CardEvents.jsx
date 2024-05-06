@@ -5,7 +5,7 @@ export function CardEvents({title, description, date, hour, image, category, lab
     return(
         <div className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden">
             <div className='h-40 overflow-hidden'><img className="w-full bg-cover" src={`${image}`} alt="Courses Image" /></div>
-            <div className="mt-2 p-5">
+            <div className="p-4">
                 <section className='flex justify-between'>
                     <h3 className='dark:text-white'>{title}</h3>
                     {percent ? <h3 className='dark:text-white'>{percent}%</h3> : null}

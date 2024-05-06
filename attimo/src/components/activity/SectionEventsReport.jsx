@@ -16,7 +16,7 @@ export const select = [
 
 export function Reports() {
     const data = [
-      { id: 0, value: 2, label: 'Web Design', color: tailwindColors.theme.extend.colors['clr-dark-green'] },
+      { id: 0, value: 2, label: 'Web Design', color: tailwindColors.theme.extend.colors['clr-dark-green']},
       { id: 1, value: 3, label: 'Humanities', color: tailwindColors.theme.extend.colors['clr-blue'] },
       { id: 2, value: 1, label: 'Seminar', color: tailwindColors.theme.extend.colors['clr-dark-pink'] },
       { id: 3, value: 9, label: 'Others', color: tailwindColors.theme.extend.colors['clr-light-gray'] },

@@ -141,7 +141,7 @@ export const profileInfo = [
 export function HomePage() {
   return (
     <>
-      <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-screen">
+      <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full">
         <aside className="w-16">
           <Sidebar
             username="usuario"
@@ -155,7 +155,7 @@ export function HomePage() {
             <MyCourses className="w-full" items={courses} name="Valeria" />
           </section>
           <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
-            <div className="w-[90%] m-auto rounded-lg ">
+          <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
               <Calendar />
             </div>
             <UpcomingEvents items={upcomingEvents} />
