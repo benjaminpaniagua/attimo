@@ -6,44 +6,49 @@ export function Activities() {
   const events = [
     {
         image: defaultImg,
-        title: "Quiz React",
+        title: "Introduction to React",
         date: "10 May",
         hour: "10:00",
-        percent: 5,
       },
       {
         image: defaultImg,
-        title: "Investigación Seminario",
-        date: "12 Jun",
+        title: "Quiz React",
+        date: "12 May",
         hour: "12:00",
-        percent: 30,
+        percent: 10,
       },
       {
         image: defaultImg,
-        title: "Charla de Linux",
-        date: "09 Jul",
+        title: "Introduction to Astro",
+        date: "09 Jun",
+        hour: "08:00",
+      },
+      {
+        image: defaultImg,
+        title: "Laboratory Astro",
+        date: "13 Jun",
+        hour: "10:00",
+        percent: 15,
+      },
+      {
+        image: defaultImg,
+        title: "Introduction to Laravel",
+        date: "13 Jun",
         hour: "10:00",
       },
       {
         image: defaultImg,
-        title: "Exposición Proyecto",
-        date: "16 May",
+        title: "Project Exhibition",
+        date: "25 Jun",
         hour: "10:00",
         percent: 25,
       },
       {
         image: defaultImg,
-        title: "Laboratorio de Ingeniería",
-        date: "08 May",
+        title: "Final exam",
+        date: "15 Jul",
         hour: "10:00",
-        percent: 5,
-      },
-      {
-        image: defaultImg,
-        title: "Quiz Inglés",
-        date: "15 May",
-        hour: "10:00",
-        percent: 7.5,
+        percent: 30,
       },
       
   ];
@@ -51,7 +56,7 @@ export function Activities() {
     <>
       <section className="w-full">
         <div className="bg-clr-white rounded-lg">
-          <div className="flex justify-between items-center p-8 pb-0 md:flex-wrap">
+          <div className="flex justify-between items-center p-8 pb-0 md:flex-wrap ">
             <h2>List of Events</h2>
             {/* <InputSearch placeholder="Search an event" /> */}
           </div>

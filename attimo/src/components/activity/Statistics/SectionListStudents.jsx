@@ -62,9 +62,9 @@ export function List() {
       <div className="bg-clr-white rounded-lg">
         <div className="flex justify-between items-center p-10 pb-0">
         <h2 className="fs-med">List of Students</h2>
-        <h3 className="flex justify-center items-center hover:bg-clr-light-gray transition duration-300 cursor-pointer rounded-lg p-4">View All</h3>
+        <h3 className="flex justify-center items-center hover:bg-clr-light-gray  transition duration-300 cursor-pointer rounded-lg p-4">View All</h3>
         </div>
-        <div className="pl-6">
+        <div className="p-4">
         <ListStudents students={students} />
         </div>
       </div>
