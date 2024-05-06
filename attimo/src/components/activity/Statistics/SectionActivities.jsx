@@ -56,7 +56,7 @@ export function Activities() {
     <>
       <section className="w-full">
         <div className="bg-clr-white rounded-lg">
-          <div className="flex justify-between items-center p-8 pb-0 md:flex-wrap">
+          <div className="flex justify-between items-center p-8 pb-0 md:flex-wrap ">
             <h2>List of Events</h2>
             {/* <InputSearch placeholder="Search an event" /> */}
           </div>
