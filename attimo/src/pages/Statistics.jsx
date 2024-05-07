@@ -4,47 +4,19 @@ import { Graphs } from "../components/activity/Statistics/SectionGraphs.jsx";
 import { List } from "../components/activity/Statistics/SectionListStudents.jsx";
 import { Activities } from "../components/activity/Statistics/SectionActivities.jsx";
 
-export const profileInfo = [
-
-  {
-    id:1,
-    name:"Ernesto Jimenez",
-    mail: "ernestin@gmail.com",
-    usr: "erne12",
-    taskCompleted:"5",
-    taskRemaining:"43",
-    courses:
-    "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
-  }
-  
-  ]
-
-
 export function Statistics() {
   return (
     <>
-      <div className="flex gap-4 bg-clr-light-bg">
-
-        <aside className="w-16">
-          <Sidebar
-            username="usuario"
-            email="email@gmail.com"
-            image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg"
-            items={profileInfo}
-          ></Sidebar>
-        </aside>
-
-        <main className="flex gap-5 md:flex-col p-2 w-full">
-          <section className="flex flex-col gap-5 w-2/3 md:w-full">
-            <StatisticsCards />
-            <Graphs />
-            <List />
-          </section>
-          <section className="flex gap-5 w-1/3 md:w-full">
-            <Activities />
-          </section>
-        </main>
-      </div>
+      <main className="flex gap-5 md:flex-col p-4 w-full">
+        <section className="flex flex-col gap-5 w-2/3 md:w-full">
+          <StatisticsCards />
+          <Graphs />
+          <List />
+        </section>
+        <section className="flex gap-5 w-1/3 md:w-full">
+          <Activities />
+        </section>
+      </main>
     </>
   );
 }
