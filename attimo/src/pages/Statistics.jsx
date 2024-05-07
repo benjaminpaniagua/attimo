@@ -3,6 +3,23 @@ import { StatisticsCards } from "../components/activity/Statistics/SectionContai
 import { Graphs } from "../components/activity/Statistics/SectionGraphs.jsx";
 import { List } from "../components/activity/Statistics/SectionListStudents.jsx";
 import { Activities } from "../components/activity/Statistics/SectionActivities.jsx";
+
+export const profileInfo = [
+
+  {
+    id:1,
+    name:"Ernesto Jimenez",
+    mail: "ernestin@gmail.com",
+    usr: "erne12",
+    taskCompleted:"5",
+    taskRemaining:"43",
+    courses:
+    "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
+  }
+  
+  ]
+
+
 export function Statistics() {
   return (
     <>
@@ -13,6 +30,7 @@ export function Statistics() {
             username="usuario"
             email="email@gmail.com"
             image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg"
+            items={profileInfo}
           ></Sidebar>
         </aside>
 

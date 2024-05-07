@@ -43,7 +43,7 @@ export default function Sidebar({ children, image, username, email, items}) {
                     {items.map(item => (
             <ProfileModal
               key={item.id}
-              img={item.img}
+              img={item.img}    
               name={item.name}
               mail={item.mail}
               usr={item.usr}
@@ -52,7 +52,6 @@ export default function Sidebar({ children, image, username, email, items}) {
               courses={item.courses} 
               isOpen={modalIsOpen} 
               onClose={() => setModalIsOpen(false)} 
-              
             />
           ))}
                         

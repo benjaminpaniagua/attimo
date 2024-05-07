@@ -3,7 +3,7 @@ import { MyCourses } from "../components/activity/MyCourses.jsx";
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
 import Calendar from "../components/UI/Calendar.jsx";
-import {MyProfile} from "../components/activity/MyProfile.jsx";
+
 
 export const courses = [
   {
@@ -127,8 +127,8 @@ export const profileInfo = [
 
   {
     id:1,
-    name:"Ernest Du",
-    mail: "ernest@gmail.com",
+    name:"Ernesto Jimenez",
+    mail: "ernestin@gmail.com",
     usr: "erne12",
     taskCompleted:"5",
     taskRemaining:"43",
