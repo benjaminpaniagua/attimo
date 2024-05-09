@@ -122,46 +122,20 @@ const upcomingEvents = [
   },
 ];
 
-export const profileInfo = [
-
-  {
-    id:1,
-    name:"Ernesto Jimenez",
-    mail: "ernestin@gmail.com",
-    usr: "erne12",
-    taskCompleted:"5",
-    taskRemaining:"43",
-    courses:
-    "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
-  }
-  
-  ]
-
 export function HomePage() {
   return (
     <>
-      <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full">
-        <aside className="w-16">
-          <Sidebar
-            username="usuario"
-            email="email@gmail.com"
-            image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg"
-            items={profileInfo}
-          ></Sidebar>
-          |
-        </aside>
-        <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
-          <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">
-            <MyCourses className="w-full" items={courses} name="Valeria" />
-          </section>
-          <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
-          <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
-              <Calendar />
-            </div>
-            <UpcomingEvents items={upcomingEvents} />
-          </section>
-        </main>
-      </div>
+    <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
+      <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">
+        <MyCourses className="w-full" items={courses} name="Valeria" />
+      </section>
+      <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
+        <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
+          <Calendar />
+        </div>
+        <UpcomingEvents items={upcomingEvents} />
+      </section>
+    </main>
     </>
   );
 }

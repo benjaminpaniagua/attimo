@@ -5,10 +5,6 @@ import { Tasks } from "../components/activity/SectionTasks.jsx";
 import { Summary } from "../components/activity/SectionSummary.jsx";
 import defaultImg from "../assets/imgs/image_card.png";
 
-
-
-
-
 export const events = [
   
   {
@@ -85,31 +81,11 @@ export const events = [
   },
 ];
 
-export const profileInfo = [
-
-{
-  key:1,
-  img:"/imgs/usr-default.png",
-  name:"Ernesto Jimenez",
-  mail: "ernestin@gmail.com",
-  usr: "erne12",
-  taskCompleted:"5",
-  taskRemaining:"43",
-  courses:
-  "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
-}
-
-]
-
 export function Events() {
   
   return (
     <>
-      <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full ">
-        <aside className="w-16">
-          <Sidebar username="usuario" email="email@gmail.com" image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg" items={profileInfo}></Sidebar>
-        </aside>
-        <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
+      <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
           <section className="w-[70%] px-2 my-2 lg:w-full lg:px-4">
             <MyEvents items={events} />
           </section>
@@ -118,8 +94,7 @@ export function Events() {
               <Tasks />
               <Summary />
           </section>
-        </main>
-      </div>
+      </main>
     </>
   );
 }
