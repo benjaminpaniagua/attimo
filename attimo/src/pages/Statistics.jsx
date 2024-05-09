@@ -5,7 +5,6 @@ import { List } from "../components/activity/Statistics/SectionListStudents.jsx"
 import { Activities } from "../components/activity/Statistics/SectionActivities.jsx";
 
 export const profileInfo = [
-
   {
     id:1,
     name:"Ernesto Jimenez",
@@ -16,7 +15,6 @@ export const profileInfo = [
     courses:
     "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
   }
-  
   ]
 
 

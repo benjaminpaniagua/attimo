@@ -4,7 +4,6 @@ import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
 import Calendar from "../components/UI/Calendar.jsx";
 
-
 export const courses = [
   {
     id: 1,
