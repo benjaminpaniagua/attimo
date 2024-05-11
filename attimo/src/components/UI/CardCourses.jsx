@@ -1,6 +1,7 @@
 import '../../index.css'
 import PropTypes from 'prop-types';
-
+import * as React from 'react';
+import LinearWithValueLabel from './ProgressBar'; 
 export function CardCourses({title, description, image, progress}) {
     return(
         <div className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden">
@@ -13,13 +14,12 @@ export function CardCourses({title, description, image, progress}) {
                         <p className="dark:text-clr-light-gray">Progress</p>
                         <p className='text-clr-dark-green dark:text-clr-mint-green'>{progress}%</p>
                     </div>
-                    <progress className="rounded-lg bg-clr-light-gray w-full" value={progress} max="100"></progress>
+                    <LinearWithValueLabel value={progress} />
                 </div>
             </section>
         </div>
-    )
+    );
 }
-
 // Set required props
 CardCourses.propTypes = {
     title: PropTypes.string.isRequired,

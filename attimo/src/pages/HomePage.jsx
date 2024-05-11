@@ -27,7 +27,7 @@ export const courses = [
     title: "Photography Basics",
     description:
       "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
-    progress: 76,
+    progress: 50,
   },
   {
     id: 4,
