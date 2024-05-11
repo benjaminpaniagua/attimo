@@ -8,6 +8,7 @@ import { Statistics } from "./pages/Statistics.jsx";
 import { Login } from "./pages/Login.jsx";
 import { RecoverPassword } from "./pages/RecoverPassword.jsx";
 import { Questions } from "./pages/Questions.jsx";
+import { CourseDetails } from "./pages/CourseDetails.jsx";
 
 export const profileInfo = [
   {
