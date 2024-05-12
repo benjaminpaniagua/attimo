@@ -1,16 +1,24 @@
 import react from "react";
-import { Task } from "../../UI/Task.jsx";
+import {StatisticsCard} from "../../UI/StatisticsCard.jsx";
+import { Users, Dumbbell, BookA, GraduationCap } from "lucide-react";
 
-export function StatisticsCards({ items }) {
+const data = [
+  { id: 0, number: 167, description: "Total Users", icon: Users},
+  { id: 1, number: 149, description: "Are not athletes", icon: Dumbbell},
+  { id: 2, number: 12, description: "Have accommodations", icon: BookA},
+  { id: 3, number: 121, description: "Have a scholarship", icon: GraduationCap}
+];
+
+export function StatisticsCards() {
   return (
-    <div className="flex gap-4 md:flex-col">
-      {items.map(item => (
-        <section key={item.id} className="w-1/4 grid content-center bg-clr-white dark:bg-clr-dark-third py-[7.5rem] text-center justify-center rounded-lg md:w-full">
-          <Task
-            number={item.number}
-            description={item.description}
-          />
-        </section>
+    <div className="grid gap-4 grid-cols-4 lg:grid-cols-2">
+      {data.map((item) => (
+        <StatisticsCard
+          key={item.id}
+          number={item.number}
+          description={item.description}
+          icon={item.icon}
+        />
       ))}
     </div>
   );
