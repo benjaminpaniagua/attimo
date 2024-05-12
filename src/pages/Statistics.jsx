@@ -25,7 +25,7 @@ export function Statistics() {
           <h1 className="dark:text-white">Statistics</h1>
           <StatisticsCards items= {data}/>
           <Graphs />
-          <MiniCards items= {info} />
+          {/* <MiniCards items= {info} /> */}
           {/* <List /> */}
         </section>
         <section className="flex gap-5 w-1/3 md:w-full">
