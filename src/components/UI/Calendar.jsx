@@ -42,6 +42,7 @@ function ServerDay(props) {
       key={props.day.toString()}
       overlap="circular"
       badgeContent={isSelected ? ' ' : undefined}
+      style={{ zIndex: 0 }}
     >
       <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
     </Badge>
