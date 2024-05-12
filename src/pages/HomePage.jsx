@@ -127,7 +127,7 @@ export function HomePage() {
   return (
     <>
     <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
-      <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">
+      <section className="w-[70%] px-2 my-2 lg:w-full lg:px-6 tablet:w-[60%]">
         <MyCourses className="w-full" items={courses} name="Valeria" />
       </section>
       <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
