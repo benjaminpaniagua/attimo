@@ -54,11 +54,10 @@ export function Activities() {
   ];
   return (
     <>
-      <section className="w-full">
+      <section className="w-full grid">
         <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-8 pb-0 md:flex-wrap ">
             <h2 className="dark:text-clr-white">List of Events</h2>
-            {/* <InputSearch placeholder="Search an event" /> */}
           </div>
           <div className="p-2">
             <ListActivities activities={events} />

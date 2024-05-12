@@ -75,7 +75,7 @@ export function List() {
 
   return (
     <>
-      <section className="w-full">
+      <section className="grid w-full">
         <div className="bg-clr-white rounded-lg">
           <div className="flex justify-between items-center p-7 pb-0">
             <h2 className="fs-med">List of Students</h2>
