@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 export function EventSummary({ title, date, hour, image, percent }) {
   return (
     <>
-      <div className="rounded-lg bg-white dark:bg-clr-dark-bg p-3 flex gap-4 items-center">
+      <div className="rounded-lg bg-white dark:bg-clr-dark-bg p-2 flex gap-4 items-center">
         <div className="size-20 w-24 overflow-hidden rounded-lg">
           <img className="object-cover w-full h-full" src={`${image}`} alt="Event photo" />
         </div>

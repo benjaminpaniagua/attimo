@@ -9,7 +9,7 @@ export function UpcomingEvents({ items}) {
         <h2 className="my-4 dark:text-white">Upcoming events</h2>
         <p className="duration-300 cursor-pointer hover:text-clr-blue dark:text-clr-light-gray dark:hover:text-white">View all</p>
       </section>
-        <div className="grid gap-3 w-full">
+        <div className="grid gap-2 w-full">
         {items.map((item) => (
           <EventSummary
             key={item.id}
