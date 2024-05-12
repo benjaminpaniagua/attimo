@@ -54,9 +54,9 @@ export function Graphs() {
   return (
     <>
       <section className="grid grid-cols-3 md:grid-cols-1 gap-5">
-        <div className="bg-clr-white rounded-lg">
+        <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-5 pb-0">
-            <h2 className="fs-med">To Qualify</h2>
+            <h2 className="fs-med dark:text-clr-white">To Qualify</h2>
           </div>
           <div>
             <DonutChar data={toQualify} />
@@ -65,16 +65,16 @@ export function Graphs() {
           </div>
         </div>
 
-        <div className="bg-clr-white rounded-lg">
+        <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-5 pb-0">
-            <h2 className="fs-med">Average hours of sleep</h2>
+            <h2 className="fs-med dark:text-clr-white">Average hours of sleep</h2>
           </div>
           <BarChart data={hoursSleep}/>
         </div>
 
-        <div className="bg-clr-white rounded-lg">
+        <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-5 pb-0">
-            <h2 className="fs-med">Gender</h2>
+            <h2 className="fs-med dark:text-clr-white">Users Gender Breakdown</h2>
           </div>
           <DonutChar data={gender} />
         </div>
