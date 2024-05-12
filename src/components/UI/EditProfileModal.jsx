@@ -33,7 +33,7 @@ const EditProfileModal = ({ isOpen, onClose }) => {
                 <SignInputs type="password" name="Username" />
             </div>
             <div className='justify-center flex mt-8'>
-                <button onClick={handleClose} className='dark:text-clr-dark-blue dark:bg-clr-white  font-medium text-fs-med text-white w-40 bg-clr-dark-blue rounded-lg mb-4 p-5'>Confirm</button>
+                <button onClick={handleClose} className='w-full dark:text-clr-dark-blue dark:bg-clr-white  font-medium text-fs-med text-white w-40 bg-clr-dark-blue rounded-lg mb-4 p-5'>Confirm</button>
             </div>
         </div>
         </ReactModal>
