@@ -7,7 +7,7 @@ export default function LinearWithValueLabel({ value }) {
     <Box sx={{ display: 'flex', alignItems: 'center' }}>
       <Box sx={{ width: '100%', mr: 1 }}>
         <LinearProgress variant="determinate" value={value}
-          sx={{ width: '100%', '& .MuiLinearProgress-bar': {/*aqui van estilos*/},}}
+          sx={{ width: 'full', '& .MuiLinearProgress-bar': {/*aqui van estilos*/},}}
         />
       </Box>
     </Box>
