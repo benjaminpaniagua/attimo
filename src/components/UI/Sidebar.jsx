@@ -17,7 +17,7 @@ export default function Sidebar({ children, image, username, email, items }) {
 
     return (
         <>
-            <aside className="h-screen fixed z-50 text-white">
+            <aside className="h-screen fixed z-[1] text-white">
                 <nav className="h-full flex flex-col bg-clr-blue dark:bg-clr-dark-blue">
                     <div className="p-4 flex justify-between items-center">
                         <img src={logo} className={`overflow-hidden object-cover transition-all ${expanded ? "w-32" : "w-0"}`} />

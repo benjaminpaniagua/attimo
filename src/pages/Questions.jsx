@@ -1,16 +1,14 @@
 import React, { useEffect } from 'react';
 import { FormHeading } from "../components/UI/FormHeading.jsx";
 import RadioAsk from '../components/UI/QuestionsUI/RadioAsk.jsx';
-import SelectAsk  from "../components/UI/QuestionsUI/SelectAsk.jsx";
 import Slider  from "../components/UI/QuestionsUI/SliderAsk.jsx";
-import Select from '@mui/material/Select';
 import { SubmitButton } from "../components/UI/SubmitButton.jsx";
 
 
 export function Questions() {
 
-    return (
-        <div className="bg-clr-dark-blue flex justify-center items-center min-h-screen p-6">
+    return (    
+        <div className="bg-clr-dark-blue flex justify-center items-center min-h-screen p-6 w-full">
             <main className="bg-clr-white rounded-xl p-10 grid gap-4">
                 <div className="text-center">
                     <FormHeading title="Let us know you better!"/>
