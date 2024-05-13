@@ -19,6 +19,7 @@ export const profileInfo = [
 
 const courses = [
   {
+    id: 0,
     title: "Desarrollo de Aplicaciones Interactivas II",
     image:
       "https://mv1.mediacionvirtual.ucr.ac.cr/pluginfile.php/2833830/course/section/615599/TM5100%201.png",
@@ -94,6 +95,10 @@ export function CourseDetails() {
       </div>
     </>
   );
+}
+
+CourseDetails.defaultProps = {
+  
 }
 
 export default CourseDetails;

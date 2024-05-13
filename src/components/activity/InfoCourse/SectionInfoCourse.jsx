@@ -8,7 +8,7 @@ export function SectionInfoCourse({items}) {
           
           {items.map(item => (
                     <InfoCourse
-                        key={item.title}
+                        key={item.id}
                         title={item.title}
                         image={item.image}
                         description={item.description}
@@ -17,7 +17,6 @@ export function SectionInfoCourse({items}) {
                         email={item.email}
                         date={item.date}
                         hour={item.hour}
-                        description={item.description}
                     />
                 ))}
           </div>
