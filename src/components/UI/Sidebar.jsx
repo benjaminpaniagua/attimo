@@ -6,6 +6,7 @@ import { createContext, useContext, useState } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
 import ProfileModal from "./ProfileModal";
+import NotificationsModal from "./NotficationsModal"
 import logo from "../../assets/imgs/attimo_light.svg";
 
 const SidebarContext = createContext();
@@ -14,6 +15,8 @@ export default function Sidebar({ children, image, username, email, items }) {
     const [expanded, setExpanded] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const { theme, handleChangeTheme } = useDarkMode();
+    const [notificationsModalIsOpen, setNotificationsModalIsOpen] = useState(false);
+
 
     return (
         <>
@@ -31,7 +34,7 @@ export default function Sidebar({ children, image, username, email, items }) {
                             <SidebarItem icon={<Home size={20} />} text="Home" to="/" />
                             <SidebarItem icon={<LayoutDashboard size={20} />} text="Events" to="/events"/>
                             <SidebarItem icon={<BarChart size={20} />} text="Statistics" to="/statistics" />
-                            <SidebarItem icon={<Bell size={20} />} text="Notifications" />
+                            <SidebarItem icon={<Bell size={20} />} text="Notifications"   onClick={() => { setNotificationsModalIsOpen(true); setExpanded(false); }}/>
                             <SidebarItem icon={theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />} text={theme === 'dark' ? 'Light Mode' : 'Dark Mode'} onClick={handleChangeTheme} />
                             <hr className="my-3" />
                             <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
@@ -63,6 +66,13 @@ export default function Sidebar({ children, image, username, email, items }) {
                                     onClose={() => setModalIsOpen(false)}
                                 />
                             ))}
+
+                            <NotificationsModal 
+                                isOpen={notificationsModalIsOpen} 
+                                onClose={() => setNotificationsModalIsOpen(false) } 
+                                
+                            />
+                            {/*  Aqui se renderiza el modal, si quiere mandarle info, el array va aqui */}
                         </div>
                     </div>
                 </nav>

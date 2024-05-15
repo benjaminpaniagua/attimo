@@ -17,8 +17,9 @@ const ProfileModal = ({ isOpen, onClose, img, name, mail, usr, taskCompleted, ta
             onRequestClose={onClose}
             className="fixed inset-0 flex items-center justify-center"
             overlayClassName="fixed inset-0"
+            
         >
-            <div className="fixed inset-0 bg-black bg-opacity-50"></div> 
+            <div className="fixed inset-0 z-[] bg-black bg-opacity-50"></div> 
             <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] p-8">
                 <button className='m-8' onClick={onClose}>
                     <img src="/imgs/x.png" alt="close" className='w-5' />
@@ -50,7 +51,7 @@ const ProfileModal = ({ isOpen, onClose, img, name, mail, usr, taskCompleted, ta
                         </div>
                         <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white' />
                         <div className='justify-center flex mt-8 '>
-                            <button onClick={handleEditProfileClick} className='w-full dark:text-clr-dark-blue dark:bg-clr-white font-medium text-fs-med text-white w-40 bg-clr-dark-blue rounded-lg my-5 p-5'>Edit Profile</button>
+                            <button onClick={handleEditProfileClick} className='w-full dark:text-clr-dark-blue dark:bg-clr-white font-medium text-fs-med text-white bg-clr-dark-blue rounded-lg my-5 p-5'>Edit Profile</button>
                         </div>
                     </div>
                 </div>
