@@ -13,7 +13,7 @@ const SidebarContext = createContext();
 export default function Sidebar({ children, image, username, email, items }) {
     const [expanded, setExpanded] = useState(false);
     const [modalIsOpen, setModalIsOpen] = useState(false);
-    const { theme, handleChangeTheme } = useDarkMode();
+    const {theme, handleChangeTheme } = useDarkMode();
 
     return (
         <>
@@ -54,6 +54,8 @@ export default function Sidebar({ children, image, username, email, items }) {
                                     key={item.id}
                                     img={item.img}
                                     name={item.name}
+                                    lastName1={item.lastName1}
+                                    lastName2={item.lastName2}
                                     mail={item.mail}
                                     usr={item.usr}
                                     taskCompleted={item.taskCompleted}

@@ -13,12 +13,14 @@ import { CourseDetails } from "./pages/CourseDetails.jsx";
 export const profileInfo = [
   {
     key:1,
-    img:"/imgs/usr-default.png",
-    name:"Ernesto Jimenez",
-    mail: "ernestin@gmail.com",
+    img:"https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+    name:"Ernesto",
+    lastName1:"Jimenez",
+    lastName2:"Castro",
+    mail: "ernesto.jc@gmail.com",
     usr: "erne12",
-    taskCompleted:"5",
-    taskRemaining:"43",
+    taskCompleted: 5,
+    taskRemaining: 43,
     courses:
     "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario"
   }
@@ -28,7 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter> 
       <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full ">
         <aside className="w-16">
-          <Sidebar username="usuario" email="email@gmail.com" image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg" items={profileInfo}></Sidebar>
+          <Sidebar username={profileInfo[0].usr} email={profileInfo[0].mail} image={profileInfo[0].img} items={profileInfo}></Sidebar>
         </aside>
           <Routes>
             <Route path="/" element={<HomePage/>} />
