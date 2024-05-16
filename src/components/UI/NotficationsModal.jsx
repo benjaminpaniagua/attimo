@@ -15,7 +15,7 @@ const NotificationsModal = ({ isOpen, onClose}) => {
       overlayClassName="fixed inset-0"
       >
         {/* Fondo con opacidad */}
-        <div className="fixed inset-0 z-10 bg-black bg-opacity-50"></div>
+        <div className="fixed inset-0 bg-black bg-opacity-50"></div>
         {/* Contenido del modal */}
         <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg p-16 relative z-20">
           <h2>Hola Mundo</h2>
