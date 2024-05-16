@@ -5,9 +5,9 @@ import { EventsFilters } from "./EventsFilters.jsx";
 export function MyEvents({items}){
     return (
         <>  
-            <h1 className="dark:text-white">My Events</h1>
+            <h1 className="dark:text-white dark:duration-300">My Events</h1>
             <EventsFilters/>
-             <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[54rem] overflow-y-scroll no-scrollbar"> {/* <div className="grid grid-cols-auto-300 tablet:grid-cols-auto-250 gap-4 w-full max-h-[54rem] overflow-y-scroll no-scrollbar"></div> */}
+            <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[54rem] overflow-y-scroll no-scrollbar"> 
                 {items.map(item => (
                     <CardEvents
                         key={item.title}
