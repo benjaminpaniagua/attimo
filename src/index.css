@@ -18,6 +18,10 @@ html,body{
   font-size: 12px;
 }
 
+*, *::before, *::after {
+  transition: background-color 300ms, color 300ms;
+}
+
 h1{
   font-size: clamp(24px, 22px, 20px);
   font-weight: 600;
@@ -31,7 +35,7 @@ h2{
 }
 
 h3{
-  font-size: clamp(16px, 14px, 14px);
+  font-size: clamp(16px, 14px, 13px);
   font-weight: 500;
   color: hsla(230, 27%, 22%, 1);
 }
@@ -56,6 +60,14 @@ p{
 }
 
 /*Login*/
+.input-field {
+  transition: border-bottom 0.3s ease;
+}
+
+.input-field + label {
+  transition: font-size 0.3s ease, top 0.3s ease;
+}
+
 .input-field.active {
   border-bottom: 1px solid hsla(245, 11%, 43%, 1);
 }
@@ -87,6 +99,12 @@ p{
   pointer-events: all;
 }
 
+.image {
+  opacity: 0;
+  transform: translateX(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
 .image.show {
   opacity: 1;
   transform: none;
@@ -97,8 +115,6 @@ p{
   background-color: hsla(230, 27%, 22%, 1);
   border-radius: 2rem;
 }
-
-
 
 @media (max-width: 768px){
   .box {

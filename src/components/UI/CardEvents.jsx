@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export function CardEvents({title, description, date, hour, image, category, label, status, percent}) {
     return(
-        <div className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden dark:hover:brightness-125 hover:brightness-[.80] cursor-pointer transition duration-300">
+        <div className="bg-white transition duration-300 dark:bg-clr-dark-third rounded-lg overflow-hidden dark:hover:brightness-[1.2] hover:brightness-[.80] cursor-pointer">
             <div className='h-40 overflow-hidden'><img className="w-full bg-cover" src={`${image}`} alt="Courses Image" /></div>
             <div className="p-4">
                 <section className='flex justify-between'>
