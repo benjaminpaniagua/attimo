@@ -21,7 +21,11 @@ export default function Sidebar({ children, image, username, email, items }) {
                 <nav className="h-full flex flex-col bg-clr-blue dark:bg-clr-dark-blue">
                     <div className="p-4 flex justify-between items-center">
                         <img src={logo} className={`overflow-hidden object-cover transition-all ${expanded ? "w-32" : "w-0"}`} />
-                        <button onClick={() => setExpanded((curr) => !curr)} className="p-1.5 rounded-lg bg-clr-light-bg dark:bg-clr-light-secondary-bg duration-500">
+                        <button onClick={() => {
+                            if (!modalIsOpen) {
+                                setExpanded((prevExpanded) => !prevExpanded);
+                            }
+                            }} className="p-1.5 rounded-lg bg-clr-light-bg dark:bg-clr-light-secondary-bg duration-500">
                             {expanded ? <ChevronFirst className="text-clr-dark-blue" /> : <ChevronLast className="text-clr-dark-blue" />}
                         </button>
                     </div>
