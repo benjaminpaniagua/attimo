@@ -12,40 +12,43 @@ export function InfoCourse({
   hour,
   description,
 }) {
+
   return (
-    <div className="grid gap-2 p-4 pb-0 ">
-      <h1>{title}</h1>
-      <div className="bg-fit">
-        <img className="" src={`${image}`} alt={title} />
-      </div>
+    <section className="grid gap-4 p-4 pb-0">
+      <h1 className="dark:text-clr-white">{title}</h1>
+      <div className="bg-fit rounded-md overflow-hidden">
+          <img className="" src={`${image}`} alt={title} />
+        </div>
 
       <div>
-        <h3>Course Acronyms:</h3>
-        <p>{acronyms}</p>
-      </div>
+        <div>
+          <h3 className="dark:text-clr-white">Course Acronyms</h3>
+          <p className="dark:text-clr-light-gray">{acronyms}</p>
+        </div>
 
-      <div>
-        <h3>Teacher:</h3>
-        <p>{teacher}</p>
-      </div>
+        <div>
+          <h3 className="dark:text-clr-white">Teacher</h3>
+          <p className="dark:text-clr-light-gray">{teacher}</p>
+        </div>
 
-      <div>
-        <h3>E-mail:</h3>
-        <p>{email}</p>
-      </div>
+        <div>
+          <h3 className="dark:text-clr-white">Teacher's email</h3>
+          <p className="dark:text-clr-light-gray">{email}</p>
+        </div>
 
-      <div>
-        <h3>Office and consultation hours for students:</h3>
-        <p>
-          {date}, {hour}
-        </p>
-      </div>
+        <div>
+          <h3 className="dark:text-clr-white">Office and consultation hours for students</h3>
+          <p className="dark:text-clr-light-gray">
+            {date}, {hour}
+          </p>
+        </div>
 
-      <div>
-        <h3>Course Description:</h3>
-        <p>{description}</p>
+        <div>
+          <h3 className="dark:text-clr-white">Course Description</h3>
+          <p className="dark:text-clr-light-gray">{description}</p>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 

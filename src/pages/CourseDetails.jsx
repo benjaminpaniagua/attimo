@@ -71,14 +71,6 @@ const upcomingEvents = [
 export function CourseDetails() {
   return (
     <>
-      <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full">
-        <aside className="w-16">
-          <Sidebar
-            username="usuario"
-            email="email@gmail.com"
-            image="https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg"
-          ></Sidebar>
-        </aside>
         <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
         <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">
           <SectionInfoCourse items={courses} />
@@ -90,9 +82,7 @@ export function CourseDetails() {
             </div>
             <UpcomingEvents items={upcomingEvents} />
           </section>
-
         </main>
-      </div>
     </>
   );
 }

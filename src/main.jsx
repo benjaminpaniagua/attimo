@@ -37,6 +37,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
             <Route path="events" element={<Events />} />
             <Route path="statistics" element={<Statistics />} />
             <Route path="/*" element={<HomePage />} />
+            <Route path="/recover" element={<CourseDetails />} />
           </Routes>
       </div>
     </BrowserRouter>
