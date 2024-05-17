@@ -61,7 +61,7 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
                         
                         <div className='justify-center flex mt-8 '>
                         
-                        <ModalButtons onClick={handleEditProfileClick} />
+                        <ModalButtons onClick={handleEditProfileClick} text="Edit Profile"/>
                     
                         </div>
 

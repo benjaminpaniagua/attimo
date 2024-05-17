@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import {InputEditProfile} from "../UI/InputEditProfile.jsx"
 import useLogin from '../hooks/useLogin.js';
 import { ChevronLeft } from "lucide-react";
+import SignInputs from "./SignInputs.jsx"
+import { ModalButtons } from "./ModalButtons";
 
 const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
     useLogin();
@@ -18,7 +19,7 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
             className="fixed inset-0 flex items-center justify-center"
             overlayClassName="fixed inset-0" 
         >
-        <div className="bg-clr-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] z-[101] p-8">
+        <div className=" bg-clr-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] z-[101] p-8">
             <button onClick={handleClose}>
                 <ChevronLeft className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
             </button>
@@ -35,7 +36,7 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
                 <SignInputs type="text" name="Username" isActive={true} defaultValue={profileInfo.usr} />
             </div>
             <div className='justify-center flex mt-8'>
-                <button onClick={handleClose} className='w-full dark:text-clr-dark-blue dark:bg-clr-white font-medium text-fs-med text-white bg-clr-dark-blue rounded-lg mb-4 p-5'>Confirm</button>
+                <ModalButtons onClick={handleClose} text="Confirm" />
             </div>
         </div>
         </ReactModal>
