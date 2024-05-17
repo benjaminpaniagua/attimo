@@ -75,8 +75,7 @@ export default function Sidebar({ children, image, username, email, items }) {
 
                             <NotificationsModal 
                                 isOpen={notificationsModalIsOpen} 
-                                onClose={() => setNotificationsModalIsOpen(false) } 
-                                
+                                onClose={() => setNotificationsModalIsOpen(false) }   
                             />
                             {/*  Aqui se renderiza el modal, si quiere mandarle info, el array va aqui */}
                         </div>
