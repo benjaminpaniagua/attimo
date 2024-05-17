@@ -29,13 +29,13 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
                 </div>
             </div>
             <div className='grid gap-3 mt-4'>
-                <SignInputs type="text" name="First Name" defaultValue={profileInfo.name} />
-                <SignInputs type="text" name="Last Names" defaultValue={`${profileInfo.lastName1} ${profileInfo.lastName2}`} />
-                <SignInputs type="email" name="Email" defaultValue={profileInfo.mail} />
-                <SignInputs type="password" name="Username" defaultValue={profileInfo.usr} />
+                <SignInputs type="text" name="First Name" isActive={true} defaultValue={profileInfo.name} />
+                <SignInputs type="text" name="Last Names" isActive={true} defaultValue={`${profileInfo.lastName1} ${profileInfo.lastName2}`} />
+                <SignInputs type="email" name="Email" isActive={true} defaultValue={profileInfo.mail} />
+                <SignInputs type="text" name="Username" isActive={true} defaultValue={profileInfo.usr} />
             </div>
             <div className='justify-center flex mt-8'>
-                <button onClick={handleClose} className='w-full dark:text-clr-dark-blue dark:bg-clr-white  font-medium text-fs-med text-white w-40 bg-clr-dark-blue rounded-lg mb-4 p-5'>Confirm</button>
+                <button onClick={handleClose} className='w-full dark:text-clr-dark-blue dark:bg-clr-white font-medium text-fs-med text-white bg-clr-dark-blue rounded-lg mb-4 p-5'>Confirm</button>
             </div>
         </div>
         </ReactModal>

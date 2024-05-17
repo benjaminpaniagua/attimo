@@ -3,7 +3,7 @@ import "../../index.css";
 import PropTypes from 'prop-types';
 import useLogin from "../hooks/useLogin";
 
-export function SignInputs({ type, name, defaultValue }) {
+export function SignInputs({ type, name, defaultValue, isActive}) {
     useLogin();
     const formattedName = name.charAt(0).toUpperCase() + name.slice(1);
     
@@ -13,7 +13,7 @@ export function SignInputs({ type, name, defaultValue }) {
                 type={type}
                 name={name}
                 minLength='4'
-                className="input-field absolute duration-300 w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-b border-solid bg-none outline-none bg-transparent dark:text-clr-white"
+                className={`input-field absolute duration-300 w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-b border-solid bg-none outline-none bg-transparent dark:text-clr-white ${isActive ? 'active' : ''}`}
                 autoComplete="off"
                 required
                 defaultValue={defaultValue}
@@ -27,10 +27,12 @@ SignInputs.propTypes = {
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
     value: PropTypes.string,
+    isActive: PropTypes.bool,
 };
 
 SignInputs.defaultProps = {
     name: "Name",
     type: "text",
     value: "",
+    isActive: false,
 };
