@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import { SignInputs } from "../UI/SignInputs.jsx";
+import {InputEditProfile} from "../UI/InputEditProfile.jsx"
 import useLogin from '../hooks/useLogin.js';
 import { ChevronLeft } from "lucide-react";
 
@@ -29,10 +29,10 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
                 </div>
             </div>
             <div className='grid gap-3 mt-4'>
-                <SignInputs type="text" name="First Name" defaultValue={profileInfo.name} />
-                <SignInputs type="text" name="Last Names" defaultValue={`${profileInfo.lastName1} ${profileInfo.lastName2}`} />
-                <SignInputs type="email" name="Email" defaultValue={profileInfo.mail} />
-                <SignInputs type="password" name="Username" defaultValue={profileInfo.usr} />
+                <InputEditProfile type="text" name="First Name" defaultValue={profileInfo.name} />
+                <InputEditProfile type="text" name="Last Names" defaultValue={`${profileInfo.lastName1} ${profileInfo.lastName2}`} />
+                <InputEditProfile type="email" name="Email" defaultValue={profileInfo.mail} />
+                <InputEditProfile type="password" name="Username" defaultValue={profileInfo.usr} />
             </div>
             <div className='justify-center flex mt-8'>
                 <button onClick={handleClose} className='w-full dark:text-clr-dark-blue dark:bg-clr-white  font-medium text-fs-med text-white bg-clr-dark-blue rounded-lg mb-4 p-5'>Confirm</button>

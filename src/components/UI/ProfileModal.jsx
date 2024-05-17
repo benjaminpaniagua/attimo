@@ -5,9 +5,13 @@ import { useEditProfile} from '../hooks/useModal';
 import PropTypes from 'prop-types';
 import { useBlur } from "../hooks/useBlur";
 import { X } from "lucide-react";
+import { ModalButtons } from "./ModalButtons";
+
 
 const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, usr, taskCompleted, taskRemaining, courses }) => {
-    const { editModalIsOpen, handleEditProfileClick, closeEditModal } = useEditProfile();
+    const { editModalIsOpen,  closeEditModal, handleEditProfileClick } = useEditProfile();
+    
+    
     useBlur(isOpen);
 
     return (
@@ -51,9 +55,13 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
                             <p className='mb-4 dark:text-clr-light-gray'>{courses}</p>
                         </div>
                         <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white' />
+                        
                         <div className='justify-center flex mt-8 '>
-                            <button onClick={handleEditProfileClick} className='w-full dark:text-clr-dark-blue dark:bg-clr-white font-medium text-fs-med text-clr-dark-blue bg-clr-light-secondary-bg hover:bg-indigo-300/70 rounded-lg my-5 p-5'>Edit Profile</button>
+                        
+                        <ModalButtons onClick={handleEditProfileClick} />
+                    
                         </div>
+
                     </div>
                 </div>
             </div>
