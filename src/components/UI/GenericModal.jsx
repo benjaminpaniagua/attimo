@@ -15,7 +15,7 @@ const GenericModal = ({ isOpen, onClose, children, title }) => {
       className="fixed inset-0 flex items-center justify-center"
       overlayClassName="fixed inset-0"
     >
-      <div className="fixed inset-0 bg-black bg-opacity-50" onClick={onClose}></div>
+      <span className="fixed inset-0 bg-black bg-opacity-50" onClick={onClose}></span>
       <div className="flex justify-center items-center min-h-screen">
         <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg p-8 relative w-[50rem] md:w-[25rem] grid gap-6">
           <div className="flex justify-between">

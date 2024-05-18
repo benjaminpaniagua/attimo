@@ -20,7 +20,7 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
             overlayClassName="fixed inset-0" 
         >
 
-        <div className="fixed inset-0 bg-black bg-opacity-[0.01]" onClick={onClose}></div>    
+        <span className="fixed inset-0 bg-black bg-opacity-[0.01]" onClick={onClose}></span>    
         <div className=" bg-clr-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[28rem] p-8">
             <button onClick={handleClose}>
                 <ChevronLeft className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
