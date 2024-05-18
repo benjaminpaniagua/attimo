@@ -8,6 +8,7 @@ import { X } from "lucide-react";
 import { ModalButtons } from "./ModalButtons";
 
 
+
 const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, usr, taskCompleted, taskRemaining, courses }) => {
     const { editModalIsOpen,  closeEditModal, handleEditProfileClick } = useEditProfile();
     
@@ -19,13 +20,16 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
             isOpen={isOpen}
             onRequestClose={onClose}
             className="fixed inset-0 flex items-center justify-center"
-            overlayClassName="fixed inset-0"
+            overlayClassName="fixed inset-0 "
             
         >
-            <div className="fixed inset-0 bg-black bg-opacity-70" onClick={()=>{
+            <div className="fixed inset-0 bg-black bg-opacity-70" 
+            
+            onClick={()=>{
                 onClose();
-                onClose({closeEditModal});
-            }}></div>
+            }}>
+
+            </div>
             <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] p-8">
                 <button onClick={onClose}>
                     <X className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
@@ -61,7 +65,7 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
                         
                         <div className='justify-center flex mt-8 '>
                         
-                        <ModalButtons onClick={handleEditProfileClick} text="Edit Profile"/>
+                        <ModalButtons onClick={() => { handleEditProfileClick(); }} text="Edit Profile"/>
                     
                         </div>
 

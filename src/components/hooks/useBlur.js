@@ -1,14 +1,18 @@
-import { useEffect } from 'react';
+import { useState } from 'react';
 
-export function useBlur(isOpen) {
-    useEffect(() => {
-        if (isOpen) {
-            document.body.style.overflow = 'hidden';
-            document.body.style.overflow = ''; 
-        }
+export function useBlur() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+  
+    const openModal = () => {
+      setIsModalOpen(true);
+    };
+  
+    const closeModal = () => {
+      setIsModalOpen(false);
+    };
+  
+    return { isModalOpen, openModal, closeModal };
+  }
+  
 
-        return () => {
-            document.body.style.overflow = ''; 
-        };
-    }, [isOpen]);
-}
+ 
