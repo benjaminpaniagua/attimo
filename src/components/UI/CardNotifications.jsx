@@ -16,13 +16,13 @@ export function CardNotifications({
         />
         <div className="grid">
           <h3>
-            <span className="font-bold">{mandated} </span>
+            <span className="font-semibold">{mandated} </span>
             {description}
           </h3>
           <p>{time}</p>
         </div>
         </div>
-      <hr className="border-t-2 border-clr-light-gray my-2" />
+      <hr className="border-t-1 border-clr-light-gray my-2" />
     </>
   );
 }

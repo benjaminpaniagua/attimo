@@ -12,21 +12,19 @@ const GenericModal = ({ isOpen, onClose, children, title }) => {
       isOpen={isOpen}
       onRequestClose={onClose}
       shouldCloseOnOverlayClick={true}
-      className="fixed inset-0 flex items-center justify-center"
-      overlayClassName="fixed inset-0"
+      className="fixed inset-0 flex items-center justify-center z-50"
+      overlayClassName="fixed inset-0 bg-black bg-opacity-50 z-40"
     >
-      <div className="fixed inset-0 bg-black bg-opacity-50"></div>
-      <div className="flex justify-center items-center min-h-screen">
-        <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg p-8 relative w-[50rem] md:w-[25rem] grid gap-6">
-          <div className="flex justify-between">
-            <h2>{title}</h2>
-            <button onClick={onClose}>
-              <X />
-            </button>
-          </div>
-          <div className="grid gap-4">
-            {children}
-          </div>
+      
+      <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg p-8 relative  grid gap-6 max-h-[40rem] md:max-h-[40rem] max-w-[40rem] md:max-w-[30rem] overflow-y-scroll no-scrollbar">
+        <div className="flex justify-between items-center mb-4">
+          <h2 className="font-bold">{title}</h2>
+          <button onClick={onClose} className="focus:outline-none">
+            <X size={24} />
+          </button>
+        </div>
+        <div className="grid gap-4">
+          {children}
         </div>
       </div>
     </ReactModal>
