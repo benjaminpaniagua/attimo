@@ -9,6 +9,9 @@
   import { RecoverPassword } from "./pages/RecoverPassword.jsx";
   import { Questions } from "./pages/Questions.jsx";
   import { CourseDetails } from "./pages/CourseDetails.jsx";
+  import Modal from 'react-modal';
+
+Modal.setAppElement('#root');
 
   export const profileInfo = [
     {
