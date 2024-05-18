@@ -30,7 +30,7 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
             }}>
 
             </div>
-            <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] p-8">
+            <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[28rem] p-8">
                 <button onClick={onClose}>
                     <X className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
                 </button>

@@ -21,7 +21,7 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
         >
 
         <div className="fixed inset-0 bg-black bg-opacity-[0.01]" onClick={onClose}></div>    
-        <div className=" bg-clr-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] z-[101] p-8">
+        <div className=" bg-clr-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[28rem] p-8">
             <button onClick={handleClose}>
                 <ChevronLeft className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
             </button>
