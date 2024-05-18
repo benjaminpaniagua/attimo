@@ -1,22 +1,22 @@
-import { useState } from 'react';
+    import { useState } from 'react';
 
-export function useEditProfile() {
-    const [editModalIsOpen, setEditModalIsOpen] = useState(false);
+    export function useEditProfile() {
+        const [editModalIsOpen, setEditModalIsOpen] = useState(false);
 
-    const openEditModal = () => {
-        setEditModalIsOpen(true);
-    };
+        const openEditModal = () => {
+            setEditModalIsOpen(true);
+        };
 
-    const closeEditModal = () => {
-        setEditModalIsOpen(false);
-    };
+        const closeEditModal = () => {
+            setEditModalIsOpen(false);
+        };
 
-    const handleEditProfileClick = () => {
-        openEditModal();
-    };
+        const handleEditProfileClick = () => {
+            openEditModal();
+        };
 
-    return { editModalIsOpen, openEditModal, closeEditModal, handleEditProfileClick };
-}
+        return { editModalIsOpen, openEditModal, closeEditModal, handleEditProfileClick };
+    }
 
 
 
