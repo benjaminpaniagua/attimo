@@ -17,7 +17,7 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
             isOpen={isOpen}
             onRequestClose={onClose}
             className="fixed inset-0 flex items-center justify-center"
-            overlayClassName="fixed inset-0" 
+            overlayClassName="fixed inset-0 " 
         >
         <div className=" bg-clr-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] z-[101] p-8">
             <button onClick={handleClose}>

@@ -24,7 +24,7 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
         >
             <div className="fixed inset-0 bg-black bg-opacity-70" onClick={()=>{
                 onClose();
-                closeEditModal();
+                onClose({closeEditModal});
             }}></div>
             <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[31rem] p-8">
                 <button onClick={onClose}>
