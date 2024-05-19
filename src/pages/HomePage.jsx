@@ -88,38 +88,7 @@ export const courses = [
 ];
 
 const upcomingEvents = [
-  {
-    id: 1,
-    image: myImage,
-    title: "Quizz React",
-    date: "10 May",
-    hour: "10:00",
-    percent: 5,
-  },
-  {
-    id: 2,
-    image: myImage,
-    title: "Smash Tournament",
-    date: "10 May",
-    hour: "17:00",
-    percent: 0,
-  },
-  {
-    id: 3,
-    image: myImage,
-    title: "Seminar Investigation",
-    date: "10 May",
-    hour: "14:30",
-    percent: 25,
-  },
-  {
-    id: 4,
-    image: myImage,
-    title: "Python Meet",
-    date: "10 May",
-    hour: "17:00",
-    percent: 0,
-  },
+  
 ];
 
 export function HomePage() {

@@ -1,6 +1,7 @@
 import "../../index.css";
 import { EventSummary } from "../UI/EventSummary";
 import { Smile } from "lucide-react";
+import { EmptyState } from "../UI/EmptyState.jsx";
 
 export function UpcomingEvents({ items }) {
   return (
@@ -11,13 +12,11 @@ export function UpcomingEvents({ items }) {
       </section>
       
       {items.length === 0 ? (
-        <div className="grid h-full text-center m-auto pt-14 pb-4">
-          <Smile size={46} className="m-auto mb-4 text-clr-blue/70 dark:text-clr-light-gray" />
-          <section className="w-96">
-            <h3 className="dark:text-white">No events on the horizon!</h3>
-            <p className="dark:text-clr-light-gray">Looks like you have some free time. Relax and enjoy!</p>
-          </section>
-        </div>
+        <EmptyState 
+          icon={Smile} 
+          title="No events" 
+          message="You have not events yet!" 
+        />
       ) : (
         <div className="grid gap-2 w-full">
           {items.map((item) => (

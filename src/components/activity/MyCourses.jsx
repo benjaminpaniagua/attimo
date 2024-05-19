@@ -1,6 +1,7 @@
 import "../../index.css";
 import "../UI/CardCourses.jsx";
 import { LibraryBig } from "lucide-react";
+import { EmptyState } from "../UI/EmptyState.jsx";
 import { CardCourses } from "../UI/CardCourses.jsx";
 
 export function MyCourses({ items, name }) {
@@ -8,13 +9,11 @@ export function MyCourses({ items, name }) {
     <>
       <h1 className="dark:text-white dark:duration-300">My Courses</h1>
       {items.length === 0 ? (
-        <div className="grid h-full text-center m-auto py-4">
-          <LibraryBig size={54} className="m-auto mb-4 text-clr-light-gray"/>
-          <section>
-            <h3 className="dark:text-white">No courses</h3>
-            <p className="dark:text-clr-light-gray">You have no events yet!</p>
-          </section>
-        </div>
+        <EmptyState 
+          icon={LibraryBig} 
+          title="No courses to display!" 
+          message="Time to take a breather and plan your next adventure!" 
+        />
       ) : (
         <>
           <p className="mt-2 mb-5 dark:text-clr-light-gray">
