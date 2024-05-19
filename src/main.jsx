@@ -31,9 +31,7 @@ Modal.setAppElement('#root');
 
   ReactDOM.createRoot(document.getElementById("root")).render(
       <BrowserRouter> 
-      
-      
-        <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full ">
+<div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full ">
           <aside className="w-16">
             <Sidebar username={profileInfo[0].usr} email={profileInfo[0].mail} image={profileInfo[0].img} items={profileInfo}></Sidebar>
           </aside>
