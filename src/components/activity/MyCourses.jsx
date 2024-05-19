@@ -1,25 +1,40 @@
 import "../../index.css";
 import "../UI/CardCourses.jsx";
+import { LibraryBig } from "lucide-react";
 import { CardCourses } from "../UI/CardCourses.jsx";
 
 export function MyCourses({ items, name }) {
   return (
     <>
       <h1 className="dark:text-white dark:duration-300">My Courses</h1>
-      <p className="mt-2 mb-5 dark:text-clr-light-gray">Have a nice day {name}, are you ready for your next event?</p> 
-      <div className="grid grid-cols-auto-300 tablet:grid-cols-auto-250 gap-4 w-full max-h-[47rem] overflow-y-scroll no-scrollbar">
-        {items.map((item) => (
-          <CardCourses
-            key={item.id}
-            title={item.title}
-            description={item.description}
-            date={item.date}
-            hour={item.hour}
-            image={item.image}
-            progress={item.progress}
-          />
-        ))}
-      </div>
+      {items.length === 0 ? (
+        <div className="grid h-full text-center m-auto py-4">
+          <LibraryBig size={54} className="m-auto mb-4 text-clr-light-gray"/>
+          <section>
+            <h3 className="dark:text-white">No courses</h3>
+            <p className="dark:text-clr-light-gray">You have no events yet!</p>
+          </section>
+        </div>
+      ) : (
+        <>
+          <p className="mt-2 mb-5 dark:text-clr-light-gray">
+            Have a nice day {name}, are you ready for your next event?
+          </p>
+          <div className="grid grid-cols-auto-300 tablet:grid-cols-auto-250 gap-4 w-full max-h-[47rem] overflow-y-scroll no-scrollbar">
+            {items.map((item) => (
+              <CardCourses
+                key={item.id}
+                title={item.title}
+                description={item.description}
+                date={item.date}
+                hour={item.hour}
+                image={item.image}
+                progress={item.progress}
+              />
+            ))}
+          </div>
+        </>
+      )}
     </>
   );
 }
