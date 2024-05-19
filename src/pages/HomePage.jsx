@@ -3,6 +3,7 @@ import { MyCourses } from "../components/activity/MyCourses.jsx";
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
 import Calendar from "../components/UI/Calendar.jsx";
+import {events} from "./Events.jsx";
 
 export const courses = [
   {
@@ -87,10 +88,6 @@ export const courses = [
   },
 ];
 
-const upcomingEvents = [
-  
-];
-
 export function HomePage() {
   return (
     <>
@@ -102,7 +99,7 @@ export function HomePage() {
         <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
           <Calendar />
         </div>
-        <UpcomingEvents items={upcomingEvents} />
+        <UpcomingEvents items={events} />
       </section>
     </main>
     </>

@@ -19,7 +19,7 @@ export function UpcomingEvents({ items }) {
         />
       ) : (
         <div className="grid gap-2 w-full">
-          {items.map((item) => (
+          {items.slice(0, 4).map((item) => (
             <EventSummary
               key={item.id}
               title={item.title}
