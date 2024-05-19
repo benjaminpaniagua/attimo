@@ -3,7 +3,7 @@ import "../../index.css";
 import carousel1 from "../../assets/imgs/carousel1.webp";
 import carousel2 from "../../assets/imgs/carousel2.webp";
 import carousel3 from "../../assets/imgs/carousel3.webp";
-
+import PropTypes from "prop-types";
 export function Carousel() {
     return (
         <div className="carousel absolute h-full w-[55%] bg-clr-light-secondary-bg grid grid-rows-[auto_1fr] overflow-hidden pb-8 rounded-3xl left-[45%] duration-[0.3s,transform] ease-in-out top-0">
@@ -30,4 +30,16 @@ export function Carousel() {
             </div>
         </div>
     )
+}
+
+Carousel.propTypes = {
+    carousel1: PropTypes.string.isRequired,
+    carousel2: PropTypes.string.isRequired,
+    carousel3: PropTypes.string.isRequired
+}
+
+Carousel.defaultProps = {
+    carousel1: carousel1,
+    carousel2: carousel2,
+    carousel3: carousel3
 }

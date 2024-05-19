@@ -22,7 +22,7 @@ StatisticsCard.propTypes = {
 };
 
 StatisticsCard.defaultProps = {
-    description: "Watch Now",
+    description: "Total Users",
     number: 0,
     icon: User,
 };

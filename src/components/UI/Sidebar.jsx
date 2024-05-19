@@ -54,7 +54,6 @@ export default function Sidebar({ children, image, username, email, items }) {
         description: "created an event",
         time: "Last week",
     },
-    // Resto de notificaciones aquí
   ]);
 
   const clearNotifications = () => {
@@ -146,7 +145,7 @@ export default function Sidebar({ children, image, username, email, items }) {
         </nav>
       </aside>
 
-      {/* Profile Modals */}
+      {/* Profile Modal */}
       {items.map((item) => (
         <ProfileModal
           key={item.id}
@@ -235,7 +234,7 @@ Sidebar.propTypes = {
       usr: PropTypes.string.isRequired,
       taskCompleted: PropTypes.number.isRequired,
       taskRemaining: PropTypes.number.isRequired,
-      courses: PropTypes.arrayOf(PropTypes.string).isRequired,
+      courses: PropTypes.arrayOf(PropTypes.object).isRequired,
     })
   ),
 };
