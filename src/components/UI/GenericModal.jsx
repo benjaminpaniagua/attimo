@@ -19,7 +19,7 @@ const GenericModal = ({ isOpen, onClose, children, title }) => {
         className="fixed inset-0 bg-black bg-opacity-50"
         onClick={onClose}
       ></span>
-      <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg p-8 relative  grid gap-6 max-h-[40rem] md:max-h-[40rem] max-w-[40rem] md:max-w-[30rem] overflow-y-scroll no-scrollbar">
+      <div className="bg-white dark:bg-clr-dark-bg rounded-md p-8 relative grid gap-6 max-h-[40rem] md:max-h-[40rem] max-w-[40rem] md:max-w-[30rem]  overflow-y-scroll no-scrollbar">
         <div className="flex justify-between items-center mb-4">
           <h2 className="font-bold">{title}</h2>
           <button onClick={onClose} className="focus:outline-none">
