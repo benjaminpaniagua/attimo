@@ -1,8 +1,9 @@
 import "../../index.css";
+
 import PropTypes from "prop-types";
 
 
-export function CardTasks({taskCompleted, completedText,  taskRemaining,  remainingText,coursesText,courses,}) {
+export function CardTasks({taskCompleted, completedText,  taskRemaining,  remainingText,coursesText,courses}) {
 
 
     return(
@@ -24,7 +25,10 @@ export function CardTasks({taskCompleted, completedText,  taskRemaining,  remain
         <div className='grid grid-cols-1 mb-4'>
             <div>
                 <h3 className="dark:text-clr-mint-green">{coursesText}</h3>
-                
+                {courses.map((courseTitle, index) => (
+                <p key={index}>{courseTitle}</p>
+                  ))}
+
             </div>
             <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white' />
         </div>
