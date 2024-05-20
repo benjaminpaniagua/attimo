@@ -61,11 +61,11 @@ export function Graphs() {
           <div>
             <DonutChar data={toQualify} />
             <div className="flex justify-center mb-5  ">
-                <div className="w-5 h-5 bg-purple-900 mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-blue mx-2 mt-1"></div>
                 <p className="dark:text-clr-white">To Qualify</p>
-                <div className="w-5 h-5 bg-pink-700 mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1"></div>
                 <p className="dark:text-clr-white">Qualified</p>
-                <div className="w-5 h-5 bg-gray-400 mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1"></div>
                 <p className="dark:text-clr-white">Not sent</p>
             </div>
             {/* Pasar los datos como propiedad */}
@@ -83,11 +83,11 @@ export function Graphs() {
           </div>
           <DonutChar data={gender} />
           <div className="flex justify-center mb-5  ">
-                <div className="w-5 h-5 bg-purple-900 mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-blue mx-2 mt-1"></div>
                 <p className="dark:text-clr-white">Boys</p>
-                <div className="w-5 h-5 bg-pink-700 mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1"></div>
                 <p className="dark:text-clr-white">Girls</p>
-                <div className="w-5 h-5 bg-gray-400 mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1"></div>
                 <p className="dark:text-clr-white">Undefined</p>
             </div>
         </div>

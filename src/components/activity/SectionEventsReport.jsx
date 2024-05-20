@@ -31,13 +31,13 @@ export function Reports() {
           </div>
           <DonutChar data={data} /> {/* Send data as property */}
             <div className="flex justify-center">
-              <div className="w-5 h-5 bg-teal-700 mx-2 "></div>
+              <div className="w-5 h-5 bg-clr-dark-green mx-2 "></div>
                 <p className="dark:text-clr-white text-base">Web Design</p>
-                <div className="w-5 h-5 bg-purple-900 mx-2"></div>
+                <div className="w-5 h-5 bg-clr-blue mx-2"></div>
                 <p className="dark:text-clr-white text-base">Humanities</p>
-                <div className="w-5 h-5 bg-pink-700 mx-2"></div>
+                <div className="w-5 h-5 bg-clr-dark-pink mx-2"></div>
                 <p className="dark:text-clr-white text-base">Seminar</p>
-                <div className="w-5 h-5 bg-gray-400 mx-2"></div>
+                <div className="w-5 h-5 bg-clr-light-gray mx-2"></div>
                 <p className="dark:text-clr-white text-base">Not sent</p>
             </div>
         </div>
