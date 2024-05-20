@@ -5,7 +5,6 @@ export function SectionInfoCourse({items}) {
     <>
       <section className="">
           <div className="flex justify-between items-center md:flex-wrap ">
-          
           {items.map(item => (
                     <InfoCourse
                         key={item.id}
