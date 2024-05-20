@@ -1,6 +1,6 @@
-import DonutChar from "../../UI/DonutChar.jsx";
-import BarChart from "../../UI/StatisticsUI/BarChar.jsx";
-import tailwindColors from "../../../../tailwind.config.js";
+import DonutChar from "../UI/DonutChar.jsx";
+import BarChart from "../UI/BarChar.jsx";
+import tailwindColors from "../../../tailwind.config.js";
 export function Graphs() {
   const toQualify = [
     {

@@ -1,5 +1,5 @@
 import Sidebar from "../components/UI/Sidebar.jsx";
-import { SectionInfoCourse } from "../components/activity/InfoCourse/SectionInfoCourse.jsx";
+import { SectionInfoCourse } from "../components/activity/SectionInfoCourse.jsx";
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
 import Calendar from "../components/UI/Calendar.jsx";

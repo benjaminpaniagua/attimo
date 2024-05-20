@@ -14,7 +14,7 @@ export function EventsFilters(){
     return (
         <>
             <div className="flex md:flex-col justify-between gap-4 my-4 w-full">
-            <InputSearch placeholder="Search an event" />
+                <InputSearch placeholder="Search an event" />
                 <div className="flex gap-4 items-center">
                     <p className="dark:text-clr-light-gray lg:hidden">Sort by:</p>
                     <FilterSelect items={categories} responsive={true} />

@@ -1,6 +1,6 @@
 import Sidebar from "../components/UI/Sidebar.jsx";
-import { StatisticsCards } from "../components/activity/Statistics/SectionContainersStatistics.jsx";
-import { Graphs } from "../components/activity/Statistics/SectionGraphs.jsx";
+import { StatisticsCards } from "../components/activity/SectionContainersStatistics.jsx";
+import { Graphs } from "../components/activity/SectionGraphs.jsx";
 
 export function Statistics() {
   return (

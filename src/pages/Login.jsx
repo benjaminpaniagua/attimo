@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import { SignUpForm } from "../components/UI/SignUpForm.jsx";
 import { SignInForm } from "../components/UI/SignInForm.jsx";
 import { Carousel } from "../components/UI/Carousel.jsx";

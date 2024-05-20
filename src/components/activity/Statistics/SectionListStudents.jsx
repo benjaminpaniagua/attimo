@@ -1,4 +1,4 @@
-import ListStudents from "../../UI/StatisticsUI/ListStudents.jsx";
+import ListStudents from "../../UI/ListStudents.jsx";
 import { InputSearch } from "../../UI/InputSearch.jsx";
 export function List() {
   const students = [

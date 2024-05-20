@@ -16,10 +16,10 @@ export const select = [
 
 export function Reports() {
     const data = [
-      { id: 0, value: 2, label: 'Web Design', color: tailwindColors.theme.extend.colors['clr-dark-green']},
-      { id: 1, value: 3, label: 'Humanities', color: tailwindColors.theme.extend.colors['clr-blue'] },
-      { id: 2, value: 1, label: 'Seminar', color: tailwindColors.theme.extend.colors['clr-dark-pink'] },
-      { id: 3, value: 9, label: 'Others', color: tailwindColors.theme.extend.colors['clr-light-gray'] },
+      { id: 0, value: 2, color: tailwindColors.theme.extend.colors['clr-dark-green']},
+      { id: 1, value: 3, color: tailwindColors.theme.extend.colors['clr-blue'] },
+      { id: 2, value: 1, color: tailwindColors.theme.extend.colors['clr-dark-pink'] },
+      { id: 3, value: 9, color: tailwindColors.theme.extend.colors['clr-light-gray'] },
     ];
   
     return (
@@ -30,6 +30,16 @@ export function Reports() {
             <FilterSelect items={select}/>
           </div>
           <DonutChar data={data} /> {/* Send data as property */}
+            <div className="flex justify-center">
+              <div className="w-5 h-5 bg-teal-700 mx-2 "></div>
+                <p className="dark:text-clr-white text-base">Web Design</p>
+                <div className="w-5 h-5 bg-purple-900 mx-2"></div>
+                <p className="dark:text-clr-white text-base">Humanities</p>
+                <div className="w-5 h-5 bg-pink-700 mx-2"></div>
+                <p className="dark:text-clr-white text-base">Seminar</p>
+                <div className="w-5 h-5 bg-gray-400 mx-2"></div>
+                <p className="dark:text-clr-white text-base">Not sent</p>
+            </div>
         </div>
       </>
     );

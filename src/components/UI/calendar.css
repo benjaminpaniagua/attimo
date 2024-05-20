@@ -1,3 +1,5 @@
+/*Calendar uses @mui material library and needs to be personalized in css*/
+
 /*Calendar structure*/
 .css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
   background-color: #515c94 !important;
