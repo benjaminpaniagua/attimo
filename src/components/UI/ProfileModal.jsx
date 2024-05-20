@@ -6,7 +6,8 @@ import PropTypes from 'prop-types';
 import { useBlur } from "../hooks/useBlur";
 import { X } from "lucide-react";
 import { ModalButtons } from "./ModalButtons";
-
+import { CardProfile } from "./CardProfile";
+import { CardTasks } from "./CardTasks";
 
 
 const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, usr, taskCompleted, taskRemaining, courses }) => {
@@ -28,42 +29,10 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
                 <button onClick={onClose}>
                     <X className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
                 </button>
-                <div className='text-center'>
-                    <div className="grid gap-3">
-                        <img src={img} className='w-48 mx-auto rounded-full' alt="profile photo" />
-                        <section>
-                            <h3 className="dark:text-clr-white">{name} {lastName1} {lastName2}</h3>
-                            <p className="dark:text-clr-white">{mail}</p>
-                            <p className="dark:text-clr-white">@{usr}</p>
-                        </section>
-                        <hr className='w-96 bg-clr-blue dark:bg-clr-white h-1 mx-auto mb-4' />
-                    </div>
-                    <div className='flex mb-4'>
-                        <div className="flex-1 pr-4 relative">
-                            <h3 className="dark:text-clr-mint-green">{taskCompleted}</h3>
-                            <p className="dark:text-clr-light-gray">Task Completed</p>
-                            <div className="absolute inset-y-0 right-0 w-[0.2rem] bg-clr-blue dark:bg-clr-white "></div>
-                        </div>
-                        <div className="flex-1">
-                            <h3 className="dark:text-clr-mint-green">{taskRemaining}</h3>
-                            <p className="dark:text-clr-light-gray">Remaining Tasks</p>
-                        </div>
-                    </div>
-                    <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white' />
-                    <div className='grid grid-cols-1 mb-4'>
-                        <div>
-                            <h3 className="dark:text-clr-mint-green">Courses</h3>
-                            <p className='mb-4 dark:text-clr-light-gray'>{courses}</p>
-                        </div>
-                        <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white' />
-                        
-                        <div className='justify-center flex mt-8 '>
-                        
-                        <ModalButtons onClick={() => { handleEditProfileClick(); }} text="Edit Profile"/>
-                    
-                        </div>
-
-                    </div>
+                <CardProfile img={img} name={name} lastName1={lastName1} lastName2={lastName2} mail={mail} usr={usr} taskCompleted={taskCompleted} taskRemaining={taskRemaining} courses={courses} />
+                <CardTasks taskCompleted={taskCompleted} completedText={"Task Completed"} taskRemaining={taskRemaining}   remainingText={"Task Remaining"}  courses={courses} coursesText={"Courses"} />
+                <div className='justify-center flex mt-8 '>
+                    <ModalButtons onClick={() => { handleEditProfileClick(); }} text="Edit Profile"/>
                 </div>
             </div>
             <EditProfileModal isOpen={editModalIsOpen} onClose={closeEditModal} profileInfo={{img, name, lastName1, lastName2, mail, usr}}/>
