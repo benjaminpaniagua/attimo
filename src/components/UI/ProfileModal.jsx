@@ -7,8 +7,7 @@ import { useBlur } from "../hooks/useBlur";
 import { ModalButtons } from "./ModalButtons";
 import { CardProfile } from "./CardProfile";
 import { CardTasks } from "./CardTasks";
-import { X } from "lucide-react";
-
+import { X } from 'lucide-react';
 
 const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, usr, taskCompleted, taskRemaining, courses }) => {
     const { editModalIsOpen,  closeEditModal, handleEditProfileClick } = useEditProfile();
@@ -22,14 +21,14 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
             overlayClassName="fixed inset-0 "
             
         >
-            <span className="fixed inset-0 bg-black bg-opacity-70" onClick={()=>{onClose();}}></span>
+            <span className="fixed inset-0 bg-black bg-opacity-50" onClick={()=>{onClose();}}></span>
             <div className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[28rem] md:w-[26rem] xs:w-[24.3rem] p-8">
                 <button onClick={onClose}>
                     <X className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
                 </button>
-                <CardProfile img={img} name={name} lastName1={lastName1} lastName2={lastName2} mail={mail} usr={usr}/>
-                <CardTasks taskCompleted={taskCompleted} completedText={"Task Completed"} taskRemaining={taskRemaining} remainingText={"Task Remaining"} coursesText={"Courses"}/> 
-                <div className='justify-center flex mt-8 '>
+                <CardProfile img={img} name={name} lastName1={lastName1} lastName2={lastName2} mail={mail} usr={usr} taskCompleted={taskCompleted} taskRemaining={taskRemaining} courses={courses} />
+                <CardTasks taskCompleted={taskCompleted} taskRemaining={taskRemaining} courses={courses} />
+                <div className='justify-center flex'>
                     <ModalButtons onClick={() => { handleEditProfileClick(); }} text="Edit Profile"/>
                 </div>
             </div>
