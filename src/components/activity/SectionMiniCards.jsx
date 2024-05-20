@@ -1,4 +1,4 @@
-import { Card } from "../../UI/Card";
+import { Card } from "../UI/Card";
 
 export function MiniCards({ items }) {
   return (
