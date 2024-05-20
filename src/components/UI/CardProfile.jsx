@@ -1,5 +1,5 @@
 import "../../index.css";
-
+import PropTypes from "prop-types";
 
 export function CardProfile({img, name, lastName1, lastName2, mail, usr}) {
 

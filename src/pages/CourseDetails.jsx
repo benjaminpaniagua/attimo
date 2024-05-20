@@ -3,26 +3,13 @@ import { SectionInfoCourse } from "../components/activity/SectionInfoCourse.jsx"
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
 import Calendar from "../components/UI/Calendar.jsx";
-
-export const profileInfo = [
-  {
-    id: 1,
-    name: "Ernest Du",
-    mail: "ernest@gmail.com",
-    usr: "erne12",
-    taskCompleted: "5",
-    taskRemaining: "43",
-    courses:
-      "Composicion Inglesa · Aplicaciones Interactivas · Diseño Web ·  Repertorio · Imagen en Movimiento · Seminario",
-  },
-];
+import {events} from "./Events.jsx";
 
 const courses = [
   {
     id: 0,
     title: "Desarrollo de Aplicaciones Interactivas II",
-    image:
-      "https://mv1.mediacionvirtual.ucr.ac.cr/pluginfile.php/2833830/course/section/615599/TM5100%201.png",
+    image: myImage,
     acronyms: "TM-5100",
     teacher: "Jorge Miranda Loría",
     email: "jorge.mirandaloria@ucr.ac.cr",
@@ -33,56 +20,20 @@ const courses = [
   },
 ];
 
-const upcomingEvents = [
-  {
-    id: 1,
-    image: myImage,
-    title: "Quizz React",
-    date: "10 May",
-    hour: "10:00",
-    percent: 5,
-  },
-  {
-    id: 2,
-    image: myImage,
-    title: "Smash Tournament",
-    date: "10 May",
-    hour: "17:00",
-    percent: 0,
-  },
-  {
-    id: 3,
-    image: myImage,
-    title: "Seminar Investigation",
-    date: "10 May",
-    hour: "14:30",
-    percent: 25,
-  },
-  {
-    id: 4,
-    image: myImage,
-    title: "Python Meet",
-    date: "10 May",
-    hour: "17:00",
-    percent: 0,
-  },
-];
-
 export function CourseDetails() {
   return (
     <>
-        <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
+      <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
         <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">
           <SectionInfoCourse items={courses} />
           </section>
-
           <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
           <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
               <Calendar />
             </div>
-            <UpcomingEvents items={upcomingEvents} />
+            <UpcomingEvents items={events} />
           </section>
-        </main>
+      </main>
     </>
   );
 }
