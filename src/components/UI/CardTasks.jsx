@@ -24,7 +24,7 @@ export function CardTasks({taskCompleted, completedText,  taskRemaining,  remain
         <div className='grid grid-cols-1 mb-4'>
             <div>
                 <h3 className="dark:text-clr-mint-green">{coursesText}</h3>
-                <p className='mb-4 dark:text-clr-light-gray'></p>
+                
             </div>
             <hr className='w-96 bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white' />
         </div>
