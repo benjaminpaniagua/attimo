@@ -7,6 +7,7 @@ import { useBlur } from "../hooks/useBlur";
 import { ModalButtons } from "./ModalButtons";
 import { CardProfile } from "./CardProfile";
 import { CardTasks } from "./CardTasks";
+import { X } from "lucide-react";
 
 
 const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, usr, taskCompleted, taskRemaining, courses }) => {
@@ -26,8 +27,8 @@ const ProfileModal = ({ isOpen, onClose, img, name, lastName1, lastName2, mail, 
                 <button onClick={onClose}>
                     <X className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
                 </button>
-                <CardProfile img={img} name={name} lastName1={lastName1} lastName2={lastName2} mail={mail} usr={usr} taskCompleted={taskCompleted} taskRemaining={taskRemaining} courses={courses} />
-                <CardTasks taskCompleted={taskCompleted} completedText={"Task Completed"} taskRemaining={taskRemaining}   remainingText={"Task Remaining"}  courses={courses} coursesText={"Courses"} />
+                <CardProfile img={img} name={name} lastName1={lastName1} lastName2={lastName2} mail={mail} usr={usr}/>
+                <CardTasks taskCompleted={taskCompleted} completedText={"Task Completed"} taskRemaining={taskRemaining} remainingText={"Task Remaining"} coursesText={"Courses"}/> 
                 <div className='justify-center flex mt-8 '>
                     <ModalButtons onClick={() => { handleEditProfileClick(); }} text="Edit Profile"/>
                 </div>
