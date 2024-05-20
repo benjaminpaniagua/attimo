@@ -1,5 +1,4 @@
 import "../../index.css";
-
 import PropTypes from "prop-types";
 
 export function CardTasks({ taskCompleted, taskRemaining, courses }) {
