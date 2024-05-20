@@ -19,11 +19,11 @@ const GenericModal = ({ isOpen, onClose, children, title }) => {
         className="fixed inset-0 bg-black bg-opacity-50"
         onClick={onClose}
       ></span>
-      <div className="bg-white dark:bg-clr-dark-bg rounded-md p-8 relative grid gap-6 max-h-[40rem] md:max-h-[40rem] max-w-[40rem] md:max-w-[30rem]  overflow-y-scroll no-scrollbar">
+      <div className="bg-white dark:bg-clr-dark-bg rounded-md p-6 relative flex flex-col gap-6 max-h-[40rem] md:max-h-[40rem] max-w-[40rem] md:max-w-[30rem] overflow-y-scroll no-scrollbar">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="font-bold">{title}</h2>
+          <h2 className="font-semibold dark:text-clr-white">{title}</h2>
           <button onClick={onClose} className="focus:outline-none">
-            <X size={24} />
+            <X size={24} className='w-10 text-clr-dark-gray dark:text-clr-light-gray'/>
           </button>
         </div>
         <div className="grid gap-4">{children}</div>

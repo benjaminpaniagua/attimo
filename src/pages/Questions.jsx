@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react';
 import { FormHeading } from "../components/UI/FormHeading.jsx";
-import RadioAsk from '../components/UI/QuestionsUI/RadioAsk.jsx';
-import Slider  from "../components/UI/QuestionsUI/SliderAsk.jsx";
+import RadioAsk from '../components/UI/RadioAsk.jsx';
+import Slider  from "../components/UI/SliderAsk.jsx";
 import { SubmitButton } from "../components/UI/SubmitButton.jsx";
 
 

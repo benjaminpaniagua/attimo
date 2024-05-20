@@ -6,7 +6,6 @@ import { Summary } from "../components/activity/SectionSummary.jsx";
 import defaultImg from "../assets/imgs/image_card.png";
 
 export const events = [
-  
   {
     id: 1,
     image: defaultImg,

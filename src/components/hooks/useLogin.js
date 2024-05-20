@@ -25,7 +25,6 @@ function useLogin() {
                 input.classList.remove("active");
             });
         });
-
         toggleElements.forEach((toggle) => {
             toggleRef.current.push(toggle);
 
@@ -33,19 +32,16 @@ function useLogin() {
                 main.classList.toggle("sign-up-mode");
             });
         });
-
         if (bullets.length > 0) {
             bullets.forEach((bullet) => {
                 bulletsRef.current.push(bullet);
                 bullet.addEventListener("click", () => moveSlider(bullet.dataset.value));
             });
         }
-
         // Asignar las imágenes a imgsRef
         images.forEach((img) => {
             imgsRef.current.push(img);
         });
-
         return () => {
             inputElements.forEach((input) => {
                 input.removeEventListener("focus", () => {
@@ -56,17 +52,14 @@ function useLogin() {
                     input.classList.remove("active");
                 });
             });
-
             toggleElements.forEach((toggle) => {
                 toggle.removeEventListener("click", () => {
                     main.classList.toggle("sign-up-mode");
                 });
             });
-
             bullets.forEach((bullet) => {
                 bullet.removeEventListener("click", () => moveSlider(bullet.dataset.value));
             });
-
             // Limpiar las referencias
             inputsRef.current = [];
             toggleRef.current = [];
@@ -86,8 +79,6 @@ function useLogin() {
         bulletsRef.current.forEach((bull) => bull.classList.remove("active"));
         bulletsRef.current[index - 1].classList.add("active");
     }
-
     return { inputsRef, toggleRef, bulletsRef, imgsRef, moveSlider };
 }
-
 export default useLogin;

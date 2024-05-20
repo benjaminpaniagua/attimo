@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import Select from '@mui/material/Select';
 
 export function SelectAsk() {

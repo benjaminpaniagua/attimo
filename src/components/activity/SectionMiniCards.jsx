@@ -1,5 +1,4 @@
-import react from "react";
-import { Card } from "../../UI/StatisticsUI/Card";
+import { Card } from "../UI/Card";
 
 export function MiniCards({ items }) {
   return (

@@ -1,15 +1,20 @@
 import PropTypes from "prop-types";
 import { CardNotifications } from "../UI/CardNotifications";
+import { ModalButtons } from "../UI/ModalButtons";
+import { Bell } from "lucide-react";
 
 export function NotificationsContent({ notifications, clearNotifications }) {
   const handleClearNotifications = () => {
-    clearNotifications(); // Llama a la función para limpiar las notificaciones
+    clearNotifications(); 
   };
 
   return (
     <>
       {notifications.length === 0 ? (
-        <h2>There are no notifications</h2>
+        <div className="grid m-auto">
+          <Bell size={34} className="m-auto mb-4 text-clr-light-gray"/>
+          <p className="dark:text-clr-light-gray">You have no notifications</p>
+        </div>
       ) : (
         notifications.map((notification, index) => (
           <CardNotifications
@@ -22,12 +27,7 @@ export function NotificationsContent({ notifications, clearNotifications }) {
         ))
       )}
       {notifications.length > 0 && (
-        <button
-          className="text-clr-white p-4 bg-clr-blue rounded-lg hover:bg-clr-dark-blue"
-          onClick={handleClearNotifications}
-        >
-          Clear All
-        </button>
+        <ModalButtons  text="Clear All" onClick={handleClearNotifications}/>
       )}
     </>
   );
@@ -44,5 +44,10 @@ NotificationsContent.propTypes = {
   ).isRequired,
   clearNotifications: PropTypes.func.isRequired,
 };
+
+NotificationsContent.defaultProps = {
+  notifications: [],
+  clearNotifications: () => {},
+}
 
 export default NotificationsContent;

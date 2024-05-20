@@ -6,13 +6,12 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { PickersDay } from '@mui/x-date-pickers/PickersDay';
 import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { DayCalendarSkeleton } from '@mui/x-date-pickers/DayCalendarSkeleton';
-import '../calendar.css'; 
+import './calendar.css';
 
 function getRandomNumber(min, max) {
   return Math.round(Math.random() * (max - min) + min);
 }
 
-// Función para obtener días destacados del servidor
 function fakeFetch(date, { signal }) {
   return new Promise((resolve, reject) => {
     const timeout = setTimeout(() => {
@@ -30,7 +29,6 @@ function fakeFetch(date, { signal }) {
 
 const initialValue = dayjs('2024-04-29');
 
-// Componente para mostrar días del servidor
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
 
@@ -42,8 +40,7 @@ function ServerDay(props) {
       key={props.day.toString()}
       overlap="circular"
       badgeContent={isSelected ? ' ' : undefined}
-      style={{ zIndex: 0 }}
-    >
+      style={{ zIndex: 0 }}> 
       <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
     </Badge>
   );
@@ -54,7 +51,6 @@ export default function DateCalendarServerRequest() {
   const [isLoading, setIsLoading] = React.useState(false);
   const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
 
-  // Función para cargar días destacados del servidor
   const fetchHighlightedDays = (date) => {
     const controller = new AbortController();
     fakeFetch(date, {
@@ -65,7 +61,6 @@ export default function DateCalendarServerRequest() {
         setIsLoading(false);
       })
       .catch((error) => {
-        // Ignorar el error si es causado por `controller.abort`
         if (error.name !== 'AbortError') {
           throw error;
         }
@@ -76,18 +71,13 @@ export default function DateCalendarServerRequest() {
 
   React.useEffect(() => {
     fetchHighlightedDays(initialValue);
-    // Abortar solicitud al desmontar
     return () => requestAbortController.current?.abort();
   }, []);
 
-  // Manejar cambio de mes
   const handleMonthChange = (date) => {
     if (requestAbortController.current) {
-      // Asegurarse de abortar las solicitudes inútiles
-      // porque es posible cambiar entre meses muy rápido
       requestAbortController.current.abort();
     }
-
     setIsLoading(true);
     setHighlightedDays([]);
     fetchHighlightedDays(date);

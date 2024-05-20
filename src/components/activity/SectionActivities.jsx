@@ -1,6 +1,6 @@
-import { InputSearch } from "../../UI/InputSearch";
-import ListActivities from "../../UI/StatisticsUI/ListActivities.jsx";
-import defaultImg from "../../../assets/imgs/img_activity.png";
+import { InputSearch } from "../UI/InputSearch.jsx";
+import ListActivities from "../UI/ListActivities.jsx";
+import defaultImg from "../assets/imgs/img_activity.png";
 
 export function Activities() {
   const events = [

@@ -1,4 +1,6 @@
 import "../../index.css";
+import PropTypes from 'prop-types';
+
 export function Task({ number, description, id }) {
   return (
     <>
@@ -6,4 +8,16 @@ export function Task({ number, description, id }) {
         <p className="dark:text-clr-light-gray">{description}</p>
     </>
   );
+}
+
+Task.propTypes = {
+  number: PropTypes.number.isRequired,
+  description: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired
+}
+
+Task.defaultProps = {
+  number: 0,
+  description: "Task",
+  id: 0
 }

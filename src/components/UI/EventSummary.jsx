@@ -1,6 +1,6 @@
 import "../../index.css";
 import PropTypes from "prop-types";
-
+import defaultImage from "../../assets/imgs/image_card.png";
 export function EventSummary({ title, date, hour, image, percent }) {
   return (
     <>
@@ -20,7 +20,7 @@ export function EventSummary({ title, date, hour, image, percent }) {
   );
 }
 
-// Set required props
+
 EventSummary.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
@@ -34,5 +34,5 @@ EventSummary.defaultProps = {
   description: "Description",
   date: "10 May",
   hour: "11:10",
-  image: "https://images.unsplash.com/photo-1622834085294-0b1a1c7f2f0e",
+  image: defaultImage,
 };

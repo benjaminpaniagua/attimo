@@ -1,6 +1,6 @@
 import React from "react";
 import "../../index.css";
-
+import PropTypes from "prop-types";
 export function FilterSelect({items, responsive=false}) {
     return (
         <>
@@ -15,3 +15,17 @@ export function FilterSelect({items, responsive=false}) {
     );
 }
 
+FilterSelect.propTypes = {
+    items: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.number.isRequired,
+            title: PropTypes.string.isRequired,
+        })
+    ).isRequired,
+    responsive: PropTypes.bool,
+};
+
+FilterSelect.defaultProps = {
+    items: [],
+    responsive: false,
+};

@@ -1,5 +1,5 @@
 import react from "react";
-import {StatisticsCard} from "../../UI/StatisticsCard.jsx";
+import {StatisticsCard} from "../UI/StatisticsCard.jsx";
 import { Users, Dumbbell, BookA, GraduationCap } from "lucide-react";
 
 const data = [

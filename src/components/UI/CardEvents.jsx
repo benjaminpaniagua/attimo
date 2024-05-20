@@ -1,4 +1,5 @@
 import '../../index.css'
+import defaultImage from '../../assets/imgs/image_card.png';
 import PropTypes from 'prop-types';
 
 export function CardEvents({title, description, date, hour, image, category, label, status, percent}) {
@@ -22,7 +23,6 @@ export function CardEvents({title, description, date, hour, image, category, lab
     )
 }
 
-// Set required props
 CardEvents.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -40,7 +40,7 @@ CardEvents.defaultProps = {
     description: "Event's description",
     date: "10 May",
     hour: "8:00",
-    image: "https://images.unsplash.com/photo-1622834085294-0b1a1c7f2f0e",
+    image: defaultImage,
     category: "University",
     label: "Event",
     percent: 0,

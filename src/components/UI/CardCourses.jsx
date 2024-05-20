@@ -1,6 +1,7 @@
 import '../../index.css'
 import PropTypes from 'prop-types';
 import * as React from 'react';
+import defaultImage from '../../assets/imgs/image_card.png';
 import LinearWithValueLabel from './ProgressBar'; 
 
 export function CardCourses({title, description, image, progress}) {
@@ -13,7 +14,7 @@ export function CardCourses({title, description, image, progress}) {
                 <div>
                     <div className='flex justify-between mb-2'>
                         <p className="dark:text-clr-light-gray">Progress</p>
-                        <p className='text-clr-dark-green dark:text-clr-mint-green'>{progress}%</p>
+                        <p className='text-clr-blue dark:text-clr-light-bg'>{progress}%</p>
                     </div>
                     <LinearWithValueLabel value={progress} />
                 </div>
@@ -21,7 +22,7 @@ export function CardCourses({title, description, image, progress}) {
         </div>
     );
 }
-// Set required props
+
 CardCourses.propTypes = {
     title: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
@@ -30,9 +31,9 @@ CardCourses.propTypes = {
 }
 
 CardCourses.defaultProps = {
-    title: "Course Title",
-    description: "Description",
-    image: "https://images.unsplash.com/photo-1622834085294-0b1a1c7f2f0e",
+    title: "Programming",
+    description: "Learn the basics of java programming language and start coding your first program.",
+    image: defaultImage,
     progress: 56
 }
 
