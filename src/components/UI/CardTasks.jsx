@@ -1,5 +1,7 @@
 import "../../index.css";
 import PropTypes from "prop-types";
+import { EmptyState } from "./EmptyState.jsx";
+import { LibraryBig } from "lucide-react";
 
 export function CardTasks({ taskCompleted, taskRemaining, courses }) {
     return (
@@ -23,7 +25,10 @@ export function CardTasks({ taskCompleted, taskRemaining, courses }) {
                     <div className="grid h-36 no-scrollbar overflow-y-scroll">
                         <div className='grid text-start gap-2 pb-4'>
                             {courses.length === 0 ? (
-                                <p className="text-center dark:text-clr-light-gray">You have no courses yet</p>
+                                <EmptyState 
+                                title="There are no courses" 
+                                icon={LibraryBig} 
+                              />
                             ) : (
                                 courses.map((course, index) => (
                                     <p key={index} className="dark:text-clr-light-gray">• {course.title}</p>
