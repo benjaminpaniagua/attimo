@@ -49,11 +49,41 @@ export default function Sidebar({ children, image, username, email, items }) {
         time: "Last week",
     },
     {
-        mandated: "Andres Cortes",
-        mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-        description: "created an event",
-        time: "Last week",
-    },
+      mandated: "Andres Cortes",
+      mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Last week",
+  },
+  {
+    mandated: "Andres Cortes",
+    mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+    description: "created an event",
+    time: "Last week",
+},
+{
+  mandated: "Andres Cortes",
+  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+  description: "created an event",
+  time: "Last week",
+},
+{
+  mandated: "Andres Cortes",
+  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+  description: "created an event",
+  time: "Last week",
+},
+{
+  mandated: "Andres Cortes",
+  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+  description: "created an event",
+  time: "Last week",
+},
+{
+  mandated: "Andres Cortes",
+  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+  description: "created an event",
+  time: "Last week",
+},
   ]);
 
   const clearNotifications = () => {

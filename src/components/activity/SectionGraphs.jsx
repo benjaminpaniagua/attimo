@@ -2,7 +2,7 @@ import DonutChar from "../UI/DonutChar.jsx";
 import BarChart from "../UI/BarChar.jsx";
 import tailwindColors from "../../../tailwind.config.js";
 export function Graphs() {
-  const toQualify = [
+  const typeScholarship = [
     {
       id: 0,
       value: 12,
@@ -56,17 +56,17 @@ export function Graphs() {
       <section className="grid grid-cols-3 md:grid-cols-1 gap-5">
         <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-5 pb-0">
-            <h2 className="fs-med dark:text-clr-white">To Qualify</h2>
+            <h2 className="fs-med dark:text-clr-white">Students with scholarship</h2>
           </div>
           <div>
-            <DonutChar data={toQualify} />
+            <DonutChar data={typeScholarship} />
             <div className="flex justify-center mb-5  ">
                 <div className="w-5 h-5 bg-clr-blue mx-2 mt-1"></div>
-                <p className="dark:text-clr-white">To Qualify</p>
+                <p className="dark:text-clr-white">Academic</p>
                 <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1"></div>
-                <p className="dark:text-clr-white">Qualified</p>
+                <p className="dark:text-clr-white">Socioeconomic</p>
                 <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1"></div>
-                <p className="dark:text-clr-white">Not sent</p>
+                <p className="dark:text-clr-white">Sports</p>
             </div>
             {/* Pasar los datos como propiedad */}
           </div>
