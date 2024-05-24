@@ -18,8 +18,11 @@ export function Questions() {
                     <selectAsk/> 
                     <select className="mt-3 text-base">
                         <option value="noShol">No scholarship</option>
-                        <option value="partial">Partial scholarship</option>
-                        <option value="full">Full scholarship</option>
+                        <option value="socioeconomic">Socioeconomic scholarship</option>
+                        <option value="excellence">Excellence scholarship</option>
+                        <option value="sportsArts">Sports/Arts scholarship</option>
+                        <option value="representation">Representation scholarship</option>
+                        <option value="external">External scholarship</option>
                     </select>
                     <h3 className="mt-8 font-medium text-clr-dark-blue">How many hours do you sleep?</h3>
                     <Slider />
