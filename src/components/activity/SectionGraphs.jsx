@@ -61,11 +61,11 @@ export function Graphs() {
           <DonutChar data={typeScholarship} />
             <div className="flex justify-center mb-5">
                 <div className="w-5 h-5 bg-clr-blue mx-2 mt-1 rounded-full"></div>
-                <p className="dark:text-clr-white">Academic</p>
+                <p className="dark:text-clr-white">No-Sch</p>
                 <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1 rounded-full"></div>
-                <p className="dark:text-clr-white">Socioeconomic</p>
+                <p className="dark:text-clr-white">Partial-Sch</p>
                 <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1 rounded-full"></div>
-                <p className="dark:text-clr-white">Sports</p>
+                <p className="dark:text-clr-white">Full-Sch</p>
             </div>
           </div>
         </div>

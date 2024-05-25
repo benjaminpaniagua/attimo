@@ -1,4 +1,4 @@
-import Select from '@mui/material/Select';
+import React from 'react';
 
 export function SelectAsk() {
 
@@ -8,14 +8,13 @@ export function SelectAsk() {
     };
 
     return (
-        <div >
-            <select className="mt-3 text-base">
-                <option value="noShol">No scholarship</option>
-                <option value="partial">Partial scholarship</option>
-                <option value="full">Full scholarship</option>
+        <div>
+            <select value={value} onChange={handleChange} className="mt-3 text-base">
+            <option value="noScholarship">No Scholarship</option>
+                    <option value="partialScholarship">Partial Scholarship</option>
+                    <option value="fullScholarship">Full Scholarship</option>
             </select>
         </div>
-        
     );
 }
 

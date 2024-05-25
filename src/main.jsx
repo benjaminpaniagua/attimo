@@ -41,6 +41,7 @@ Modal.setAppElement('#root');
               <Route path="statistics" element={<Statistics />} />
               <Route path="/login" element={<Login />} />
               <Route path="/*" element={<HomePage />} />
+              <Route path="/Questions" element={<Questions />} />
             </Routes>
         </div>
       </BrowserRouter>
