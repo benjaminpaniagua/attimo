@@ -1,7 +1,14 @@
-import React, { useState } from "react";
-import { LayoutDashboard, Home, Bell, BarChart, Sun, Moon, LogOut } from "lucide-react";
+import {
+  LayoutDashboard,
+  Home,
+  Bell,
+  BarChart,
+  Sun,
+  Moon,
+  LogOut,
+} from "lucide-react";
 import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { Link } from "react-router-dom";
 import { ProfileContent } from "../activity/ProfileContent";
@@ -17,74 +24,86 @@ export default function Sidebar({ children, image, username, email, items }) {
   const [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const { theme, handleChangeTheme } = useDarkMode();
-  const [notificationsModalIsOpen, setNotificationsModalIsOpen] = useState(false);
+  const [notificationsModalIsOpen, setNotificationsModalIsOpen] =
+    useState(false);
   const [notifications, setNotifications] = useState([
     {
-        mandated: "Jorge Miranda",
-        mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-        description: "created an event",
-        time: "5 minutes ago",
+      mandated: "Jorge Miranda",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "5 minutes ago",
     },
     {
-        mandated: "David Smith",
-        mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-        description: "created an event",
-        time: "18 minutes ago",
+      mandated: "David Smith",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "18 minutes ago",
     },
     {
-        mandated: "María Jiménez",
-        mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-        description: "created an event",
-        time: "2 hours ago",
+      mandated: "María Jiménez",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "2 hours ago",
     },
     {
-        mandated: "Pedro Corsh",
-        mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-        description: "created an event",
-        time: "Yesterday",
+      mandated: "Pedro Corsh",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Yesterday",
     },
     {
-        mandated: "Gonzalo Jyma",
-        mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-        description: "created an event",
-        time: "Last week",
+      mandated: "Gonzalo Jyma",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Last week",
     },
     {
       mandated: "Andres Cortes",
-      mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
       description: "created an event",
       time: "Last week",
-  },
-  {
-    mandated: "Andres Cortes",
-    mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-    description: "created an event",
-    time: "Last week",
-},
-{
-  mandated: "Andres Cortes",
-  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-  description: "created an event",
-  time: "Last week",
-},
-{
-  mandated: "Andres Cortes",
-  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-  description: "created an event",
-  time: "Last week",
-},
-{
-  mandated: "Andres Cortes",
-  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-  description: "created an event",
-  time: "Last week",
-},
-{
-  mandated: "Andres Cortes",
-  mandatedImg: "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
-  description: "created an event",
-  time: "Last week",
-},
+    },
+    {
+      mandated: "Andres Cortes",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Last week",
+    },
+    {
+      mandated: "Andres Cortes",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Last week",
+    },
+    {
+      mandated: "Andres Cortes",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Last week",
+    },
+    {
+      mandated: "Andres Cortes",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Last week",
+    },
+    {
+      mandated: "Andres Cortes",
+      mandatedImg:
+        "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
+      description: "created an event",
+      time: "Last week",
+    },
   ]);
 
   const clearNotifications = () => {
@@ -97,6 +116,7 @@ export default function Sidebar({ children, image, username, email, items }) {
         <nav className="h-full flex flex-col bg-clr-blue dark:bg-clr-dark-blue">
           <div className="p-4 flex justify-between items-center">
             <img
+              alt="User Image"
               src={logo}
               className={`overflow-hidden object-cover transition-all ${
                 expanded ? "w-32" : "w-0"
@@ -145,11 +165,11 @@ export default function Sidebar({ children, image, username, email, items }) {
                 onClick={handleChangeTheme}
               />
               <hr className="my-3" />
-              <SidebarItem 
-                icon={<LogOut 
-                size={20} />} 
-                text="Log Out" 
-                to="/login"/>
+              <SidebarItem
+                icon={<LogOut size={20} />}
+                text="Log Out"
+                to="/login"
+              />
             </ul>
           </SidebarContext.Provider>
 
@@ -181,27 +201,23 @@ export default function Sidebar({ children, image, username, email, items }) {
       </aside>
 
       {/* Profile Modal */}
-      
-          <ProfileModal
-            isOpen={modalIsOpen}
-            onClose={() => setModalIsOpen(false)}
-          >
-            {items.map((item) => (
-              <ProfileContent
-                key={item.id}
-                img={item.img}
-                name={item.name}
-                lastName1={item.lastName1}
-                lastName2={item.lastName2}
-                mail={item.mail}
-                usr={item.usr}
-                taskCompleted={item.taskCompleted}
-                taskRemaining={item.taskRemaining}
-                courses={item.courses}
-              />
-            ))}
-            </ProfileModal>
- 
+
+      <ProfileModal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)}>
+        {items.map((item) => (
+          <ProfileContent
+            key={item.id}
+            img={item.img}
+            name={item.name}
+            lastName1={item.lastName1}
+            lastName2={item.lastName2}
+            mail={item.mail}
+            usr={item.usr}
+            taskCompleted={item.taskCompleted}
+            taskRemaining={item.taskRemaining}
+            courses={item.courses}
+          />
+        ))}
+      </ProfileModal>
 
       {/* Notifications Modal */}
       <GenericModal

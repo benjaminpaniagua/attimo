@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import defaultImage from "../../assets/imgs/image_card.png";
-export function InfoCourse({id, title, image, acronyms, teacher, email, date, hour, description}) {
+export function InfoCourse({title, image, acronyms, teacher, email, date, hour, description}) {
   return (
     <section className="grid gap-4">
       <h1 className="dark:text-clr-white">{title}</h1>
@@ -20,7 +20,7 @@ export function InfoCourse({id, title, image, acronyms, teacher, email, date, ho
         </section>
 
         <section>
-          <h3 className="dark:text-clr-white">Teacher's email</h3>
+          <h3 className="dark:text-clr-white">Teachers email</h3>
           <p className="dark:text-clr-light-gray">{email}</p>
         </section>
 
@@ -41,7 +41,6 @@ export function InfoCourse({id, title, image, acronyms, teacher, email, date, ho
 }
 
 InfoCourse.propTypes = {
-    id: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
     acronyms: PropTypes.string.isRequired,
@@ -53,7 +52,6 @@ InfoCourse.propTypes = {
 };
 
 InfoCourse.defaultProps = {
-  id: 0,
   title: "Desarrollo de Aplicaciones Interactivas II",
   image: defaultImage,
   acronyms: "TM-5100",

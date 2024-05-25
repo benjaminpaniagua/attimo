@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import defaultImage from "../../assets/imgs/image_card.png";
 export function EventSummary({ title, date, hour, image, percent }) {
   return (
-    <>
       <div className="rounded-lg bg-white dark:bg-clr-dark-bg p-2 flex gap-4 items-center">
         <div className="size-20 w-24 overflow-hidden rounded-lg">
           <img className="object-cover w-full h-full" src={`${image}`} alt="Event photo" />
@@ -16,7 +15,6 @@ export function EventSummary({ title, date, hour, image, percent }) {
           <p className="dark:text-clr-light-gray">{date}, {hour}</p>
         </section>
       </div>
-    </>
   );
 }
 
@@ -27,6 +25,7 @@ EventSummary.propTypes = {
   date: PropTypes.string.isRequired,
   hour: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  percent: PropTypes.number.isRequired,
 };
 
 EventSummary.defaultProps = {
@@ -35,4 +34,5 @@ EventSummary.defaultProps = {
   date: "10 May",
   hour: "11:10",
   image: defaultImage,
+  percent: 0,
 };

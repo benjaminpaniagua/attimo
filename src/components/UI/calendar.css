@@ -28,7 +28,7 @@
 /*Date title*/
 .css-cyfsxc-MuiPickersCalendarHeader-labelContainer {
   cursor: pointer;
-  font-family: "Poppins","Poppins","Poppins",sans-serif !important;
+  font-family: "Poppins",sans-serif !important;
   font-size: 18px !important; 
   color: #354075 !important;
   font-weight: 500 !important;
@@ -49,7 +49,6 @@
 }
 /*Events*/
 .css-1r7ctd-MuiBadge-badge {
-  /* font-family: "Poppins","Poppins","Poppins",sans-serif !important; */
   background-color: hsla(232, 89%, 74%, .3) !important;
   top: 50%   !important;
   right: 50% !important;

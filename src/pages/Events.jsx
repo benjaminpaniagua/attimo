@@ -10,7 +10,8 @@ export const events = [
     id: 1,
     image: defaultImg,
     title: "Quizz React",
-    description:"Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
     percent: 5,
     date: "10 May",
     hour: "10:00",
@@ -24,6 +25,7 @@ export const events = [
     title: "Lecture Seminar",
     description:
       "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    percent: 0,
     date: "11 May",
     hour: "8:00",
     category: "Course",
@@ -35,6 +37,7 @@ export const events = [
     title: "ID Card Photo Day",
     description:
       "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    percent: 0,
     date: "11 May",
     hour: "9:30",
     category: "University",
@@ -60,6 +63,7 @@ export const events = [
     title: "English Club Meeting",
     description:
       "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    percent: 0,
     date: "12 May",
     hour: "10:00",
     category: "Students",
@@ -72,6 +76,7 @@ export const events = [
     title: "Smash Tournament",
     description:
       "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    percent: 0,
     date: "12 May",
     hour: "13:00",
     category: "Students",
@@ -81,18 +86,17 @@ export const events = [
 ];
 
 export function Events() {
-  
   return (
     <>
       <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
-          <section className="w-[70%] px-2 my-2 lg:w-full lg:px-4">
-            <MyEvents items={events} />
-          </section>
-          <section className="grid py-4 pr-4 w-[30%] lg:w-full lg:px-4 gap-4">
-              <Reports />
-              <Tasks />
-              <Summary />
-          </section>
+        <section className="w-[70%] px-2 my-2 lg:w-full lg:px-4">
+          <MyEvents items={events} />
+        </section>
+        <section className="grid py-4 pr-4 w-[30%] lg:w-full lg:px-4 gap-4">
+          <Reports />
+          <Tasks />
+          <Summary />
+        </section>
       </main>
     </>
   );
