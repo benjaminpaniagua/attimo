@@ -4,6 +4,7 @@ import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
 import { createContext, useContext } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { Link } from "react-router-dom";
+import { ProfileContent } from "../activity/ProfileContent";
 import ProfileModal from "./ProfileModal";
 import GenericModal from "../UI/GenericModal";
 import NotificationsContent from "../activity/NotificationsContent";
@@ -146,22 +147,27 @@ export default function Sidebar({ children, image, username, email, items }) {
       </aside>
 
       {/* Profile Modal */}
-      {items.map((item) => (
-        <ProfileModal
-          key={item.id}
-          img={item.img}
-          name={item.name}
-          lastName1={item.lastName1}
-          lastName2={item.lastName2}
-          mail={item.mail}
-          usr={item.usr}
-          taskCompleted={item.taskCompleted}
-          taskRemaining={item.taskRemaining}
-          courses={item.courses}
-          isOpen={modalIsOpen}
-          onClose={() => setModalIsOpen(false)}
-        />
-      ))}
+      
+          <ProfileModal
+            isOpen={modalIsOpen}
+            onClose={() => setModalIsOpen(false)}
+          >
+            {items.map((item) => (
+              <ProfileContent
+                key={item.id}
+                img={item.img}
+                name={item.name}
+                lastName1={item.lastName1}
+                lastName2={item.lastName2}
+                mail={item.mail}
+                usr={item.usr}
+                taskCompleted={item.taskCompleted}
+                taskRemaining={item.taskRemaining}
+                courses={item.courses}
+              />
+            ))}
+            </ProfileModal>
+ 
 
       {/* Notifications Modal */}
       <GenericModal

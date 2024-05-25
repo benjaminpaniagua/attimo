@@ -16,3 +16,20 @@ export function CardProfile({img, name, lastName1, lastName2, mail, usr}) {
     </div>
     )
 }
+
+
+CardProfile.propTypes = {
+   name : PropTypes.string.isRequired,
+   lastName1 : PropTypes.string.isRequired,
+   lastName2 : PropTypes.string.isRequired,
+   mail : PropTypes.string.isRequired,
+   usr : PropTypes.string.isRequired
+};
+
+CardProfile.defaultProps = {
+    name : "Juan",
+    lastName1 : "Solis",
+    lastName2 : "Benavides",
+    mail : "juanvasquez@gmailcom",
+    usr : "juanca78",
+};

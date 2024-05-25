@@ -2,9 +2,9 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import useLogin from '../hooks/useLogin.js';
 import { ChevronLeft } from "lucide-react";
-import { SignInputs } from "./SignInputs.jsx"
-import { ModalButtons } from "./ModalButtons";
-import { CardEditInfo } from './CardEditInfo.jsx';
+import { SignInputs } from '../UI/SignInputs.jsx';
+import { ModalButtons } from '../UI/ModalButtons.jsx';
+import { CardEditInfo } from '../UI/CardEditInfo.jsx';
 
 const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
     useLogin();
@@ -25,6 +25,7 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
             <button onClick={handleClose}>
                 <ChevronLeft className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
             </button>
+            
                 <CardEditInfo title="Edit Profile" img={profileInfo.img} />
             <div className='grid gap-3 mt-12'>
                 <SignInputs type="text" name="First Name" isActive={true} defaultValue={profileInfo.name} />
