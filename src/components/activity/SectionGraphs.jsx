@@ -59,13 +59,13 @@ export function Graphs() {
             <h2 className="fs-med dark:text-clr-white">Students with scholarship</h2>
           </div>
           <div>
-            <DonutChar data={typeScholarship} />
-            <div className="flex justify-center mb-5  ">
-                <div className="w-5 h-5 bg-clr-blue mx-2 mt-1"></div>
+          <DonutChar data={typeScholarship} />
+            <div className="flex justify-center mb-5">
+                <div className="w-5 h-5 bg-clr-blue mx-2 mt-1 rounded-full"></div>
                 <p className="dark:text-clr-white">Academic</p>
-                <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1 rounded-full"></div>
                 <p className="dark:text-clr-white">Socioeconomic</p>
-                <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1 rounded-full"></div>
                 <p className="dark:text-clr-white">Sports</p>
             </div>
             {/* Pasar los datos como propiedad */}
@@ -82,12 +82,12 @@ export function Graphs() {
             <h2 className="fs-med dark:text-clr-white">Users Gender Breakdown</h2>
           </div>
           <DonutChar data={gender} />
-          <div className="flex justify-center mb-5  ">
-                <div className="w-5 h-5 bg-clr-blue mx-2 mt-1"></div>
+          <div className="flex justify-center mb-5 ">
+                <div className="w-5 h-5 bg-clr-blue mx-2 mt-1 rounded-full"></div>
                 <p className="dark:text-clr-white">Boys</p>
-                <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-dark-pink mx-2 mt-1 rounded-full"></div>
                 <p className="dark:text-clr-white">Girls</p>
-                <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1"></div>
+                <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1 rounded-full"></div>
                 <p className="dark:text-clr-white">Undefined</p>
             </div>
         </div>

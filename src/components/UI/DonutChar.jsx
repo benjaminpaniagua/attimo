@@ -5,7 +5,7 @@ export default function DonutChar({ data }) {
   return (
     <div className='mt-10'>
     <PieChart
-    margin={{ top: 0, bottom: 80, left: 0, right: 0 }}
+    margin={{ top: 0, bottom: 20, left: 0, right: 0 }}
       series={[
         {
           data,
@@ -13,7 +13,7 @@ export default function DonutChar({ data }) {
           faded: { innerRadius: 20, additionalRadius: -30, color: 'grey' },
         },
       ]}
-      height={300}
+      height={270}
         legend={{
           direction: 'row',
           position: { vertical: 'bottom', horizontal: 'middle' },
