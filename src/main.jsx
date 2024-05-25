@@ -39,6 +39,7 @@ Modal.setAppElement('#root');
               <Route path="/" element={<HomePage name={profileInfo[0].name} />} />
               <Route path="events" element={<Events />} />
               <Route path="statistics" element={<Statistics />} />
+              <Route path="/login" element={<Login />} />
               <Route path="/*" element={<HomePage />} />
             </Routes>
         </div>

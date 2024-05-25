@@ -75,7 +75,7 @@ export function Graphs() {
           <div className="flex justify-between items-center p-5 pb-0">
             <h2 className="fs-med dark:text-clr-white">Average hours of sleep</h2>
           </div>
-          <BarChart data={hoursSleep}/>
+          <BarChart data={hoursSleep} color={tailwindColors.theme.extend.colors["clr-mint-green"]}/>
         </div>
         <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-5 pb-0">
