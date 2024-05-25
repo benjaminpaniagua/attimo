@@ -1,9 +1,10 @@
 import "../../index.css";
 import { Pencil } from "lucide-react"; 
 import React from "react";
+import PropTypes from 'prop-types';
+import defaultImage from "../../assets/imgs/image_card.png";
 export function CardEditInfo({title,img}) {
     return(
-        <>
             <div className='grid justify-center text-center'>
                 <h2 className='mb-4 dark:text-clr-white'>{title}</h2>
                 <div className="relative group w-48 mx-auto">
@@ -16,6 +17,16 @@ export function CardEditInfo({title,img}) {
                     </button>
                 </div>
             </div>
-        </>
     )
 }
+
+CardEditInfo.propTypes = {
+    title: PropTypes.string.isRequired,
+    img: PropTypes.string.isRequired,
+}
+
+CardEditInfo.defaultProps = {
+    title: "This is a title",
+    img: defaultImage,
+}
+
