@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { PieChart } from '@mui/x-charts/PieChart';
+import PropTypes from 'prop-types';
 
 export default function DonutChar({ data }) {
   return (
@@ -23,3 +24,11 @@ export default function DonutChar({ data }) {
     </div>
   );
 }
+
+DonutChar.propTypes = {
+  data: PropTypes.array.isRequired,
+};
+
+DonutChar.defaultProps = {
+  data: [],
+};
