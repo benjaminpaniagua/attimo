@@ -17,9 +17,9 @@ export function NotificationsContent({ notifications, clearNotifications }) {
         </div>
       ) : (
         <div className="flex flex-col gap-2 h-[23rem] max-w-[30rem] md:max-w-[30rem] overflow-y-scroll no-scrollbar">
-          {notifications.map((notification, index) => (
+          {notifications.map((notification) => (
             <CardNotifications
-              key={index}
+              key={notification.id}
               mandated={notification.mandated}
               mandatedImg={notification.mandatedImg}
               description={notification.description}

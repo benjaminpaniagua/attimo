@@ -52,7 +52,6 @@ export function Graphs() {
   ];
 
   return (
-    <>
       <section className="grid grid-cols-3 md:grid-cols-1 gap-5">
         <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-5 pb-0">
@@ -68,7 +67,6 @@ export function Graphs() {
                 <div className="w-5 h-5 bg-clr-light-gray mx-2 mt-1 rounded-full"></div>
                 <p className="dark:text-clr-white">Sports</p>
             </div>
-            {/* Pasar los datos como propiedad */}
           </div>
         </div>
         <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
@@ -92,6 +90,5 @@ export function Graphs() {
             </div>
         </div>
       </section>
-    </>
   );
 }

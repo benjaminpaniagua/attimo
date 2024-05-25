@@ -87,7 +87,6 @@ export const events = [
 
 export function Events() {
   return (
-    <>
       <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
         <section className="w-[70%] px-2 my-2 lg:w-full lg:px-4">
           <MyEvents items={events} />
@@ -98,7 +97,6 @@ export function Events() {
           <Summary />
         </section>
       </main>
-    </>
   );
 }
 

@@ -1,13 +1,4 @@
-import {
-  LayoutDashboard,
-  Home,
-  Bell,
-  BarChart,
-  Sun,
-  Moon,
-  LogOut,
-} from "lucide-react";
-import { ChevronFirst, ChevronLast, MoreVertical } from "lucide-react";
+import { ChevronFirst, ChevronLast, MoreVertical, LayoutDashboard, Home, Bell, BarChart, Sun, Moon, LogOut } from "lucide-react";
 import { createContext, useContext, useState } from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { Link } from "react-router-dom";
@@ -28,6 +19,7 @@ export default function Sidebar({ children, image, username, email, items }) {
     useState(false);
   const [notifications, setNotifications] = useState([
     {
+      id: 1,
       mandated: "Jorge Miranda",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -35,6 +27,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "5 minutes ago",
     },
     {
+      id: 2,
       mandated: "David Smith",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -42,6 +35,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "18 minutes ago",
     },
     {
+      id: 3,
       mandated: "María Jiménez",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -49,6 +43,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "2 hours ago",
     },
     {
+      id: 4,
       mandated: "Pedro Corsh",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -56,6 +51,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "Yesterday",
     },
     {
+      id: 5,
       mandated: "Gonzalo Jyma",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -63,6 +59,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "Last week",
     },
     {
+      id: 6,
       mandated: "Andres Cortes",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -70,6 +67,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "Last week",
     },
     {
+      id: 7,
       mandated: "Andres Cortes",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -77,6 +75,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "Last week",
     },
     {
+      id: 8,
       mandated: "Andres Cortes",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -84,6 +83,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "Last week",
     },
     {
+      id: 9,
       mandated: "Andres Cortes",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -91,6 +91,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "Last week",
     },
     {
+      id: 10,
       mandated: "Andres Cortes",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -98,6 +99,7 @@ export default function Sidebar({ children, image, username, email, items }) {
       time: "Last week",
     },
     {
+      id: 11,
       mandated: "Andres Cortes",
       mandatedImg:
         "https://i.pinimg.com/564x/22/8b/cf/228bcf5a0800f813cd1744d4ccbf01ea.jpg",
@@ -116,7 +118,7 @@ export default function Sidebar({ children, image, username, email, items }) {
         <nav className="h-full flex flex-col bg-clr-blue dark:bg-clr-dark-blue">
           <div className="p-4 flex justify-between items-center">
             <img
-              alt="User Image"
+              alt={'${username} photo'}
               src={logo}
               className={`overflow-hidden object-cover transition-all ${
                 expanded ? "w-32" : "w-0"

@@ -1,4 +1,3 @@
-import Sidebar from "../components/UI/Sidebar.jsx";
 import { SectionInfoCourse } from "../components/activity/SectionInfoCourse.jsx";
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";

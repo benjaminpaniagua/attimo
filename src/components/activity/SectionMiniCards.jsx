@@ -1,4 +1,5 @@
 import { Card } from "../UI/Card";
+import PropTypes from "prop-types";
 
 export function MiniCards({ items }) {
   return (
@@ -11,3 +12,17 @@ export function MiniCards({ items }) {
     </div>
   );
 }
+
+MiniCards.propTypes = {
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      number: PropTypes.number.isRequired,
+      description: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
+
+MiniCards.defaultProps = {
+  items: [],
+};
