@@ -30,8 +30,8 @@ export function CardTasks({ taskCompleted, taskRemaining, courses }) {
                                 icon={LibraryBig} 
                               />
                             ) : (
-                                courses.map((course, index) => (
-                                    <p key={index} className="dark:text-clr-light-gray">• {course.title}</p>
+                                courses.map((course) => (
+                                    <p key={course.id} className="dark:text-clr-light-gray">• {course.title}</p>
                                 ))
                             )}
                         </div>
