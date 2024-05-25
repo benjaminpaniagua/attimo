@@ -1,4 +1,6 @@
 import { BarChart } from '@mui/x-charts/BarChart';
+import propTypes from 'prop-types';
+import tailwindColors from "../../../tailwind.config.js";
 
 export default function SleepHoursChart({ data, colors }) {
   return (
@@ -11,3 +13,13 @@ export default function SleepHoursChart({ data, colors }) {
     />
   );
 }
+
+SleepHoursChart.propTypes = {
+  data: propTypes.array.isRequired,
+  colors: propTypes.array.isRequired,
+};
+
+SleepHoursChart.defaultProps = {
+  data: [],
+  colors: [tailwindColors.theme.extend.colors["clr-blue"]],
+};
