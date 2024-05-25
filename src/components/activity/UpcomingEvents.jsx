@@ -1,4 +1,5 @@
 import "../../index.css";
+import { Link } from "react-router-dom";
 import { EventSummary } from "../UI/EventSummary";
 import { Smile } from "lucide-react";
 import { EmptyState } from "../UI/EmptyState.jsx";
@@ -8,7 +9,7 @@ export function UpcomingEvents({ items }) {
     <div className="mt-2 px-6 grid">
       <section className="flex items-center justify-between">
         <h2 className="my-4 dark:text-white">Upcoming events</h2>
-        <p className="duration-300 cursor-pointer hover:text-clr-blue dark:text-clr-light-gray dark:hover:text-white">View all</p>
+        <Link to="/events"><p className="duration-300 cursor-pointer hover:text-clr-blue dark:text-clr-light-gray dark:hover:text-white">View all</p></Link>
       </section>
       
       {items.length === 0 ? (

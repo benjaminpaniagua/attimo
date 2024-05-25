@@ -88,12 +88,12 @@ export const courses = [
   },
 ];
 
-export function HomePage() {
+export function HomePage({name}) {
   return (
     <>
     <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
       <section className="w-[70%] px-2 my-2 lg:w-full lg:px-6 tablet:w-[60%]">
-        <MyCourses className="w-full" items={courses} name="Valeria" />
+        <MyCourses className="w-full" items={courses} name={name} />
       </section>
       <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
         <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">

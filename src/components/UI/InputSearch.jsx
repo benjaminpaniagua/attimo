@@ -5,7 +5,7 @@ import "../../index.css";
 
 export function InputSearch({ placeholder }) {
     return (
-      <div className="flex justify-between px-4 bg-clr-light-gray/40 dark:bg-clr-dark-gray/30 rounded-md overflow-hidden text-clr-dark-bg">
+      <div className="flex justify-between px-4 bg-clr-light-gray/25 dark:bg-clr-dark-gray/30 rounded-md overflow-hidden text-clr-dark-bg">
         <input
           className="w-full py-2 placeholder:text-clr-dark-gray bg-transparent dark:placeholder:text-clr-light-gray cursor-pointer focus:outline-none"
           type="text"
