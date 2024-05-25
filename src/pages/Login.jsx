@@ -1,11 +1,21 @@
 import { SignUpForm } from "../components/UI/SignUpForm.jsx";
 import { SignInForm } from "../components/UI/SignInForm.jsx";
 import { Carousel } from "../components/UI/Carousel.jsx";
+import useDarkMode from "../components/hooks/useDarkMode.js";
 import useLogin from "../components/hooks/useLogin.js";
+import { useEffect } from "react";
 
 export function Login() {
     useLogin();
+    const { theme, handleChangeTheme } = useDarkMode();
 
+    useEffect(() => {
+        if (theme === 'dark') {
+            document.querySelector('html').classList.remove('dark');
+        }
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+    
     return (
         <main className="main-authentification bg-clr-dark-blue w-full min-h-screen max-h-[90vh] overflow-hidden flex items-center justify-center p-8">
             <div className="box relative w-full max-w-[1020px] h-[640px] bg-white rounded-[3.3rem]">

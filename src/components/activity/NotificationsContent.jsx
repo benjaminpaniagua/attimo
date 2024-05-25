@@ -16,18 +16,20 @@ export function NotificationsContent({ notifications, clearNotifications }) {
           <p className="dark:text-clr-light-gray">You have no notifications</p>
         </div>
       ) : (
-        notifications.map((notification, index) => (
-          <CardNotifications
-            key={index}
-            mandated={notification.mandated}
-            mandatedImg={notification.mandatedImg}
-            description={notification.description}
-            time={notification.time}
-          />
-        ))
+        <div className="flex flex-col gap-2 max-h-[30rem] md:max-h-[30rem] max-w-[30rem] md:max-w-[30rem] overflow-y-scroll no-scrollbar">
+          {notifications.map((notification, index) => (
+            <CardNotifications
+              key={index}
+              mandated={notification.mandated}
+              mandatedImg={notification.mandatedImg}
+              description={notification.description}
+              time={notification.time}
+            />
+          ))}
+        </div>
       )}
       {notifications.length > 0 && (
-        <ModalButtons  text="Clear All" onClick={handleClearNotifications}/>
+        <ModalButtons text="Clear All" onClick={handleClearNotifications}/>
       )}
     </>
   );
