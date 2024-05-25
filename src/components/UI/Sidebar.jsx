@@ -145,7 +145,11 @@ export default function Sidebar({ children, image, username, email, items }) {
                 onClick={handleChangeTheme}
               />
               <hr className="my-3" />
-              <SidebarItem icon={<LogOut size={20} />} text="Log Out" />
+              <SidebarItem 
+                icon={<LogOut 
+                size={20} />} 
+                text="Log Out" 
+                to="/login"/>
             </ul>
           </SidebarContext.Provider>
 
