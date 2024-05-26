@@ -1,5 +1,4 @@
 import ListStudents from "../UI/ListStudents.jsx";
-import { InputSearch } from "../UI/InputSearch.jsx";
 export function List() {
   const students = [
     {
@@ -74,7 +73,6 @@ export function List() {
   ];
 
   return (
-    <>
       <section className="grid w-full">
         <div className="bg-clr-white rounded-lg">
           <div className="flex justify-between items-center p-7 pb-0">
@@ -85,6 +83,5 @@ export function List() {
           </div>
         </div>
       </section>
-    </>
   );
 }

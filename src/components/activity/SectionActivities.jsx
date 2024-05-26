@@ -1,4 +1,3 @@
-import { InputSearch } from "../UI/InputSearch.jsx";
 import ListActivities from "../UI/ListActivities.jsx";
 import defaultImg from "../assets/imgs/img_activity.png";
 
@@ -53,7 +52,6 @@ export function Activities() {
       
   ];
   return (
-    <>
       <section className="w-full grid">
         <div className="bg-clr-white dark:bg-clr-dark-third rounded-lg">
           <div className="flex justify-between items-center p-8 pb-0 md:flex-wrap ">
@@ -64,6 +62,5 @@ export function Activities() {
           </div>
         </div>
       </section>
-    </>
   );
 }

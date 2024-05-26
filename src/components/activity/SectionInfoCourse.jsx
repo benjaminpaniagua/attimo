@@ -2,7 +2,6 @@ import { InfoCourse } from "../UI/InfoCourse";
 
 export function SectionInfoCourse({items}) {
   return (
-    <>
       <section className="">
           <div className="flex justify-between items-center md:flex-wrap ">
             {items.map(item => (
@@ -20,6 +19,5 @@ export function SectionInfoCourse({items}) {
             ))}
           </div>
       </section>
-    </>
   );
 }

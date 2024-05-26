@@ -1,4 +1,3 @@
-import React from "react";
 import {FilterSelect} from "../UI/FilterSelect.jsx";
 import DonutChar from "../UI/DonutChar.jsx";
 import tailwindColors from '../../../tailwind.config.js';
@@ -23,7 +22,6 @@ export function Reports() {
     ];
   
     return (
-      <>
         <div className="grid bg-white dark:bg-clr-dark-third rounded-lg p-6 lg:p-4">
           <div className="flex justify-between items-center pb-0">
             <h2 className="fs-med dark:text-white">Events Report</h2>
@@ -41,6 +39,5 @@ export function Reports() {
                 <p className="dark:text-clr-white text-base">Other</p>
             </div>
         </div>
-      </>
     );
   }

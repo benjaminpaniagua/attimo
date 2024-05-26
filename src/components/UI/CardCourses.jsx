@@ -1,6 +1,5 @@
 import '../../index.css'
 import PropTypes from 'prop-types';
-import * as React from 'react';
 import defaultImage from '../../assets/imgs/image_card.png';
 import LinearWithValueLabel from './ProgressBar'; 
 

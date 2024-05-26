@@ -21,7 +21,6 @@ const courses = [
 
 export function CourseDetails() {
   return (
-    <>
       <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
         <section className="w-[70%] px-2 my-4 lg:w-full lg:px-6 tablet:w-[60%]">
           <SectionInfoCourse items={courses} />
@@ -33,7 +32,6 @@ export function CourseDetails() {
             <UpcomingEvents items={events} />
           </section>
       </main>
-    </>
   );
 }
 

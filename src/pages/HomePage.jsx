@@ -1,4 +1,3 @@
-import Sidebar from "../components/UI/Sidebar.jsx";
 import { MyCourses } from "../components/activity/MyCourses.jsx";
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
@@ -90,7 +89,6 @@ export const courses = [
 
 export function HomePage({name}) {
   return (
-    <>
     <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
       <section className="w-[70%] px-2 my-2 lg:w-full lg:px-6 tablet:w-[60%]">
         <MyCourses className="w-full" items={courses} name={name} />
@@ -102,7 +100,6 @@ export function HomePage({name}) {
         <UpcomingEvents items={events} />
       </section>
     </main>
-    </>
   );
 }
 

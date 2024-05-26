@@ -1,4 +1,3 @@
-import Sidebar from "../components/UI/Sidebar.jsx";
 import { MyEvents } from "../components/activity/MyEvents.jsx";
 import { Reports } from "../components/activity/SectionEventsReport.jsx";
 import { Tasks } from "../components/activity/SectionTasks.jsx";
