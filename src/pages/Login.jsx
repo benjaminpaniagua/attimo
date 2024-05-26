@@ -7,7 +7,7 @@ import { useEffect } from "react";
 
 export function Login() {
     useLogin();
-    const { theme, handleChangeTheme } = useDarkMode();
+    const { theme } = useDarkMode();
 
     useEffect(() => {
         if (theme === 'dark') {
