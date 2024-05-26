@@ -1,5 +1,6 @@
 import * as React from 'react';
 import dayjs from 'dayjs';
+import PropTypes from 'prop-types';
 import Badge from '@mui/material/Badge';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
@@ -40,11 +41,17 @@ function ServerDay(props) {
       key={props.day.toString()}
       overlap="circular"
       badgeContent={isSelected ? ' ' : undefined}
-      style={{ zIndex: 0 }}> 
+      style={{ zIndex: 0 }}>
       <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
     </Badge>
   );
 }
+
+ServerDay.propTypes = {
+  highlightedDays: PropTypes.array,
+  day: PropTypes.object.isRequired,
+  outsideCurrentMonth: PropTypes.bool.isRequired,
+};
 
 export default function DateCalendarServerRequest() {
   const requestAbortController = React.useRef(null);

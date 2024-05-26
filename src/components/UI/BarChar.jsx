@@ -20,6 +20,5 @@ SleepHoursChart.propTypes = {
 };
 
 SleepHoursChart.defaultProps = {
-  data: [],
   color: tailwindColors.theme.extend.colors["clr-blue"],
 };
