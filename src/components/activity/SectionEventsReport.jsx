@@ -15,10 +15,10 @@ export const select = [
 
 export function Reports() {
     const data = [
-      { id: 0, value: 2, color: tailwindColors.theme.extend.colors['clr-dark-green']},
-      { id: 1, value: 3, color: tailwindColors.theme.extend.colors['clr-blue'] },
-      { id: 2, value: 1, color: tailwindColors.theme.extend.colors['clr-dark-pink'] },
-      { id: 3, value: 9, color: tailwindColors.theme.extend.colors['clr-light-gray'] },
+      { id: 0, value: 2, color: tailwindColors.theme.extend.colors['clr-dark-green'], label: 'Web Design'},
+      { id: 1, value: 3, color: tailwindColors.theme.extend.colors['clr-blue'], label: 'Humanities'},
+      { id: 2, value: 1, color: tailwindColors.theme.extend.colors['clr-dark-pink'], label: 'Seminar'},
+      { id: 3, value: 9, color: tailwindColors.theme.extend.colors['clr-light-gray'], label: 'Other' },
     ];
   
     return (
@@ -28,16 +28,6 @@ export function Reports() {
             <FilterSelect items={select}/>
           </div>
           <DonutChar data={data} /> {/* Send data as property */}
-            <div className="flex justify-center">
-              <div className="w-5 h-5 bg-clr-dark-green mx-2 rounded-full"></div>
-                <p className="dark:text-clr-white text-base">Web Design</p>
-                <div className="w-5 h-5 bg-clr-blue mx-2 rounded-full"></div>
-                <p className="dark:text-clr-white text-base">Humanities</p>
-                <div className="w-5 h-5 bg-clr-dark-pink mx-2 rounded-full"></div>
-                <p className="dark:text-clr-white text-base">Seminar</p>
-                <div className="w-5 h-5 bg-clr-light-gray mx-2 rounded-full"></div>
-                <p className="dark:text-clr-white text-base">Other</p>
-            </div>
         </div>
     );
   }

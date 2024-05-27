@@ -6,7 +6,7 @@ export default function DonutChar({ data }) {
   return (
     <div className='mt-10'>
     <PieChart
-    margin={{ top: 0, bottom: 20, left: 0, right: 0 }}
+    margin={{ top: 0, bottom: 60, left: 0, right: 0 }}
       series={[
         {
           data,
