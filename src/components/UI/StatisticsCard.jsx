@@ -17,7 +17,7 @@ export function StatisticsCard({ description, number, icon: Icon}) {
 
 StatisticsCard.propTypes = {
     description: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
+    icon: PropTypes.elementType.isRequired,
     number: PropTypes.number.isRequired,
 };
 

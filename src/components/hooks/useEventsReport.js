@@ -75,6 +75,5 @@ export function useEventsReport() {
         }
     }, [courses, events]);
 
-    console.log(data);
     return data;
 }
