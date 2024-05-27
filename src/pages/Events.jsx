@@ -7,10 +7,10 @@ import defaultImg from "../assets/imgs/image_card.png";
 export const events = [
   {
     id: 1,
+    course_id: 4,
     image: defaultImg,
     title: "Quizz React",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
     percent: 5,
     date: "10 May",
     hour: "10:00",
@@ -20,10 +20,10 @@ export const events = [
   },
   {
     id: 2,
+    course_id: 2,
     image: defaultImg,
-    title: "Lecture Seminar",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    title: "Lecture",
+    description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
     percent: 0,
     date: "11 May",
     hour: "8:00",
@@ -32,10 +32,10 @@ export const events = [
   },
   {
     id: 3,
+    course_id: 0,
     image: defaultImg,
     title: "ID Card Photo Day",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
     percent: 0,
     date: "11 May",
     hour: "9:30",
@@ -45,10 +45,10 @@ export const events = [
   },
   {
     id: 4,
+    course_id: 5,
     image: defaultImg,
     title: "Animation Logo",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
     percent: 15,
     date: "11 May",
     hour: "13:00",
@@ -58,10 +58,10 @@ export const events = [
   },
   {
     id: 5,
+    course_id: 0,
     image: defaultImg,
     title: "English Club Meeting",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
     percent: 0,
     date: "12 May",
     hour: "10:00",
@@ -71,10 +71,10 @@ export const events = [
   },
   {
     id: 6,
+    course_id: 0,
     image: defaultImg,
     title: "Smash Tournament",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
+    description: "Lorem ipsum dolor sit amet consectetur. Felis odio pellentesque sed vivamus nisi...",
     percent: 0,
     date: "12 May",
     hour: "13:00",

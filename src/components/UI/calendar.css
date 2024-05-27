@@ -14,7 +14,7 @@
 
 /*Today's selection*/
 .css-23p0if-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
-  color: #332591 !important;
+  color: #9c893c !important;
   background-color: #99a7ff !important;
   font-weight: 500;
 }
@@ -84,3 +84,6 @@
   color: #515c94 !important;
 }
 /*Selected day*/
+.css-1wy8uaa-MuiButtonBase-root-MuiPickersDay-root.Mui-selected {
+  background-color: #515c94 !important;
+}

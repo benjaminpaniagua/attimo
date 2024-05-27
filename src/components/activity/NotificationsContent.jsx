@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { CardNotifications } from "../UI/CardNotifications";
 import { ModalButtons } from "../UI/ModalButtons";
 import { Bell } from "lucide-react";
+import { EmptyState } from "../UI/EmptyState";
 
 export function NotificationsContent({ notifications, clearNotifications }) {
   const handleClearNotifications = () => {
@@ -11,9 +12,11 @@ export function NotificationsContent({ notifications, clearNotifications }) {
   return (
     <>
       {notifications.length === 0 ? (
-        <div className="grid m-auto">
-          <Bell size={34} className="m-auto mb-4 text-clr-light-gray"/>
-          <p className="dark:text-clr-light-gray">You have no notifications</p>
+        <div className="grid m-auto pt-24">
+          <EmptyState 
+          icon={Bell} 
+          message="You have no notifications" 
+          />
         </div>
       ) : (
         <div className="flex flex-col gap-2 h-[23rem] max-w-[30rem] md:max-w-[30rem] overflow-y-scroll no-scrollbar">

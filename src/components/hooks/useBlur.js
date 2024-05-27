@@ -13,6 +13,3 @@ export function useBlur() {
   
     return { isModalOpen, openModal, closeModal };
   }
-  
-
- 

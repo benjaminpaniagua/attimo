@@ -13,12 +13,12 @@ export function SignInputs({ type, name, defaultValue, isActive}) {
                 type={type}
                 name={name}
                 minLength='4'
-                className={`input-field absolute duration-300 w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-b border-solid bg-none outline-none bg-transparent dark:text-clr-white ${isActive ? 'active' : ''}`}
+                className={`input-field absolute duration-300 w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-b border-solid bg-none outline-none bg-transparent dark:text-clr-white/80 ${isActive ? 'active' : ''}`}
                 autoComplete="off"
                 required
                 defaultValue={defaultValue}
             />
-            <label className="absolute -translate-y-2/4 text-[0.95rem] duration-300 text-clr-light-gray dark:text-clr-light-green pointer-events-none transition-[0.4s] left-0 top-2/4">{formattedName}</label>
+            <label className="absolute -translate-y-2/4 text-[0.95rem] duration-300 text-clr-light-gray dark:text-clr-white pointer-events-none transition-[0.4s] left-0 top-2/4">{formattedName}</label>
         </div>
     );
 }

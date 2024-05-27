@@ -16,10 +16,10 @@ const GenericModal = ({ isOpen, onClose, children, title }) => {
       overlayClassName="fixed inset-0 bg-black bg-opacity-50 z-40"
     >
       <button
-        className="fixed inset-0 bg-black bg-opacity-50"
+        className="fixed inset-0 bg-black bg-opacity-20"
         onClick={onClose}
       ></button>
-      <div className="bg-white dark:bg-clr-dark-bg rounded-md p-6 relative flex flex-col gap-6">
+      <div className="bg-white dark:bg-clr-dark-bg rounded-md p-6 relative flex flex-col gap-6 min-h-[36rem] min-w-[30rem]">
         <div className="flex justify-between items-center mb-4">
           <h2 className="font-semibold dark:text-clr-white">{title}</h2>
           <button onClick={onClose} className="focus:outline-none">

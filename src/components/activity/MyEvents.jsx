@@ -17,7 +17,7 @@ export function MyEvents({ items }) {
       ) : (
         <>
           <EventsFilters />
-          <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[54rem] overflow-y-scroll no-scrollbar">
+          <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[52rem] xl:max-h-[55rem] overflow-y-scroll no-scrollbar">
             {items.map((item) => (
               <CardEvents
                 key={item.title}
