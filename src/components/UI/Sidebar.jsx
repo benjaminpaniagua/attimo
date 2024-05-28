@@ -142,7 +142,7 @@ export default function Sidebar({ children, image, username, email, items }) {
 
           <SidebarContext.Provider value={{ expanded }}>
             <ul className="flex flex-col gap-4 m-auto px-3">
-              <SidebarItem icon={<Home size={20} />} text="Home" to="/" />
+              <SidebarItem icon={<Home size={20} />} text="Home" to="/home" />
               <SidebarItem
                 icon={<LayoutDashboard size={20} />}
                 text="Events"

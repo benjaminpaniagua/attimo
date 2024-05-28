@@ -1,20 +1,12 @@
 import { SignUpForm } from "../components/UI/SignUpForm.jsx";
 import { SignInForm } from "../components/UI/SignInForm.jsx";
 import { Carousel } from "../components/UI/Carousel.jsx";
-import useDarkMode from "../components/hooks/useDarkMode.js";
 import useLogin from "../components/hooks/useLogin.js";
-import { useEffect } from "react";
+import useLightMode from "../components/hooks/useLightMode.js";
 
 export function Login() {
     useLogin();
-    const { theme } = useDarkMode();
-
-    useEffect(() => {
-        if (theme === 'dark') {
-            document.querySelector('html').classList.remove('dark');
-        }
-        localStorage.setItem('theme', theme);
-    }, [theme]);
+    useLightMode();
     
     return (
         <main className="main-authentification bg-clr-dark-blue w-full min-h-screen max-h-[90vh] overflow-hidden flex items-center justify-center p-8">

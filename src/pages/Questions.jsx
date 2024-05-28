@@ -4,10 +4,12 @@ import Slider  from "../components/UI/SliderAsk.jsx";
 import { SubmitButton } from "../components/UI/SubmitButton.jsx";
 import { SelectAsk } from "../components/UI/SelectAsk.jsx";
 import useNavigation from "../components/hooks/useNavigation.js";
+import useLightMode from "../components/hooks/useLightMode.js";
 
 export function Questions() {
-    const handleSubmit = useNavigation("/homepage");
-    
+    useLightMode();
+    const handleSubmit = useNavigation("/home");
+
     return (    
         <div className="bg-clr-dark-blue flex justify-center items-center min-h-screen p-6 w-full">
             <form onSubmit={handleSubmit} autoComplete="off" className="bg-clr-white rounded-xl p-10 grid gap-4">

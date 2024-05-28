@@ -36,12 +36,13 @@ Modal.setAppElement('#root');
             <Sidebar username={profileInfo[0].usr} email={profileInfo[0].mail} image={profileInfo[0].img} items={profileInfo}></Sidebar>
           </aside>
             <Routes>
-              <Route path="/" element={<HomePage name={profileInfo[0].name} />} />
-              <Route path="events" element={<Events />} />
-              <Route path="statistics" element={<Statistics />} />
+              <Route path="/home" element={<HomePage name={profileInfo[0].name} />} />
+              <Route path="/events" element={<Events />} />
+              <Route path="/statistics" element={<Statistics />} />
               <Route path="/login" element={<Login />} />
               <Route path="/Questions" element={<Questions />} />
               <Route path="/recoverPassword" element={<RecoverPassword />} />
+              <Route path="/" element={<Login />} />
               <Route path="/*" element={<Login />} />
             </Routes>
         </div>
