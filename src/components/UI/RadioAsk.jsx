@@ -16,7 +16,7 @@ export function RadioAsk() {
         <FormControl>
             <div>
                 <section>
-                    <h3 className="font-medium text-clr-dark-blue">What is your gender?</h3>
+                    <h3 className="font-regular text-clr-dark-blue">What is your gender?</h3>
                     <RadioGroup
                         row
                         aria-labelledby="demo-row-radio-buttons-group-label"
@@ -31,7 +31,7 @@ export function RadioAsk() {
                 </section>
 
                 <section>
-                    <h3 className="mt-8 font-medium text-clr-dark-blue">Do you practice sport regularly?</h3>
+                    <h3 className="mt-8 font-regular text-clr-dark-blue">Do you practice sport regularly?</h3>
                     <RadioGroup
                         row
                         aria-labelledby="demo-row-radio-buttons-group-label"

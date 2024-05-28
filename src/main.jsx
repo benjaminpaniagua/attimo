@@ -40,8 +40,9 @@ Modal.setAppElement('#root');
               <Route path="events" element={<Events />} />
               <Route path="statistics" element={<Statistics />} />
               <Route path="/login" element={<Login />} />
-              <Route path="/*" element={<HomePage />} />
               <Route path="/Questions" element={<Questions />} />
+              <Route path="/recoverPassword" element={<RecoverPassword />} />
+              <Route path="/*" element={<Login />} />
             </Routes>
         </div>
       </BrowserRouter>
