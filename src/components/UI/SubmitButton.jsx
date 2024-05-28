@@ -34,5 +34,5 @@ SubmitButton.defaultProps = {
     value: "Sign Up",
     subHeading: "",
     linkText: "",
-    link: "/login"
+    link: "/"
 };

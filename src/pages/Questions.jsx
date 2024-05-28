@@ -8,7 +8,7 @@ import useLightMode from "../components/hooks/useLightMode.js";
 
 export function Questions() {
     useLightMode();
-    const handleSubmit = useNavigation("/home");
+    const handleSubmit = useNavigation("/attimo/home");
 
     return (    
         <div className="bg-clr-dark-blue flex justify-center items-center min-h-screen p-6 w-full">
