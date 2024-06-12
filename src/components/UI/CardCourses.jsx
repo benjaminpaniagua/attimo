@@ -6,7 +6,7 @@ import LinearWithValueLabel from './ProgressBar';
 export function CardCourses({title, description, image, progress}) {
     return(
         <div className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden dark:hover:brightness-125 hover:brightness-[.80] transition duration-300 cursor-pointer">
-            <div className='h-40 overflow-hidden'><img className="w-full bg-cover" src={`${image}`} alt="Courses Image" /></div>
+            <div className='h-40 overflow-hidden'><img className="w-full bg-cover" src={`${image}`} alt={`${title} image`} /></div>
             <section className="mt-2 p-5">
                 <h3 className='dark:text-white'>{title}</h3>
                 <p className="my-3 dark:text-clr-light-gray">{description}</p>
