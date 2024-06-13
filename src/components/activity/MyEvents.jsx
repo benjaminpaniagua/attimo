@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import "../../index.css";
 import { CardEvents } from "../UI/CardEvents.jsx";
 import { EventsFilters } from "./EventsFilters.jsx";
@@ -5,8 +6,9 @@ import { EmptyState } from "../UI/EmptyState.jsx";
 import { CalendarOff } from "lucide-react";
 import { useFetchActivities } from "../hooks/useFetchActivities.js";
 
-export function MyEvents({ items }) {
+export function MyEvents() {
   const { data, isLoading, error } = useFetchActivities();
+  const [search, setSearch] = useState("");
 
   const truncate = (text, maxLength) => {
     // Check if the length of the text is less than or equal to the maximum length allowed
@@ -32,6 +34,10 @@ export function MyEvents({ items }) {
     ));
   };
 
+  const filteredData = data.filter(item => 
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <>
       <h1 className="dark:text-white">My Events</h1>
@@ -47,9 +53,9 @@ export function MyEvents({ items }) {
         />
       ) : (
         <>
-          <EventsFilters />
+          <EventsFilters setSearch={setSearch} />
           <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[52rem] xl:max-h-[55rem] overflow-y-scroll no-scrollbar">
-            {createCardsActivities(data)}
+            {createCardsActivities(filteredData)}
           </div>
         </>
       )}
