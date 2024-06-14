@@ -6,7 +6,7 @@ import { Loading } from "../UI/Loading.jsx";
 import { useFetchCourses } from "../hooks/useFetchCourses";
 
 export function MyCourses({ name }) {
-  const { data, isLoading } = useFetchCourses();
+  const { data, isLoading, error } = useFetchCourses();
 
   const truncate = (text, maxLength) => {
     //check if the text length is less than or equal to the maximum allowed limit
@@ -32,7 +32,7 @@ export function MyCourses({ name }) {
   return (
     <>
       <h1 className="dark:text-white dark:duration-300">My Courses</h1>
-      {isLoading ? ( <Loading /> ) : data.length === 0 ? (
+      {isLoading ? ( <Loading /> ) : error ? (<span className="text-clr-blue dark:text-clr-white">Error loading events</span>) : data.length === 0 ? (
         <EmptyState
           icon={LibraryBig}
           title="No courses to display!"

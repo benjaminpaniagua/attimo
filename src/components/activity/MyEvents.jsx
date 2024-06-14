@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import "../../index.css";
 import { CardEvents } from "../UI/CardEvents.jsx";
 import { EventsFilters } from "./EventsFilters.jsx";
 import { EmptyState } from "../UI/EmptyState.jsx";
+import { Loading } from "../UI/Loading.jsx";
 import { CalendarOff } from "lucide-react";
 import { useFetchActivities } from "../hooks/useFetchActivities.js";
+import "../../index.css";
 
 export function MyEvents() {
   const { data, isLoading, error } = useFetchActivities();
@@ -23,7 +24,7 @@ export function MyEvents() {
         key={item.title}
         title={item.name}
         percent={item.percent}
-        description={truncate(item.description, 50)}
+        description={truncate(item.description, 62)}
         date={item.date}
         hour={item.hour}
         image={item.image}
@@ -41,11 +42,7 @@ export function MyEvents() {
   return (
     <>
       <h1 className="dark:text-white">My Events</h1>
-      {isLoading ? (
-        <p>Loading...</p>
-      ) : error ? (
-        <p>Error loading events</p>
-      ) : data.length === 0 ? (
+      {isLoading ? ( <Loading /> ) : error ? (<span className="text-clr-blue dark:text-clr-white">Error loading events</span>) : data.length === 0 ? (
         <EmptyState
           icon={CalendarOff}
           title="No events on the horizon!"
