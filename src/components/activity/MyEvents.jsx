@@ -54,7 +54,7 @@ export function MyEvents() {
       ) : (
         <>
           <EventsFilters setSearch={setSearch} />
-          <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[52rem] xl:max-h-[55rem] overflow-y-scroll no-scrollbar">
+          <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[50rem] overflow-y-scroll no-scrollbar">
             {createCardsActivities(filteredData)}
           </div>
         </>
