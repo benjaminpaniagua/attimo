@@ -6,7 +6,8 @@ import { Loading } from "../UI/Loading.jsx";
 import { useFetchCourses } from "../hooks/useFetchCourses";
 
 export function MyCourses({ name }) {
-  const { data, isLoading, error } = useFetchCourses();
+
+  const { data, isLoading, error } = useFetchCourses(1); // User id
 
   const truncate = (text, maxLength) => {
     //check if the text length is less than or equal to the maximum allowed limit

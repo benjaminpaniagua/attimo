@@ -8,7 +8,7 @@ import { useFetchActivities } from "../hooks/useFetchActivities.js";
 import "../../index.css";
 
 export function MyEvents() {
-  const { data, isLoading, error } = useFetchActivities();
+  const { data, isLoading, error } = useFetchActivities(1); // User id
   const [search, setSearch] = useState("");
 
   const truncate = (text, maxLength) => {
@@ -21,12 +21,12 @@ export function MyEvents() {
   const createCardsActivities = (data) => {
     return data.map((item) => (
       <CardEvents
-        key={item.title}
+        id={item.id}
         title={item.name}
         percent={item.percent}
         description={truncate(item.description, 62)}
         date={item.date}
-        hour={item.hour}
+        hour={item.time}
         image={item.image}
         category={item.category}
         label={item.label}
@@ -35,14 +35,20 @@ export function MyEvents() {
     ));
   };
 
-  const filteredData = data.filter(item => 
+  const filteredData = data.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
 
   return (
     <>
       <h1 className="dark:text-white">My Events</h1>
-      {isLoading ? ( <Loading /> ) : error ? (<span className="text-clr-blue dark:text-clr-white">Error loading events</span>) : data.length === 0 ? (
+      {isLoading ? (
+        <Loading />
+      ) : error ? (
+        <span className="text-clr-blue dark:text-clr-white">
+          Error loading events
+        </span>
+      ) : data.length === 0 ? (
         <EmptyState
           icon={CalendarOff}
           title="No events on the horizon!"

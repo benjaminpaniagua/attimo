@@ -4,7 +4,7 @@ export function InfoCourse({title, image, acronyms, teacher, email, consultation
   return (
     <section className="grid gap-4">
       <h1 className="dark:text-clr-white">{title}</h1>
-      <div className="bg-fit rounded-md overflow-hidden h-72">
+      <div className="bg-fit rounded-md overflow-hidden h-80">
           <img className="w-full h-full object-cover" src={`${image}`} alt={title} />
         </div>
 

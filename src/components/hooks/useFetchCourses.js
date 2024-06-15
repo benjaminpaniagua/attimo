@@ -1,27 +1,28 @@
 import { useEffect, useState } from "react";
 
-export const useFetchCourses = () => {
+export const useFetchCourses = (id) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [error, setError] = useState(null); 
 
     const getData = async () => {
         try {
-            const response = await fetch("http://attimobackend.test/api/groups/all");
-            const data = await response.json();
-            setData(data);
-            setIsLoading(false);
+        const response = await fetch(`http://attimobackend.test/api/groups/user/` + id);
+        if (!response.ok) {
+            throw new Error("Network response was not ok");
+        }
+        const data = await response.json();
+        setData(data);
         } catch (error) {
-            console.log(error);
-            setIsLoading(false);
+        setError(error.message);
+        } finally {
+        setIsLoading(false);
         }
     };
 
     useEffect(() => {
         getData();
-    }, []);
+    }, [id]);
 
-    return {
-        data,
-        isLoading,
-    };
+    return { data, isLoading, error };
 };

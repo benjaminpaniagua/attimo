@@ -89,7 +89,7 @@ export const courses = [
 ];
 
 export function HomePage({ name }) {
-  const { data: activities, isLoading } = useFetchActivities();
+  const { data: activities, isLoading } = useFetchActivities(1);
 
   return (
     <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">

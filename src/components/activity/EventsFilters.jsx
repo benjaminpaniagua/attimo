@@ -7,8 +7,16 @@ import { useFetchCategories } from "../hooks/useFetchCategories.js";
 import PropTypes from "prop-types";
 
 export function EventsFilters({ setSearch }) {
-  const { data: categories } = useFetchCategories();
-  const { data: courses } = useFetchCourses();
+  const { data: categories, isLoading: isLoadingCategories, error: errorCategories } = useFetchCategories();
+  const { data: courses, isLoading: isLoadingCourses, error: errorCourses } = useFetchCourses(1);
+
+  if (isLoadingCategories || isLoadingCourses) {
+    return <div>Loading...</div>;
+  }
+
+  if (errorCategories || errorCourses) {
+    return <div>Error loading filters</div>;
+  }
 
   return (
     <div className="flex md:flex-col justify-between gap-4 my-4 w-full">
