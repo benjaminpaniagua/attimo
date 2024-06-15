@@ -2,7 +2,8 @@ import { MyCourses } from "../components/activity/MyCourses.jsx";
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import myImage from "../assets/imgs/image_card.png";
 import Calendar from "../components/UI/Calendar.jsx";
-import {events} from "./Events.jsx";
+import { Loading } from "../components/UI/Loading.jsx";
+import { useFetchActivities } from "../components/hooks/useFetchActivities.js";
 
 export const courses = [
   {
@@ -87,7 +88,9 @@ export const courses = [
   },
 ];
 
-export function HomePage({name}) {
+export function HomePage({ name }) {
+  const { data: activities, isLoading } = useFetchActivities();
+
   return (
     <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
       <section className="w-[70%] px-2 my-2 lg:w-full lg:px-4 tablet:w-[60%]">
@@ -97,7 +100,15 @@ export function HomePage({name}) {
         <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
           <Calendar />
         </div>
-        <UpcomingEvents items={events} />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          activities ? (
+            <UpcomingEvents activities={activities} />
+          ) : (
+            <span>No activities available</span>
+          )
+        )}
       </section>
     </main>
   );

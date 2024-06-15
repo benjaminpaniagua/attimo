@@ -1,22 +1,24 @@
 import { UpcomingEvents } from "../components/activity/UpcomingEvents.jsx";
 import Calendar from "../components/UI/Calendar.jsx";
-import { events } from "./Events.jsx";
 import { useFetchCourse } from "../components/hooks/useFetchCourse.js";
 import { Loading } from "../components/UI/Loading.jsx";
 import { useLocation } from "react-router-dom";
 import { InfoCourse } from "../components/UI/InfoCourse.jsx";
+import { useFetchGroupActivities } from "../components/hooks/useFetchGroupActivities.js";
 
 export function CourseDetails() {
   const location = useLocation();
   const courseId = location.state;
   const { data, isLoading } = useFetchCourse(location.state);
 
-  const showCourseDetails = (course) => {
+  const { data: groupActivities, isLoading: groupLoading } = useFetchGroupActivities({ id: courseId });
+
+  const showCourseDetails = course => {
     return (
       <>
         <div className="flex justify-between items-center md:flex-wrap ">
           <InfoCourse
-            title={course[0].name + " - " + (course[0].number <=9 ? "0" : "") + course[0].number}
+            title={course[0].name + " - " + (course[0].number <= 9 ? "0" : "") + course[0].number}
             image={course[0].image}
             acronyms={course[0].acronym}
             teacher={course[0].teacher_name + " " + course[0].teacher_lastname1 + " " + course[0].teacher_lastname2}
@@ -39,7 +41,11 @@ export function CourseDetails() {
           <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
             <Calendar />
           </div>
-          <UpcomingEvents items={events} />
+          {groupLoading ? (
+            <Loading />
+          ) : (
+            <UpcomingEvents activities={groupActivities} />
+          )}
         </section>
       </main>
     </>
