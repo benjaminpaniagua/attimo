@@ -1,17 +1,14 @@
 import React from "react";
 import "../../index.css";
 import { FilterSelect } from "../UI/FilterSelect.jsx";
-import { courses } from "../../pages/HomePage.jsx";
 import { InputSearch } from "../UI/InputSearch.jsx";
+import { useFetchCourses } from "../hooks/useFetchCourses.js";
+import { useFetchCategories } from "../hooks/useFetchCategories.js";
 import PropTypes from "prop-types";
 
 export function EventsFilters({ setSearch }) {
-  const categories = [
-    { id: 1, title: "University" },
-    { id: 2, title: "Course" },
-    { id: 3, title: "Students" },
-    { id: 4, title: "Major" },
-  ];
+  const { data: categories } = useFetchCategories();
+  const { data: courses } = useFetchCourses();
 
   return (
     <div className="flex md:flex-col justify-between gap-4 my-4 w-full">
