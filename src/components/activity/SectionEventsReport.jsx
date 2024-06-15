@@ -1,8 +1,5 @@
 import { FilterSelect } from "../UI/FilterSelect.jsx";
 import DonutChar from "../UI/DonutChar.jsx";
-import tailwindColors from '../../../tailwind.config.js';
-import { courses } from '../../pages/HomePage.jsx';
-import { events } from '../../pages/Events.jsx';
 import { useEventsReport } from "../hooks/useEventsReport.js";
 import React from "react";
 

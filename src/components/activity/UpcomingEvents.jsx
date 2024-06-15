@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 import { EventSummary } from "../UI/EventSummary";
 import { Smile } from "lucide-react";
 import { EmptyState } from "../UI/EmptyState.jsx";
+import { useFetchActivities } from "../hooks/useFetchActivities.js";
 
-export function UpcomingEvents({ items }) {
+export function UpcomingEvents() {
+
+  const { data: activities } = useFetchActivities();
+  const activeActivities = activities.filter(activity => activity.status === "Active").slice(0, 4);
+
   return (
     <div className="mt-2 px-6 grid">
       <section className="flex items-center justify-between">
@@ -12,22 +17,22 @@ export function UpcomingEvents({ items }) {
         <Link to="/attimo/events"><p className="duration-300 cursor-pointer hover:text-clr-blue dark:text-clr-light-gray dark:hover:text-white">View all</p></Link>
       </section>
       
-      {items.length === 0 ? (
+      {activeActivities.length === 0 ? (
         <EmptyState 
           icon={Smile} 
-          title="No events" 
-          message="You have not events yet!" 
+          title="No activities" 
+          message="You have not activities yet!" 
         />
       ) : (
         <div className="grid gap-2 w-full">
-          {items.slice(0, 4).map((item) => (
+          {activeActivities.slice(0, 4).map((activity) => (
             <EventSummary
-              key={item.id}
-              title={item.title}
-              date={item.date}
-              hour={item.hour}
-              image={item.image}
-              percent={item.percent}
+              key={activity.id}
+              title={activity.name}
+              date={activity.date}
+              hour={activity.time}
+              image={activity.image}
+              percent={activity.percent}
             />
           ))}
         </div>
