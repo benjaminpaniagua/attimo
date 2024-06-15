@@ -7,9 +7,31 @@ import useNavigation from "../hooks/useNavigation.js";
 
 export function SignUpForm() {
     const handleSubmit = useNavigation("/Questions");
-    
+
+    const handleFormSubmit = (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        const fullname = formData.get("fullname");
+        const fullnameParts = fullname.split(" ");
+
+        // Verify that the fullname has at least 3 words
+        if (fullnameParts.length >= 3) {
+            formData.set("name", fullnameParts[0]);
+            formData.set("lastname1", fullnameParts[1]);
+            formData.set("lastname2", fullnameParts[2]);
+        } else {
+            // If the fullname is not valid, log an error and return
+            console.error("Fullname must consist of at least 3 words.");
+            return; // Not sent the form until the fullname is valid
+        }
+
+        // Call the handleSubmit function from useNavigation
+        handleSubmit(event, formData);
+    };
+
     return (
-        <form action="" autoComplete="off" onSubmit={handleSubmit} className="sign-up-form forms-authentification px-10 py-0 w-full h-full flex flex-col justify-center gap-8 col-[1_/_2] row-[1_/_2] transition-opacity duration-[0.02s] delay-[0.3s] mx-auto my-0 opacity-0 pointer-events-none">
+        <form action="http://attimobackend.test/api/user/add" method="post" autoComplete="off" onSubmit={handleFormSubmit} className="sign-up-form forms-authentification px-10 py-0 w-full h-full flex flex-col justify-center gap-8 col-[1_/_2] row-[1_/_2] transition-opacity duration-[0.02s] delay-[0.3s] mx-auto my-0 opacity-0 pointer-events-none">
             <FormHeading title="Get Started" subHeading="Already have an account?" linkText="Sign In" />
             <div>
                 <SignInputs type="text" name="fullname" isFullname={true} />
@@ -17,6 +39,10 @@ export function SignUpForm() {
                 <SignInputs type="email" name="email" />
                 <SignInputs type="password" name="password" />
             </div>
+            <input type="hidden" name="users_types_id" value={1} />
+            <input type="hidden" name="name" value="" />
+            <input type="hidden" name="lastname1" value="" />
+            <input type="hidden" name="lastname2" value="" />
             <SubmitButton value="Sign Up" subHeading="By signing up, I agree to the " linkText="Terms of services" />
         </form>
     );
