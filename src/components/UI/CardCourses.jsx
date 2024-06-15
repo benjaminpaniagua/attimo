@@ -2,12 +2,12 @@ import '../../index.css'
 import PropTypes from 'prop-types';
 import defaultImage from '../../assets/imgs/image_card.png';
 import LinearWithValueLabel from './ProgressBar'; 
+import { NavLink } from "react-router-dom";
 
-export function CardCourses({title, description, image, progress}) {
+export function CardCourses({id, title, description, image, progress}) {
     return(
-        <div className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden dark:hover:brightness-125 hover:brightness-[.80] transition duration-300 cursor-pointer">
+        <NavLink to="/attimo/courseDetails" state={id} className="bg-white dark:bg-clr-dark-third rounded-lg overflow-hidden dark:hover:brightness-125 hover:brightness-[.80] transition duration-300 cursor-pointer">
             <div className='h-40 overflow-hidden'><img className="w-full bg-cover" src={image} alt={`${title} image`} /></div>
-            
             <section className="mt-2 p-5">
                 <h3 className='dark:text-white'>{title}</h3>
                 <p className="my-3 dark:text-clr-light-gray">{description}</p>
@@ -19,7 +19,7 @@ export function CardCourses({title, description, image, progress}) {
                     <LinearWithValueLabel value={progress} />
                 </div>
             </section>
-        </div>
+        </NavLink>
     );
 }
 

@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 import defaultImage from "../../assets/imgs/image_card.png";
-export function InfoCourse({title, image, acronyms, teacher, email, date, hour, description}) {
+export function InfoCourse({title, image, acronyms, teacher, email, consultations, description}) {
   return (
     <section className="grid gap-4">
       <h1 className="dark:text-clr-white">{title}</h1>
@@ -27,7 +27,7 @@ export function InfoCourse({title, image, acronyms, teacher, email, date, hour, 
         <section>
           <h3 className="dark:text-clr-white">Office and consultation hours for students</h3>
           <p className="dark:text-clr-light-gray">
-            {date}, {hour}
+            {consultations}
           </p>
         </section>
 

@@ -18,7 +18,7 @@ export function MyCourses({ name }) {
   const createCards = (data) => {
     return data.map((item) => (
       <CardCourses
-        key={item.id}
+        id={item.id}
         title={item.name}
         description={truncate(item.description, 100)}
         date={item.date}

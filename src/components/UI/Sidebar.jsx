@@ -14,9 +14,8 @@ const SidebarContext = createContext();
 export default function Sidebar({ children, image, username, email, items }) {
   const [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const { theme, handleChangeTheme } = useDarkMode();
-  const [notificationsModalIsOpen, setNotificationsModalIsOpen] =
-    useState(false);
+  const {theme, handleChangeTheme} = useDarkMode();
+  const [notificationsModalIsOpen, setNotificationsModalIsOpen] = useState(false);
   const [notifications, setNotifications] = useState([
     {
       id: 1,
@@ -142,17 +141,27 @@ export default function Sidebar({ children, image, username, email, items }) {
 
           <SidebarContext.Provider value={{ expanded }}>
             <ul className="flex flex-col gap-4 m-auto px-3">
-              <SidebarItem icon={<Home size={20} />} text="Home" to="/attimo/home" />
+              <SidebarItem
+              icon={<Home size={20} />}
+              text="Home"
+              to="/attimo/home"
+              onClick={() => {setExpanded(false);}}
+              />
+
               <SidebarItem
                 icon={<LayoutDashboard size={20} />}
                 text="Events"
                 to="/attimo/events"
+                onClick={() => {setExpanded(false);}}
               />
+
               <SidebarItem
                 icon={<BarChart size={20} />}
                 text="Statistics"
                 to="/attimo/statistics"
+                onClick={() => {setExpanded(false);}}
               />
+
               <SidebarItem
                 icon={<Bell size={20} />}
                 text="Notifications"
@@ -161,16 +170,19 @@ export default function Sidebar({ children, image, username, email, items }) {
                   setExpanded(false);
                 }}
               />
+
               <SidebarItem
                 icon={theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
                 text={theme === "dark" ? "Light Mode" : "Dark Mode"}
                 onClick={handleChangeTheme}
               />
+              
               <hr className="my-3" />
               <SidebarItem
                 icon={<LogOut size={20} />}
                 text="Log Out"
                 to="/login"
+                onClick={() => {setExpanded(false);}}
               />
             </ul>
           </SidebarContext.Provider>
