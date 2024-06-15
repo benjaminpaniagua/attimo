@@ -9,11 +9,11 @@ import React from "react";
 export const select = [
   {
     id: 1,
-    title: "This Week",
+    name: "This Week",
   },
   {
     id: 2,
-    title: "Today",
+    name: "Today",
   }
 ];
 
