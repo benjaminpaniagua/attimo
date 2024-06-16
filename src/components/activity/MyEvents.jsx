@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CardEvents } from "../UI/CardEvents.jsx";
 import { EventsFilters } from "./EventsFilters.jsx";
 import { EmptyState } from "../UI/EmptyState.jsx";
@@ -10,11 +10,10 @@ import "../../index.css";
 export function MyEvents() {
   const { data, isLoading, error } = useFetchActivities(1); // User id
   const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const truncate = (text, maxLength) => {
-    // Check if the length of the text is less than or equal to the maximum length allowed
     if (text.length <= maxLength) return text;
-    // If the text exceeds the maximum length, the text is cut off and "..." is added
     return text.substring(0, maxLength) + "...";
   };
 
@@ -35,9 +34,11 @@ export function MyEvents() {
     ));
   };
 
-  const filteredData = data.filter((item) =>
-    item.name.toLowerCase().includes(search.toLowerCase())
-  );
+  const filteredData = data.filter((item) => {
+    const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <>
@@ -56,7 +57,7 @@ export function MyEvents() {
         />
       ) : (
         <>
-          <EventsFilters setSearch={setSearch} />
+          <EventsFilters setSearch={setSearch} setSelectedCategory={setSelectedCategory} />
           <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[50rem] overflow-y-scroll no-scrollbar">
             {createCardsActivities(filteredData)}
           </div>

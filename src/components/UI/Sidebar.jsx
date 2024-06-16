@@ -187,7 +187,7 @@ export default function Sidebar({ children, image, username, email, items }) {
             </ul>
           </SidebarContext.Provider>
 
-          <div className="border-t flex p-3">
+          <div className="border-t flex p-3 justify-center">
             <div className="w-10 h-10 rounded-md overflow-hidden">
               <img src={image} className="w-full h-full" alt="Profile" />
             </div>
