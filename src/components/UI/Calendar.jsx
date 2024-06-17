@@ -9,32 +9,13 @@ import { DateCalendar } from '@mui/x-date-pickers/DateCalendar';
 import { DayCalendarSkeleton } from '@mui/x-date-pickers/DayCalendarSkeleton';
 import './calendar.css';
 
-function getRandomNumber(min, max) {
-  return Math.round(Math.random() * (max - min) + min);
-}
-
-function fakeFetch(date, { signal }) {
-  return new Promise((resolve, reject) => {
-    const timeout = setTimeout(() => {
-      const daysInMonth = date.daysInMonth();
-      const daysToHighlight = [1, 2, 3].map(() => getRandomNumber(1, daysInMonth));
-      resolve({ daysToHighlight });
-    }, 500);
-
-    signal.onabort = () => {
-      clearTimeout(timeout);
-      reject(new DOMException('aborted', 'AbortError'));
-    };
-  });
-}
-
-const initialValue = dayjs('2024-04-29');
+const initialValue = dayjs();
 
 function ServerDay(props) {
   const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
 
   const isSelected =
-    !props.outsideCurrentMonth && highlightedDays.indexOf(props.day.date()) >= 0;
+    !props.outsideCurrentMonth && highlightedDays.some(highlightedDay => day.isSame(highlightedDay, 'day'));
 
   return (
     <Badge
@@ -54,58 +35,48 @@ ServerDay.propTypes = {
 };
 
 export default function DateCalendarServerRequest() {
-  const requestAbortController = React.useRef(null);
+  const [highlightedDays, setHighlightedDays] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [highlightedDays, setHighlightedDays] = React.useState([1, 2, 15]);
 
-  const fetchHighlightedDays = (date) => {
-    const controller = new AbortController();
-    fakeFetch(date, {
-      signal: controller.signal,
-    })
-      .then(({ daysToHighlight }) => {
-        setHighlightedDays(daysToHighlight);
-        setIsLoading(false);
-      })
-      .catch((error) => {
-        if (error.name !== 'AbortError') {
-          throw error;
-        }
-      });
-
-    requestAbortController.current = controller;
+  const fetchHighlightedDays = async () => {
+    setIsLoading(true);
+    try {
+      const response = await fetch('http://localhost:8000/api/activities/highlighted');
+      const data = await response.json();
+      setHighlightedDays(data.map(date => dayjs(date)));
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching highlighted days:', error);
+      setIsLoading(false);
+    }
   };
 
   React.useEffect(() => {
-    fetchHighlightedDays(initialValue);
-    return () => requestAbortController.current?.abort();
+    fetchHighlightedDays();
   }, []);
 
   const handleMonthChange = (date) => {
-    if (requestAbortController.current) {
-      requestAbortController.current.abort();
-    }
-    setIsLoading(true);
-    setHighlightedDays([]);
-    fetchHighlightedDays(date);
+    //  actualizar las fechas destacadas al cambiar el mes
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      <DateCalendar
-        defaultValue={initialValue}
-        loading={isLoading}
-        onMonthChange={handleMonthChange}
-        renderLoading={() => <DayCalendarSkeleton />}
-        slots={{
-          day: ServerDay,
-        }}
-        slotProps={{
-          day: {
-            highlightedDays,
-          },
-        }}
-      />
+      
+        <DateCalendar
+          defaultValue={initialValue}
+          loading={isLoading}
+          onMonthChange={handleMonthChange}
+          renderLoading={() => <DayCalendarSkeleton />}
+          slots={{
+            day: ServerDay,
+          }}
+          slotProps={{
+            day: {
+              highlightedDays,
+            },
+          }}
+        />
+     
     </LocalizationProvider>
   );
 }
