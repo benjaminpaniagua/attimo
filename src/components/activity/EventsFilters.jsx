@@ -1,13 +1,22 @@
+import React, { useState } from "react";
 import "../../index.css";
-import { FilterSelect } from "../UI/FilterSelect.jsx";
 import { InputSearch } from "../UI/InputSearch.jsx";
 import { useFetchCourses } from "../hooks/useFetchCourses.js";
 import { useFetchCategories } from "../hooks/useFetchCategories.js";
 import PropTypes from "prop-types";
+import MultipleSelectCheckmarks from "../UI/MultipleSelectCheckmarks.jsx";
 
-export function EventsFilters({ setSearch, setSelectedCategory }) {
+export function EventsFilters({
+  setSearch,
+  selectedCategories,
+  setSelectedCategories,
+  selectedCourses,
+  setSelectedCourses,
+}) {
   const { data: categories, isLoading: isLoadingCategories, error: errorCategories } = useFetchCategories();
-  const { data: courses, isLoading: isLoadingCourses, error: errorCourses } = useFetchCourses(1);
+  const { data: courses, isLoading: isLoadingCourses, error: errorCourses } = useFetchCourses(1); // User ID
+
+  const selectedCategory = selectedCategories.includes("Course") ? "Course" : "";
 
   if (isLoadingCategories || isLoadingCourses) {
     return <div>Loading...</div>;
@@ -17,8 +26,15 @@ export function EventsFilters({ setSearch, setSelectedCategory }) {
     return <div>Error loading filters</div>;
   }
 
-  const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
+  const handleCategoryChange = (event) => {
+    const { target: { value } } = event;
+    setSelectedCategories(typeof value === 'string' ? value.split(',') : value);
+    setSelectedCourses([]); // Clear selected courses on category change
+  };
+
+  const handleCourseChange = (event) => {
+    const { target: { value } } = event;
+    setSelectedCourses(typeof value === 'string' ? value.split(',') : value);
   };
 
   return (
@@ -26,8 +42,22 @@ export function EventsFilters({ setSearch, setSelectedCategory }) {
       <InputSearch placeholder="Search an event" setSearch={setSearch} />
       <div className="flex gap-4 items-center">
         <p className="dark:text-clr-light-gray lg:hidden">Sort by:</p>
-        <FilterSelect items={categories} responsive={true} onChange={handleCategoryChange} />
-        <FilterSelect items={courses} responsive={true} />
+        <MultipleSelectCheckmarks
+          items={categories}
+          selectedItems={selectedCategories}
+          handleChange={handleCategoryChange}
+          label="Categories"
+          width={200} // Adjust width here
+        />
+        {selectedCategory === "Course" && (
+          <MultipleSelectCheckmarks
+            items={courses}
+            selectedItems={selectedCourses}
+            handleChange={handleCourseChange}
+            label="Courses"
+            width={200} // Adjust width here
+          />
+        )}
       </div>
     </div>
   );
@@ -35,5 +65,8 @@ export function EventsFilters({ setSearch, setSelectedCategory }) {
 
 EventsFilters.propTypes = {
   setSearch: PropTypes.func.isRequired,
-  setSelectedCategory: PropTypes.func.isRequired,
+  selectedCategories: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setSelectedCategories: PropTypes.func.isRequired,
+  selectedCourses: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setSelectedCourses: PropTypes.func.isRequired,
 };

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { CardEvents } from "../UI/CardEvents.jsx";
 import { EventsFilters } from "./EventsFilters.jsx";
 import { EmptyState } from "../UI/EmptyState.jsx";
@@ -10,7 +10,8 @@ import "../../index.css";
 export function MyEvents() {
   const { data, isLoading, error } = useFetchActivities(1); // User id
   const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategories, setSelectedCategories] = useState([]);
+  const [selectedCourses, setSelectedCourses] = useState([]);
 
   const truncate = (text, maxLength) => {
     if (text.length <= maxLength) return text;
@@ -36,8 +37,9 @@ export function MyEvents() {
 
   const filteredData = data.filter((item) => {
     const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
-    const matchesCategory = selectedCategory === "All" || item.category === selectedCategory;
-    return matchesSearch && matchesCategory;
+    const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(item.category);
+    const matchesCourse = selectedCourses.length === 0 || selectedCourses.includes(item.course);
+    return matchesSearch && matchesCategory && matchesCourse;
   });
 
   return (
@@ -57,7 +59,13 @@ export function MyEvents() {
         />
       ) : (
         <>
-          <EventsFilters setSearch={setSearch} setSelectedCategory={setSelectedCategory} />
+          <EventsFilters 
+            setSearch={setSearch} 
+            selectedCategories={selectedCategories} 
+            setSelectedCategories={setSelectedCategories} 
+            selectedCourses={selectedCourses} 
+            setSelectedCourses={setSelectedCourses} 
+          />
           <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[50rem] overflow-y-scroll no-scrollbar">
             {createCardsActivities(filteredData)}
           </div>
