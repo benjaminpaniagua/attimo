@@ -94,7 +94,7 @@ export function HomePage({ name }) {
   return (
     <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
       <section className="w-[70%] px-2 my-2 lg:w-full lg:px-4 tablet:w-[60%]">
-        <MyCourses className="w-full" items={courses} name={name} />
+        <MyCourses className="w-full" items={courses} />
       </section>
       <section className="bg-clr-light-secondary-bg dark:bg-clr-light-gray/10 m-auto h-full pt-4 w-[30%] lg:w-full tablet:w-[40%]">
         <div className="w-fit m-auto rounded-lg dark:bg-clr-light-secondary-bg/55">
@@ -106,7 +106,7 @@ export function HomePage({ name }) {
           activities ? (
             <UpcomingEvents activities={activities} />
           ) : (
-            <span>No activities available</span>
+            <span>No activities availables</span>
           )
         )}
       </section>

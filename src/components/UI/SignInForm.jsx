@@ -6,16 +6,15 @@ import { SignInputs } from "../UI/SignInputs.jsx";
 import { SubmitButton } from "../UI/SubmitButton.jsx";
 
 export function SignInForm() {
-    const navigate = useNavigate(); 
-    const [errors, setErrors] = useState({}); 
-    const [loading, setLoading] = useState(false); 
+    const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (event) => {
-        event.preventDefault(); // Prevent default form submission behavior
-        setLoading(true); // Set loading to true when form is submitted
-        setErrors({}); // Reset errors on new submission
+        event.preventDefault();
+        setLoading(true);
+        setErrors({});
 
-        // Extract form data
         const formData = new FormData(event.target);
         const data = {
             username: formData.get("username"),
@@ -23,7 +22,6 @@ export function SignInForm() {
         };
 
         try {
-            // Attempt to send data to backend for authentication
             const response = await fetch("http://attimobackend.test/api/user/login", {
                 method: "POST",
                 headers: {
@@ -33,21 +31,19 @@ export function SignInForm() {
             });
 
             if (response.ok) {
-                // If login is successful, navigate to home page
                 const result = await response.json();
+                localStorage.setItem('user', JSON.stringify(result.user)); // Guarda los datos del usuario en localStorage
                 navigate("/attimo/home");
             } else {
-                // Handle server-side validation errors
                 const errorData = await response.json();
                 setErrors({ form: errorData.message });
-                console.error('Error response:', errorData); 
+                console.error('Error response:', errorData);
             }
         } catch (error) {
-            // Handle network or other errors
             setErrors({ form: "An error occurred during login." });
-            console.error('Fetch error:', error); 
+            console.error('Fetch error:', error);
         } finally {
-            setLoading(false); // Reset loading state regardless of outcome
+            setLoading(false);
         }
     };
 

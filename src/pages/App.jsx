@@ -28,14 +28,14 @@ export function App() {
     return (    
         <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full">
             <aside className="w-16">
-                <Sidebar username={profileInfo[0].usr} email={profileInfo[0].mail} image={profileInfo[0].img} items={profileInfo}></Sidebar>
+                <Sidebar items={profileInfo}></Sidebar>
             </aside>
             <Routes>
-                <Route path="/home" element={<HomePage name={profileInfo[0].name} />} />
+                <Route path="/home" element={<HomePage />} />
                 <Route path="/events" element={<Events />} />
                 <Route path="/statistics" element={<Statistics />} />
                 <Route path="/courseDetails" element={<CourseDetails />} />
-                <Route path="/*" element={<HomePage name={profileInfo[0].name} />} />
+                <Route path="/*" element={<HomePage />} />
             </Routes>
         </div>
     );

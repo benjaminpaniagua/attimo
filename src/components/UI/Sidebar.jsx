@@ -12,6 +12,7 @@ import PropTypes from "prop-types";
 const SidebarContext = createContext();
 
 export default function Sidebar({ children, image, username, email, items }) {
+  const user = JSON.parse(localStorage.getItem('user'));
   const [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const {theme, handleChangeTheme} = useDarkMode();
@@ -189,7 +190,7 @@ export default function Sidebar({ children, image, username, email, items }) {
 
           <div className="border-t flex p-3 justify-center">
             <div className="w-10 h-10 rounded-md overflow-hidden">
-              <img src={image} className="w-full h-full" alt="Profile" />
+              <img src={user.image} className="w-full h-full" alt="Profile" />
             </div>
 
             <div
@@ -198,8 +199,8 @@ export default function Sidebar({ children, image, username, email, items }) {
               }`}
             >
               <div className="leading-4">
-                <h4 className="font-semibold">{username}</h4>
-                <span className="text-xs">{email}</span>
+                <h4 className="font-semibold">{user.username}</h4>
+                <span className="text-xs">{user.email}</span>
               </div>
               <MoreVertical
                 size={20}
@@ -215,7 +216,6 @@ export default function Sidebar({ children, image, username, email, items }) {
       </aside>
 
       {/* Profile Modal */}
-
       <ProfileModal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)}>
         {items.map((item) => (
           <ProfileContent

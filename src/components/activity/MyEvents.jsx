@@ -8,7 +8,8 @@ import { useFetchActivities } from "../hooks/useFetchActivities.js";
 import "../../index.css";
 
 export function MyEvents() {
-  const { data, isLoading, error } = useFetchActivities(1); // User id
+  const user = JSON.parse(localStorage.getItem('user'));
+  const { data, isLoading, error } = useFetchActivities(user.id); // User id
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedCourses, setSelectedCourses] = useState([]);
