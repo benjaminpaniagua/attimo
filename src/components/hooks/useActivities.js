@@ -1,5 +1,4 @@
 // useActivities.js
-
 import { useState, useEffect } from 'react';
 
 const useActivities = (userId) => {
@@ -7,6 +6,8 @@ const useActivities = (userId) => {
   const [remainingTasks, setRemainingTasks] = useState(0);
 
   useEffect(() => {
+    if (!userId) return; // No intentar fetch si no hay userId
+
     const fetchActivities = async () => {
       try {
         const response = await fetch(`http://attimobackend.test/api/activities/user/${userId}`);
