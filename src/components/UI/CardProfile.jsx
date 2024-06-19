@@ -7,7 +7,9 @@ export function CardProfile({image, name, lastname1, lastname2, email, username}
     return(
         <div className='text-center'>
         <div className="grid gap-3">
-            <img src={image} className='w-48 mx-auto rounded-full' alt="profile photo" />
+            <div className="w-48 h-48 mx-auto rounded-full overflow-hidden">
+                <img src={image} className='object-cover w-full h-full' alt="profile photo" />
+            </div>
             <section className="mb-4">
                 <h3 className="dark:text-clr-white">{name} {lastname1} {lastname2}</h3>
                 <p className="dark:text-clr-white">{email}</p>

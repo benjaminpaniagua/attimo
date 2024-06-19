@@ -1,5 +1,16 @@
-import { ChevronFirst, ChevronLast, MoreVertical, LayoutDashboard, Home, Bell, BarChart, Sun, Moon, LogOut } from "lucide-react";
-import { createContext, useContext, useState } from "react";
+import {
+  ChevronFirst,
+  ChevronLast,
+  MoreVertical,
+  LayoutDashboard,
+  Home,
+  Bell,
+  BarChart,
+  Sun,
+  Moon,
+  LogOut,
+} from "lucide-react";
+import { createContext, useContext, useState} from "react";
 import { useDarkMode } from "../hooks/useDarkMode";
 import { Link } from "react-router-dom";
 import { ProfileContent } from "../activity/ProfileContent";
@@ -11,11 +22,12 @@ import PropTypes from "prop-types";
 
 const SidebarContext = createContext();
 
-export default function Sidebar({ children, image, username, email, items }) {
-  const user = JSON.parse(localStorage.getItem('user'));
+export default function Sidebar({ children}) {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   const [expanded, setExpanded] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const {theme, handleChangeTheme} = useDarkMode();
+  const { theme, handleChangeTheme } = useDarkMode();
   const [notificationsModalIsOpen, setNotificationsModalIsOpen] = useState(false);
   const [notifications, setNotifications] = useState([
     {
@@ -118,7 +130,7 @@ export default function Sidebar({ children, image, username, email, items }) {
         <nav className="h-full flex flex-col bg-clr-blue dark:bg-clr-dark-blue">
           <div className="p-4 flex justify-between items-center">
             <img
-              alt={`${username} photo`}
+              alt="logo"
               src={logo}
               className={`overflow-hidden object-cover transition-all ${
                 expanded ? "w-32" : "w-0"
@@ -143,24 +155,30 @@ export default function Sidebar({ children, image, username, email, items }) {
           <SidebarContext.Provider value={{ expanded }}>
             <ul className="flex flex-col gap-4 m-auto px-3">
               <SidebarItem
-              icon={<Home size={20} />}
-              text="Home"
-              to="/attimo/home"
-              onClick={() => {setExpanded(false);}}
+                icon={<Home size={20} />}
+                text="Home"
+                to="/attimo/home"
+                onClick={() => {
+                  setExpanded(false);
+                }}
               />
 
               <SidebarItem
                 icon={<LayoutDashboard size={20} />}
                 text="Events"
                 to="/attimo/events"
-                onClick={() => {setExpanded(false);}}
+                onClick={() => {
+                  setExpanded(false);
+                }}
               />
 
               <SidebarItem
                 icon={<BarChart size={20} />}
                 text="Statistics"
                 to="/attimo/statistics"
-                onClick={() => {setExpanded(false);}}
+                onClick={() => {
+                  setExpanded(false);
+                }}
               />
 
               <SidebarItem
@@ -177,13 +195,16 @@ export default function Sidebar({ children, image, username, email, items }) {
                 text={theme === "dark" ? "Light Mode" : "Dark Mode"}
                 onClick={handleChangeTheme}
               />
-              
+
               <hr className="my-3" />
               <SidebarItem
                 icon={<LogOut size={20} />}
                 text="Log Out"
                 to="/login"
-                onClick={() => {setExpanded(false);}}
+                onClick={() => {
+                  setExpanded(false);
+                  localStorage.removeItem("user");
+                }}
               />
             </ul>
           </SidebarContext.Provider>
@@ -192,7 +213,6 @@ export default function Sidebar({ children, image, username, email, items }) {
             <div className="w-10 h-10 rounded-md overflow-hidden">
               <img src={user.image} className="w-full h-full" alt="Profile" />
             </div>
-
             <div
               className={`flex justify-between items-center overflow-hidden transition-all ${
                 expanded ? "w-52 ml-3" : "w-0"

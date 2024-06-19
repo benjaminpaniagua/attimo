@@ -4,11 +4,14 @@ import { FormHeading } from "../UI/FormHeading.jsx";
 import { SignInputs } from "../UI/SignInputs.jsx";
 import { SubmitButton } from "../UI/SubmitButton.jsx";
 import useNavigation from "../hooks/useNavigation.js";
+import { useNavigate } from "react-router-dom";
 
 export function SignUpForm() {
     const handleSubmit = useNavigation("/Questions");
 
-    const handleFormSubmit = (event) => {
+    const navigate = useNavigate();
+
+    const handleFormSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
 
@@ -26,12 +29,30 @@ export function SignUpForm() {
             return; // Not sent the form until the fullname is valid
         }
 
-        // Call the handleSubmit function from useNavigation
-        handleSubmit(event, formData);
+        try {
+            const response = await fetch("http://attimobackend.test/api/user/add", {
+                method: "POST",
+                body: formData,
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log("User registered successfully:", result);
+
+                // Guardar el usuario en localStorage
+                localStorage.setItem("user", JSON.stringify(result.user));
+                // Llamar a la función de navegación
+                navigate("/Questions");
+            } else {
+                console.error("Failed to register user.");
+            }
+        } catch (error) {
+            console.error("Fetch error:", error);
+        }
     };
 
     return (
-        <form action="http://attimobackend.test/api/user/add" method="post" autoComplete="off" onSubmit={handleFormSubmit} className="sign-up-form forms-authentification px-10 py-0 w-full h-full flex flex-col justify-center gap-8 col-[1_/_2] row-[1_/_2] transition-opacity duration-[0.02s] delay-[0.3s] mx-auto my-0 opacity-0 pointer-events-none">
+        <form onSubmit={handleFormSubmit} className="sign-up-form forms-authentification px-10 py-0 w-full h-full flex flex-col justify-center gap-8 col-[1_/_2] row-[1_/_2] transition-opacity duration-[0.02s] delay-[0.3s] mx-auto my-0 opacity-0 pointer-events-none">
             <FormHeading title="Get Started" subHeading="Already have an account?" linkText="Sign In" />
             <div>
                 <SignInputs type="text" name="fullname" isFullname={true} />
