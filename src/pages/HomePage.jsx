@@ -88,8 +88,9 @@ export const courses = [
   },
 ];
 
-export function HomePage({ name }) {
-  const { data: activities, isLoading } = useFetchActivities(1);
+export function HomePage() {
+  const user = JSON.parse(localStorage.getItem('user'));
+  const { data: activities, isLoading } = useFetchActivities(user.id);
 
   return (
     <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">

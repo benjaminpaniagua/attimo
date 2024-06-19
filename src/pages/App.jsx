@@ -28,7 +28,7 @@ export function App() {
     return (    
         <div className="flex gap-4 bg-clr-light-bg dark:bg-clr-dark-bg w-full">
             <aside className="w-16">
-                <Sidebar items={profileInfo}></Sidebar>
+                <Sidebar></Sidebar>
             </aside>
             <Routes>
                 <Route path="/home" element={<HomePage />} />

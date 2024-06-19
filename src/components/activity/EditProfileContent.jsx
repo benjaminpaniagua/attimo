@@ -27,12 +27,12 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
                 <ChevronLeft className='w-10 text-clr-dark-gray dark:text-clr-light-gray' />
             </button>
             
-                <CardEditInfo title="Edit Profile" img={profileInfo.img} />
+                <CardEditInfo title="Edit Profile" img={profileInfo.image} />
             <div className='grid gap-3 mt-12'>
                 <SignInputs type="text" name="First Name" isActive={true} defaultValue={profileInfo.name}/>
-                <SignInputs type="text" name="Last Names" isActive={true} defaultValue={`${profileInfo.lastName1} ${profileInfo.lastName2}`}/>
-                <SignInputs type="text" name="Username" isActive={true} defaultValue={profileInfo.usr}/>
-                <SignInputs type="email" name="Email" isActive={true} defaultValue={profileInfo.mail}/>
+                <SignInputs type="text" name="Last Names" isActive={true} defaultValue={`${profileInfo.lastname1} ${profileInfo.lastname2}`}/>
+                <SignInputs type="text" name="Username" isActive={true} defaultValue={profileInfo.username}/>
+                <SignInputs type="email" name="Email" isActive={true} defaultValue={profileInfo.email}/>
             </div>
             <div className='justify-center flex'>
                 <ModalButtons onClick={handleClose} text="Update" />

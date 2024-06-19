@@ -217,20 +217,17 @@ export default function Sidebar({ children, image, username, email, items }) {
 
       {/* Profile Modal */}
       <ProfileModal isOpen={modalIsOpen} onClose={() => setModalIsOpen(false)}>
-        {items.map((item) => (
-          <ProfileContent
-            key={item.id}
-            img={item.img}
-            name={item.name}
-            lastName1={item.lastName1}
-            lastName2={item.lastName2}
-            mail={item.mail}
-            usr={item.usr}
-            taskCompleted={item.taskCompleted}
-            taskRemaining={item.taskRemaining}
-            courses={item.courses}
-          />
-        ))}
+        <ProfileContent
+          key={user.id}
+          image={user.image}
+          name={user.name}
+          lastname1={user.lastname1}
+          lastname2={user.lastname2}
+          email={user.email}
+          username={user.username}
+          taskCompleted={5}
+          taskRemaining={12}
+        />
       </ProfileModal>
 
       {/* Notifications Modal */}

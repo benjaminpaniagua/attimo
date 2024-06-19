@@ -1,35 +1,37 @@
 import "../../index.css";
+import defaultImage from '../../assets/imgs/image_card.png';
 import PropTypes from "prop-types";
 
-export function CardProfile({img, name, lastName1, lastName2, mail, usr}) {
+export function CardProfile({image, name, lastname1, lastname2, email, username}) {
 
     return(
         <div className='text-center'>
         <div className="grid gap-3">
-            <img src={img} className='w-48 mx-auto rounded-full' alt="profile photo" />
+            <img src={image} className='w-48 mx-auto rounded-full' alt="profile photo" />
             <section className="mb-4">
-                <h3 className="dark:text-clr-white">{name} {lastName1} {lastName2}</h3>
-                <p className="dark:text-clr-white">{mail}</p>
-                <p className="dark:text-clr-white">@{usr}</p>
+                <h3 className="dark:text-clr-white">{name} {lastname1} {lastname2}</h3>
+                <p className="dark:text-clr-white">{email}</p>
+                <p className="dark:text-clr-white">@{username}</p>
             </section>
         </div>       
     </div>
     )
 }
 
-
 CardProfile.propTypes = {
-   name : PropTypes.string.isRequired,
-   lastName1 : PropTypes.string.isRequired,
-   lastName2 : PropTypes.string.isRequired,
-   mail : PropTypes.string.isRequired,
-   usr : PropTypes.string.isRequired
-};
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    lastname1: PropTypes.string.isRequired,
+    lastname2: PropTypes.string.isRequired,
+    email: PropTypes.string.isRequired,
+    username: PropTypes.string.isRequired
+}
 
 CardProfile.defaultProps = {
-    name : "Juan",
-    lastName1 : "Solis",
-    lastName2 : "Benavides",
-    mail : "juanvasquez@gmailcom",
-    usr : "juanca78",
-};
+    image: defaultImage,
+    name: "Name",
+    lastname1: "Lastname1",
+    lastname2: "Lastname2",
+    email: "example@gmail.com",
+    username: "username"
+}

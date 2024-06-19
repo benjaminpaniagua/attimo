@@ -32,7 +32,7 @@ export function SignInForm() {
 
             if (response.ok) {
                 const result = await response.json();
-                localStorage.setItem('user', JSON.stringify(result.user)); // Guarda los datos del usuario en localStorage
+                localStorage.setItem('user', JSON.stringify(result.user)); // Save the user data in localStorage
                 navigate("/attimo/home");
             } else {
                 const errorData = await response.json();
