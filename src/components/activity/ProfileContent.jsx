@@ -3,14 +3,12 @@ import {CardTasks} from "../../components/UI/CardTasks"
 import { useEditProfile} from '../hooks/useModal';
 import { ModalButtons } from "../../components/UI/ModalButtons";
 import EditProfileModal from "./EditProfileContent";
-import PropTypes from "prop-types";
 
 export function ProfileContent(){
     const user = JSON.parse(localStorage.getItem("user"));
     const { editModalIsOpen,  closeEditModal, handleEditProfileClick } = useEditProfile();
 
     return (
-        <>
         <div>
             <CardProfile
                 image={user.image}
@@ -30,6 +28,5 @@ export function ProfileContent(){
             </div>
             <EditProfileModal isOpen={editModalIsOpen} onClose={closeEditModal}/>
         </div>
-        </>
     );
 }

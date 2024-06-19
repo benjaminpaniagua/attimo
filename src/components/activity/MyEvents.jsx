@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CardEvents } from "../UI/CardEvents.jsx";
 import { EventsFilters } from "./EventsFilters.jsx";
 import { EmptyState } from "../UI/EmptyState.jsx";

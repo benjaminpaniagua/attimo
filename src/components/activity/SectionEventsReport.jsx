@@ -1,7 +1,6 @@
 import { FilterSelect } from "../UI/FilterSelect.jsx";
 import DonutChar from "../UI/DonutChar.jsx";
 import { useEventsReport } from "../hooks/useEventsReport.js";
-import React from "react";
 
 export const select = [
   {

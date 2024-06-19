@@ -3,7 +3,6 @@ import { Reports } from "../components/activity/SectionEventsReport.jsx";
 import { Tasks } from "../components/activity/SectionTasks.jsx";
 import { Summary } from "../components/activity/SectionSummary.jsx";
 import defaultImg from "../assets/imgs/image_card.png";
-import { json } from "react-router-dom";
 
 export const events = [
   {

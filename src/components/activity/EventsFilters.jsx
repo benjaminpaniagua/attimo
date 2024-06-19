@@ -47,7 +47,7 @@ export function EventsFilters({
           selectedItems={selectedCategories}
           handleChange={handleCategoryChange}
           label="Categories"
-          width={200} // Adjust width here
+          width={200}
         />
         {selectedCategory === "Course" && (
           <MultipleSelectCheckmarks
@@ -55,7 +55,7 @@ export function EventsFilters({
             selectedItems={selectedCourses}
             handleChange={handleCourseChange}
             label="Courses"
-            width={200} // Adjust width here
+            width={200}
           />
         )}
       </div>

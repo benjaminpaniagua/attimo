@@ -49,6 +49,8 @@ InfoCourse.propTypes = {
     date: PropTypes.string.isRequired,
     hour: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired,
+    consultations: PropTypes.string.isRequired,
+  
 };
 
 InfoCourse.defaultProps = {
