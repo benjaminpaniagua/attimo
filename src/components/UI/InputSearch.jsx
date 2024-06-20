@@ -13,11 +13,11 @@ export function InputSearch({ placeholder, setSearch }) {
   };
 
   return (
-    <div className="flex justify-between dark:bg-clr-dark-gray/30 rounded-md overflow-hidden text-clr-dark-bg z-0">
+    <div className="flex justify-between rounded-md overflow-hidden text-clr-dark-bg dark:text-clr-white z-0">
       <Box
         component="form"
         sx={{
-          '& > :not(style)': { m: 1, width: '25ch' },
+          "& > :not(style)": { m: 1, width: "25ch" },
         }}
         noValidate
         autoComplete="off"
