@@ -9,11 +9,11 @@ export function SummaryWeek({ userId }) {
     const activityCount = data.length;
 
     if (activityCount > 10) {
-      return { category: 'Full', color: 'text-clr-dark-pink' };
+      return { category: 'Full', color: 'text-[#de4790]' };
     } else if (activityCount > 5) {
-      return { category: 'Busy', color: 'text-clr-blue' };
+      return { category: 'Busy', color: 'text-[#6375cc]' };
     } else {
-      return { category: 'Light', color: 'text-clr-dark-green' };
+      return { category: 'Light', color: 'text-[#2aa193]' };
     }
   };
 
