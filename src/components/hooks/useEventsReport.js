@@ -9,27 +9,28 @@ export function useEventsReport(selectedOption) {
     // Show the selected options in the console when they change
     useEffect(() => {
         console.log(`idUser: ${user.id}, selectedOption: ${selectedOption}`);
-    }
-    , [user.id, selectedOption]);
+    }, [user.id, selectedOption]);
 
     // Colors for the chart
     const colors = [
         { id: 0, color: tailwindColors.theme.extend.colors['clr-dark-green'] },
         { id: 1, color: tailwindColors.theme.extend.colors['clr-blue'] },
         { id: 2, color: tailwindColors.theme.extend.colors['clr-dark-pink'] },
-        { id: 3, color: tailwindColors.theme.extend.colors['clr-light-gray'] }, 
+        { id: 3, color: tailwindColors.theme.extend.colors['clr-light-gray'] },
     ];
 
     useEffect(() => {
         const fetchData = async () => {
-            setIsLoading(true); 
+            setIsLoading(true);
 
             try {
                 const response = await fetch(`http://attimobackend.test/api/activities/groups/count/${user.id}/${selectedOption}`);
                 const result = await response.json();
-                
-                // Organize the data in descending order
-                const sortedData = result.sort((a, b) => b.number_activities - a.number_activities);
+
+                // Organize the data in descending order and filter out courses with no activities
+                const sortedData = result
+                    .filter(item => item.number_activities > 0)
+                    .sort((a, b) => b.number_activities - a.number_activities);
 
                 // Separate the "Others" group from the rest
                 const others = sortedData.find(item => item.label === "Others");
@@ -38,9 +39,22 @@ export function useEventsReport(selectedOption) {
                 // Get the top 3 courses
                 const topCourses = courses.slice(0, 3);
 
-                // Add the "Others" group if it exists
-                if (others && others.number_activities > 0) {
-                    topCourses.push(others);
+                // Sum the activities of the remaining courses to "Others"
+                let othersActivities = 0;
+                if (others) {
+                    othersActivities = others.number_activities;
+                }
+                const remainingCourses = courses.slice(3);
+                const remainingActivities = remainingCourses.reduce((sum, course) => sum + course.number_activities, 0);
+                othersActivities += remainingActivities;
+
+                // Add the "Others" group if it has activities
+                if (othersActivities > 0) {
+                    topCourses.push({
+                        group_id: 0,
+                        label: "Others",
+                        number_activities: othersActivities
+                    });
                 }
 
                 // Create the data for the chart
@@ -60,7 +74,7 @@ export function useEventsReport(selectedOption) {
         };
 
         fetchData();
-    }, [selectedOption]); // Dependencias: idUser y selectedOption
+    }, [selectedOption]); 
 
     return { data, isLoading };
 }
