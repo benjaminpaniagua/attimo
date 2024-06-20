@@ -85,15 +85,10 @@ export const events = [
 ];
 
 export function Events() {
-  const user = localStorage.getItem("user");
-
-  //Mostrar en console log un json parse del local storage user
-  console.log("Hola, este es el nombre del user: ", user);
-
   return (
       <main className="main-content min-h-screen w-full flex gap-4 lg:flex-col">
         <section className="w-[70%] px-2 my-2 lg:w-full lg:px-4">
-          <MyEvents items={events} />
+          <MyEvents />
         </section>
         <section className="grid py-4 pr-4 w-[30%] lg:w-full lg:px-4 gap-4">
           <Reports />

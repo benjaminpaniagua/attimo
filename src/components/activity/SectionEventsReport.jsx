@@ -5,16 +5,21 @@ import { useEventsReport } from "../hooks/useEventsReport.js";
 export const select = [
   {
     id: 1,
-    name: "This Week",
+    name: "All time",
   },
   {
     id: 2,
     name: "Today",
+  },
+  {
+    id: 2,
+    name: "This week",
   }
 ];
 
 export function Reports() {
-  const data = useEventsReport();
+  const user = JSON.parse(localStorage.getItem('user'));
+  const { data, isLoading } = useEventsReport(user.id);
 
   return (
     <div className="grid bg-white dark:bg-clr-dark-third rounded-lg p-6 lg:p-4">
