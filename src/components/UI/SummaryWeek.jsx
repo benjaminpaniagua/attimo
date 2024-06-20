@@ -1,12 +1,12 @@
 import React from 'react';
-import useActivities from '../hooks/useActivities';
+import { useFetchActivities } from '../hooks/useFetchActivities';
 
 export function SummaryWeek({ userId }) {
-  const { activities } = useActivities(userId);
+  const { data } = useFetchActivities(userId);
 
-  // Función para determinar la categoría y el color basados en el número de actividades
+  // Determinate category and color based on the number of activities
   const getActivityCategory = () => {
-    const activityCount = activities.length;
+    const activityCount = data.length;
 
     if (activityCount > 10) {
       return { category: 'Full', color: 'text-clr-dark-pink' };
