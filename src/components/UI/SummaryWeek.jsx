@@ -21,7 +21,7 @@ export function SummaryWeek({ userId }) {
 
   return (
     <div className="bg-white dark:bg-clr-dark-third rounded-lg flex flex-col justify-center items-center gap-4 p-4 md:py-8">
-      <h3 className="py-4 dark:text-white">
+      <h3 className="py-4 dark:text-white font-normal">
         You have a <span className={color}>{category}</span> week of events
       </h3>
 
@@ -40,7 +40,7 @@ export function SummaryWeek({ userId }) {
         </div>
       </div>
 
-      <div className="flex w-full">
+      <div className="flex w-11/12 mx-auto">
         <div className="flex-1 h-4 bg-clr-dark-green rounded-l-lg"></div>
         <div className="flex-1 h-4 bg-clr-blue"></div>
         <div className="flex-1 h-4 bg-clr-dark-pink rounded-r-lg"></div>

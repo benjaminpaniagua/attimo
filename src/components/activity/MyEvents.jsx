@@ -22,7 +22,7 @@ export function MyEvents() {
   const createCardsActivities = (data) => {
     return data.map((item) => (
       <CardEvents
-        id={item.id}
+        key={item.id}
         title={item.name}
         percent={item.percent}
         description={truncate(item.description, 62)}
