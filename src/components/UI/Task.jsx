@@ -1,5 +1,4 @@
-// Task.jsx
-import "../../index.css";
+import React from 'react';
 import PropTypes from 'prop-types';
 
 export function Task({ number, description }) {
@@ -13,10 +12,12 @@ export function Task({ number, description }) {
 
 Task.propTypes = {
   number: PropTypes.number.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string.isRequired,
 };
 
 Task.defaultProps = {
   number: 0,
-  description: "Task"
+  description: "Task",
 };
+
+export default Task;
