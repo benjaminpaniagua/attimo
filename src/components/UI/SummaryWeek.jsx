@@ -22,8 +22,9 @@ export function SummaryWeek({ userId }) {
   return (
     <div className="bg-white dark:bg-clr-dark-third rounded-lg flex flex-col justify-center items-center gap-4 p-4 md:py-8">
       <h3 className="py-4 dark:text-white font-normal">
-        You have a <span className={color}>{category}</span> week of events
-      </h3>
+  You have a <span className={`${color} font-bold`}>{category}</span> week of events
+</h3>
+
 
       <div className="flex gap-4 items-center">
         <div className="flex items-center">
