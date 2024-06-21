@@ -8,8 +8,7 @@ export const useFetchCategories = () => {
         try {
             const response = await fetch("http://attimobackend.test/api/categories/all");
             const data = await response.json();
-            const allCategories = [{ id: 0, name: "All" }, ...data];
-            setData(allCategories);
+            setData(data);
             setIsLoading(false);
         } catch (error) {
             console.log(error);

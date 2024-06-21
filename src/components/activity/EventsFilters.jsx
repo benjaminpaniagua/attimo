@@ -1,10 +1,10 @@
-import React, { useState } from "react";
 import "../../index.css";
 import { InputSearch } from "../UI/InputSearch.jsx";
 import { useFetchCourses } from "../hooks/useFetchCourses.js";
 import { useFetchCategories } from "../hooks/useFetchCategories.js";
 import PropTypes from "prop-types";
 import MultipleSelectCheckmarks from "../UI/MultipleSelectCheckmarks.jsx";
+import SingleSelectDropdown from "../UI/SingleSelectDropdown";
 
 export function EventsFilters({
   setSearch,
@@ -12,11 +12,19 @@ export function EventsFilters({
   setSelectedCategories,
   selectedCourses,
   setSelectedCourses,
+  setSelectedGroup,
 }) {
-  const { data: categories, isLoading: isLoadingCategories, error: errorCategories } = useFetchCategories();
-  const { data: courses, isLoading: isLoadingCourses, error: errorCourses } = useFetchCourses(1); // User ID
+  const {
+    data: categories,
+    isLoading: isLoadingCategories,
+    error: errorCategories,
+  } = useFetchCategories();
 
-  const selectedCategory = selectedCategories.includes("Course") ? "Course" : "";
+  const {
+    data: courses,
+    isLoading: isLoadingCourses,
+    error: errorCourses,
+  } = useFetchCourses(1); // User ID
 
   if (isLoadingCategories || isLoadingCourses) {
     return <div>Loading...</div>;
@@ -27,15 +35,28 @@ export function EventsFilters({
   }
 
   const handleCategoryChange = (event) => {
-    const { target: { value } } = event;
-    setSelectedCategories(typeof value === 'string' ? value.split(',') : value);
-    setSelectedCourses([]); // Clear selected courses on category change
+    const {
+      target: { value },
+    } = event;
+    setSelectedCategories(typeof value === "string" ? value.split(",") : value);
+    setSelectedGroup(null);
   };
 
   const handleCourseChange = (event) => {
-    const { target: { value } } = event;
-    setSelectedCourses(typeof value === 'string' ? value.split(',') : value);
+    const {
+      target: { value },
+    } = event;
+    setSelectedCourses(typeof value === "string" ? value.split(",") : value);
   };
+
+  const handleGroupChange = (event) => {
+    const {
+      target: { value },
+    } = event;
+    setSelectedGroup(value === "0" ? null : value); // '0' represents All Groups
+  };
+
+  const selectedGroup = courses.find(course => course.id === parseInt(selectedCourses[0]))?.name;
 
   return (
     <div className="flex md:flex-col justify-between gap-4 my-4 w-full">
@@ -49,13 +70,14 @@ export function EventsFilters({
           label="Categories"
           width={200}
         />
-        {selectedCategory === "Course" && (
-          <MultipleSelectCheckmarks
-            items={courses}
-            selectedItems={selectedCourses}
-            handleChange={handleCourseChange}
-            label="Courses"
-            width={200}
+        {selectedCategories.includes("Course") && (
+          <SingleSelectDropdown
+            options={courses}
+            value={selectedCourses[0] || "0"}
+            onChange={handleGroupChange}
+            label="All Groups"
+            placeholder="Select a group"
+            valueLabel={selectedGroup}
           />
         )}
       </div>
@@ -69,4 +91,5 @@ EventsFilters.propTypes = {
   setSelectedCategories: PropTypes.func.isRequired,
   selectedCourses: PropTypes.arrayOf(PropTypes.string).isRequired,
   setSelectedCourses: PropTypes.func.isRequired,
+  setSelectedGroup: PropTypes.func.isRequired,
 };
