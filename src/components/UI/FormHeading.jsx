@@ -7,9 +7,9 @@ export function FormHeading({ title, subHeading, linkText, link }) {
         <section className="heading">
             <h1>{title}</h1>
             <p className="text-clr-dark-gray font-light text-[clamp(fs-xsmall,fs-small,fs-normal)]">
-                {subHeading} 
+                {subHeading} {' '}
                 {linkText && (
-                    <span className="toggle cursor-pointer hover:text-indigo-500/80 text-clr-dark-blue no-underline font-medium transition-[0.3s] text-[clamp(fs-xsmall,fs-small,fs-normal)]">
+                    <span className="toggle cursor-pointer duration-75 hover:text-indigo-500/80 text-clr-dark-blue no-underline font-medium transition-[0.3s] text-[clamp(fs-xsmall,fs-small,fs-normal)]">
                         <Link to={link}>{linkText}</Link>
                     </span>
                 )}

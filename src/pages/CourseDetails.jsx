@@ -10,7 +10,7 @@ export function CourseDetails() {
   const location = useLocation();
   const courseId = location.state;
   const { data, isLoading } = useFetchCourse(location.state);
-  const { data: groupActivities, isLoading: groupLoading } = useFetchGroupActivities({ id: courseId });
+  const { data: groupActivities, isLoading: groupLoading } = useFetchGroupActivities(courseId);
 
   const showCourseDetails = course => {
     return (
