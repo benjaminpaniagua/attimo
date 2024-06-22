@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { CardEvents } from "../UI/CardEvents.jsx";
 import { EventsFilters } from "./EventsFilters.jsx";
 import { EmptyState } from "../UI/EmptyState.jsx";
@@ -9,7 +9,9 @@ import { useFetchGroupActivities } from "../hooks/useFetchGroupActivities.js";
 import "../../index.css";
 
 export function MyEvents() {
-  const userId = 1; // Example user id
+  const user = JSON.parse(localStorage.getItem('user'));
+  const userId = user ? user.id : null;
+
   const { data: activities, isLoading: isLoadingActivities, error: errorActivities } = useFetchActivities(userId);
   const [search, setSearch] = useState("");
   const [selectedCategories, setSelectedCategories] = useState([]);
@@ -25,6 +27,7 @@ export function MyEvents() {
   const createCardsActivities = (data) => {
     return data.map((item) => (
       <CardEvents
+        key={item.id}
         id={item.id}
         title={item.name}
         percent={item.percent}
