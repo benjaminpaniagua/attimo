@@ -5,9 +5,8 @@ import useLogin from "../hooks/useLogin.js";
 import { SignInputs } from "../UI/SignInputs.jsx";
 import { ModalButtons } from "../UI/ModalButtons.jsx";
 import PropTypes from "prop-types";
-import defaultImage from "../../assets/imgs/image_card.png";
 
-const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
+const EditProfileModal = ({ isOpen, onClose }) => {
   const user = JSON.parse(localStorage.getItem("user"));
   useLogin();
   const [error, setError] = useState(null);
@@ -28,15 +27,16 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
           body: formData,
         }
       );
-
       if (response.ok) {
         const result = await response.json();
         console.log("User updated successfully:", result);
-        onClose(); // Cerrar modal después de actualizar exitosamente
+        // Update the user in localStorage
+        localStorage.setItem("user", JSON.stringify(result.user));
+        onClose(); 
       } else {
-        const errorData = await response.text(); // Leer el texto de la respuesta en caso de error
+        const errorData = await response.text();
         console.error("Error updating user:", errorData);
-        setError("Error updating user. Please try again."); // Manejar el error en el estado
+        setError("Error updating user. Please try again.");
       }
     } catch (error) {
       console.error("Fetch error:", error);
@@ -88,19 +88,19 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
         <div className="grid gap-3">
           <SignInputs
             type="text"
-            name="name"
+            name="name" 
             isActive={true}
             defaultValue={user.name}
           />
           <SignInputs
             type="text"
-            name="lastname1"
+            name="lastname1" 
             isActive={true}
             defaultValue={user.lastname1}
           />
           <SignInputs
             type="text"
-            name="lastname2"
+            name="lastname2" 
             isActive={true}
             defaultValue={user.lastname2}
           />
@@ -129,18 +129,6 @@ const EditProfileModal = ({ isOpen, onClose, profileInfo }) => {
 EditProfileModal.propTypes = {
   isOpen: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired,
-  profileInfo: PropTypes.object.isRequired,
-};
-
-EditProfileModal.defaultProps = {
-  profileInfo: {
-    img: defaultImage,
-    name: "Pedro",
-    lastName1: "Rojas",
-    lastName2: "García",
-    mail: "pedrorojas@gmail.com",
-    usr: "pedrito12",
-  },
 };
 
 export default EditProfileModal;
