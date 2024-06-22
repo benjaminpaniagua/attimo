@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../index.css";
 import { FormHeading } from "../UI/FormHeading.jsx";
 import { SignInputs } from "../UI/SignInputs.jsx";
 import { SubmitButton } from "../UI/SubmitButton.jsx";
-import useNavigation from "../hooks/useNavigation.js";
 import { useNavigate } from "react-router-dom";
 
 export function SignUpForm() {
-    const handleSubmit = useNavigation("/Questions");
-
     const navigate = useNavigate();
+    const [errors, setErrors] = useState({});
+    const [loading, setLoading] = useState(false);
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
+        setLoading(true);
+        setErrors({});
+
         const formData = new FormData(event.target);
 
         const fullname = formData.get("fullname");
@@ -24,9 +26,9 @@ export function SignUpForm() {
             formData.set("lastname1", fullnameParts[1]);
             formData.set("lastname2", fullnameParts[2]);
         } else {
-            // If the fullname is not valid, log an error and return
-            console.error("Fullname must consist of at least 3 words.");
-            return; // Not sent the form until the fullname is valid
+            setErrors({ fullname: "Fullname must consist of at least 3 words." });
+            setLoading(false);
+            return; // Do not send the form until the fullname is valid
         }
 
         try {
@@ -39,15 +41,27 @@ export function SignUpForm() {
                 const result = await response.json();
                 console.log("User registered successfully:", result);
 
-                // Guardar el usuario en localStorage
+                // Save the user in localStorage
                 localStorage.setItem("user", JSON.stringify(result.user));
-                // Llamar a la función de navegación
                 navigate("/Questions");
             } else {
-                console.error("Failed to register user.");
+                const errorData = await response.json();
+                const formattedErrors = {};
+
+                if (errorData.errors) {
+                    for (const key in errorData.errors) {
+                        formattedErrors[key] = errorData.errors[key][0];
+                    }
+                }
+
+                setErrors(formattedErrors);
+                console.error("Failed to register user:", errorData);
             }
         } catch (error) {
+            setErrors({ form: "An error occurred during registration. Username or email may already be on " });
             console.error("Fetch error:", error);
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -56,15 +70,21 @@ export function SignUpForm() {
             <FormHeading title="Get Started" subHeading="Already have an account?" linkText="Sign In" />
             <div>
                 <SignInputs type="text" name="fullname" isFullname={true} />
+                {errors.fullname && <p className="text-red-500">{errors.fullname}</p>}
                 <SignInputs type="text" name="username" />
+                {errors.username && <p className="text-red-500">{errors.username}</p>}
                 <SignInputs type="email" name="email" />
+                {errors.email && <p className="text-red-500">{errors.email}</p>}
                 <SignInputs type="password" name="password" />
+                {errors.password && <p className="text-red-500">{errors.password}</p>}
             </div>
             <input type="hidden" name="users_types_id" value={1} />
             <input type="hidden" name="name" value="" />
             <input type="hidden" name="lastname1" value="" />
             <input type="hidden" name="lastname2" value="" />
             <SubmitButton value="Sign Up" subHeading="By signing up, I agree to the " linkText="Terms of services" />
+            {errors.form && <p className="text-red-500">{errors.form}</p>}
+            {loading && <p>Loading...</p>}
         </form>
     );
 }
