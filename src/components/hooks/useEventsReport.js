@@ -9,11 +9,6 @@ export function useEventsReport(selectedOption) {
     const [inactiveActivities, setInactiveActivities] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    // Show the selected options in the console when they change
-    useEffect(() => {
-        console.log(`idUser: ${user.id}, selectedOption: ${selectedOption}`);
-    }, [user.id, selectedOption]);
-
     // Colors for the chart
     const colors = [
         { id: 0, color: tailwindColors.theme.extend.colors['clr-dark-green'] },

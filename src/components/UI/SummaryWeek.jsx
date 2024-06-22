@@ -32,26 +32,16 @@ export function SummaryWeek() {
 
       if (option === 0) {
         time = "semester";
-        console.log("Semester");
       } else if (option === 1) {
         time = "week";
-        console.log("Week");
       } else if (option === 2) {
         time = "day";
-        console.log("Day");
       } else {
         console.log("Unknown selectedOption:", selectedOption); // Log unknown option
       }
-
       return { category, color, time };
     };
-
-    // Log the selectedOption and totalActivities for debugging
-    console.log("HEY: Selected Option:", selectedOption);
-    console.log("Total Activities:", totalActivities);
-
     const categoryData = getActivityCategory();
-    console.log("Category Data:", categoryData); // Log the resulting category data
     setActivityCategory(categoryData);
   }, [totalActivities, selectedOption]);
 

@@ -5,18 +5,9 @@ import { useEventsReport } from "../hooks/useEventsReport.js";
 import { useSelectedOption } from "../../global/selectedOptionContext.jsx";
 
 export const select = [
-  {
-    id: 0,
-    name: "All time",
-  },
-  {
-    id: 1,
-    name: "This week",
-  },
-  {
-    id: 2,
-    name: "Today",
-  },
+  { id: 0, name: "All time" },
+  { id: 1, name: "This week" },
+  { id: 2, name: "Today" },
 ];
 
 export function Reports() {
