@@ -61,7 +61,7 @@ export function EventsFilters({
   )?.name;
 
   return (
-    <div className="flex md:flex-col justify-between gap-4 my-4 w-full items-center ">
+    <div className="flex md:flex-col justify-between gap-4 my-2 w-full items-center">
       <InputSearch placeholder="Search an event" setSearch={setSearch} />
       <div className="flex gap-4 items-center">
         <p className="dark:text-clr-light-gray lg:hidden">Sort by:</p>
