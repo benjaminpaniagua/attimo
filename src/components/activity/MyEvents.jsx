@@ -51,7 +51,7 @@ export function MyEvents() {
 
   return (
     <>
-      <h1 className="dark:text-white">My Events</h1>
+      <h1 className="dark:text-white">My Activities</h1>
       {isLoadingActivities || (selectedGroup && isLoadingGroupActivities) ? (
         <Loading />
       ) : errorActivities || errorGroupActivities ? (

@@ -11,24 +11,21 @@ export function EventsFilters({
   selectedCategories,
   setSelectedCategories,
   selectedCourses,
-  setSelectedCourses,
   setSelectedGroup,
 }) {
+  // Get user ID from localStorage
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userId = user ? user.id : null;
+
   const {
     data: categories,
-    isLoading: isLoadingCategories,
     error: errorCategories,
   } = useFetchCategories();
 
   const {
     data: courses,
-    isLoading: isLoadingCourses,
     error: errorCourses,
-  } = useFetchCourses(1); // User ID
-
-  if (isLoadingCategories || isLoadingCourses) {
-    return <div>Loading...</div>;
-  }
+  } = useFetchCourses(userId); // Pass the userId to the hook
 
   if (errorCategories || errorCourses) {
     return <div>Error loading filters</div>;
@@ -40,13 +37,6 @@ export function EventsFilters({
     } = event;
     setSelectedCategories(typeof value === "string" ? value.split(",") : value);
     setSelectedGroup(null);
-  };
-
-  const handleCourseChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setSelectedCourses(typeof value === "string" ? value.split(",") : value);
   };
 
   const handleGroupChange = (event) => {
@@ -61,16 +51,15 @@ export function EventsFilters({
   )?.name;
 
   return (
-    <div className="flex md:flex-col justify-between gap-4 my-4 w-full items-center ">
+    <div className="flex md:flex-col justify-between gap-4 my-2 w-full items-center">
       <InputSearch placeholder="Search an event" setSearch={setSearch} />
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center md:w-full">
         <p className="dark:text-clr-light-gray lg:hidden">Sort by:</p>
         <MultipleSelectCheckmarks
           items={categories}
           selectedItems={selectedCategories}
           handleChange={handleCategoryChange}
           label="Categories"
-          width={200}
         />
         {selectedCategories.includes("Course") && (
           <SingleSelectDropdown

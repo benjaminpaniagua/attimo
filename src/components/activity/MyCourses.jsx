@@ -46,7 +46,7 @@ export function MyCourses() {
       ) : (
         <>
           <p className="mt-2 mb-5 dark:text-clr-light-gray">
-            Have a nice day {user.name}, are you ready for your next event?
+            Have a nice day {user.name}, are you ready for your next activity?
           </p>
           <div className="grid grid-cols-auto-300 tablet:grid-cols-auto-250 gap-4 w-full max-h-[50rem] overflow-y-scroll no-scrollbar">
             {createCards(data)}

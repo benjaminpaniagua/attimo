@@ -49,7 +49,7 @@ export function SummaryWeek() {
 
   return (
     <div className="bg-white dark:bg-clr-dark-third rounded-lg flex flex-col justify-center items-center gap-4 p-4 md:py-8">
-      <h3 className="py-4 dark:text-white font-normal">
+      <h3 className="py-4 dark:text-white font-normal xs:text-base">
         You have a <span className={`${color} font-bold`}>{category}</span>{" "}
         <span>{time}</span> of activities
       </h3>
@@ -57,15 +57,15 @@ export function SummaryWeek() {
       <div className="flex gap-4 items-center">
         <div className="flex items-center">
           <div className="w-3 h-3 rounded-full bg-clr-dark-green mr-2"></div>
-          <p className="dark:text-white">Light (0-5)</p>
+          <p className="dark:text-white xs:text-sm">Light (0-5)</p>
         </div>
         <div className="flex items-center">
           <div className="w-3 h-3 rounded-full bg-clr-blue mr-2"></div>
-          <p className="dark:text-white">Busy (6-10)</p>
+          <p className="dark:text-white xs:text-sm">Busy (6-10)</p>
         </div>
         <div className="flex items-center">
           <div className="w-3 h-3 rounded-full bg-clr-dark-pink mr-2"></div>
-          <p className="dark:text-white">Full (+10)</p>
+          <p className="dark:text-white xs:text-sm">Full (+10)</p>
         </div>
       </div>
 

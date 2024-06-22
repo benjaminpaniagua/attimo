@@ -13,7 +13,6 @@ const MenuProps = {
   PaperProps: {
     style: {
       maxHeight: ITEM_HEIGHT * 6 + ITEM_PADDING_TOP,
-      width: 250,
     },
   },
 };
@@ -23,10 +22,9 @@ export default function MultipleSelectCheckmarks({
   selectedItems,
   handleChange,
   label,
-  width = 300,
 }) {
   return (
-    <FormControl sx={{ m: 1, width }} className="z-0">
+    <FormControl sx={{ m: 1 }} className={`z-0 w-[12rem] md:w-full`}>
       <InputLabel
         id="multiple-checkbox-label"
         className="text-black dark:text-clr-light-gray"
@@ -72,5 +70,4 @@ MultipleSelectCheckmarks.propTypes = {
   selectedItems: PropTypes.arrayOf(PropTypes.string).isRequired,
   handleChange: PropTypes.func.isRequired,
   label: PropTypes.string.isRequired,
-  width: PropTypes.number,
 };
