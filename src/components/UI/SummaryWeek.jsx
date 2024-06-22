@@ -1,28 +1,67 @@
-import React from 'react';
-import { useFetchActivities } from '../hooks/useFetchActivities';
+import React, { useState, useEffect } from "react";
+import { useEventsReport } from "../hooks/useEventsReport";
+import { useSelectedOption } from "../../global/selectedOptionContext";
 
-export function SummaryWeek({ userId }) {
-  const { data } = useFetchActivities(userId);
+export function SummaryWeek() {
+  const { selectedOption } = useSelectedOption();
+  const { totalActivities } = useEventsReport(selectedOption);
+  const [activityCategory, setActivityCategory] = useState({
+    category: "",
+    color: "",
+    time: "",
+  });
 
-  // Determinate category and color based on the number of activities
-  const getActivityCategory = () => {
-    const activityCount = data.length;
+  useEffect(() => {
+    const getActivityCategory = () => {
+      const activityCount = totalActivities;
+      let category, color, time;
 
-    if (activityCount > 10) {
-      return { category: 'Full', color: 'text-[#de4790]' };
-    } else if (activityCount > 5) {
-      return { category: 'Busy', color: 'text-[#6375cc]' };
-    } else {
-      return { category: 'Light', color: 'text-[#2aa193]' };
-    }
-  };
+      if (activityCount > 10) {
+        category = "full";
+        color = "text-[#de4790]";
+      } else if (activityCount > 5) {
+        category = "busy";
+        color = "text-[#6375cc]";
+      } else {
+        category = "light";
+        color = "text-[#2aa193]";
+      }
 
-  const { category, color } = getActivityCategory();
+      // Ensure selectedOption is a number
+      const option = Number(selectedOption);
+
+      if (option === 0) {
+        time = "semester";
+        console.log("Semester");
+      } else if (option === 1) {
+        time = "week";
+        console.log("Week");
+      } else if (option === 2) {
+        time = "day";
+        console.log("Day");
+      } else {
+        console.log("Unknown selectedOption:", selectedOption); // Log unknown option
+      }
+
+      return { category, color, time };
+    };
+
+    // Log the selectedOption and totalActivities for debugging
+    console.log("HEY: Selected Option:", selectedOption);
+    console.log("Total Activities:", totalActivities);
+
+    const categoryData = getActivityCategory();
+    console.log("Category Data:", categoryData); // Log the resulting category data
+    setActivityCategory(categoryData);
+  }, [totalActivities, selectedOption]);
+
+  const { category, color, time } = activityCategory;
 
   return (
     <div className="bg-white dark:bg-clr-dark-third rounded-lg flex flex-col justify-center items-center gap-4 p-4 md:py-8">
       <h3 className="py-4 dark:text-white font-normal">
-        You have a <span className={color}>{category}</span> week of events
+        You have a <span className={color}>{category}</span> <span>{time}</span>{" "}
+        of activities
       </h3>
 
       <div className="flex gap-4 items-center">

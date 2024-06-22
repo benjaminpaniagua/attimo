@@ -4,6 +4,9 @@ import tailwindColors from '../../../tailwind.config.js';
 export function useEventsReport(selectedOption) {
     const user = JSON.parse(localStorage.getItem('user'));
     const [data, setData] = useState([]);
+    const [totalActivities, setTotalActivities] = useState([]);
+    const [activeActivities, setActiveActivities] = useState([]);
+    const [inactiveActivities, setInactiveActivities] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     // Show the selected options in the console when they change
@@ -24,11 +27,12 @@ export function useEventsReport(selectedOption) {
             setIsLoading(true);
 
             try {
+                
                 const response = await fetch(`http://attimobackend.test/api/activities/groups/count/${user.id}/${selectedOption}`);
                 const result = await response.json();
 
                 // Organize the data in descending order and filter out courses with no activities
-                const sortedData = result
+                const sortedData = result.chartInfo
                     .filter(item => item.number_activities > 0)
                     .sort((a, b) => b.number_activities - a.number_activities);
 
@@ -66,6 +70,9 @@ export function useEventsReport(selectedOption) {
                 }));
 
                 setData(chartData);
+                setTotalActivities(result.totalActivities);
+                setActiveActivities(result.activeActivities);
+                setInactiveActivities(result.inactiveActivities);
                 setIsLoading(false);
             } catch (error) {
                 console.log(error);
@@ -76,5 +83,5 @@ export function useEventsReport(selectedOption) {
         fetchData();
     }, [selectedOption]); 
 
-    return { data, isLoading };
+    return { data, isLoading, totalActivities, activeActivities, inactiveActivities};
 }

@@ -1,7 +1,8 @@
-import { useState } from "react";
+import React from "react";
 import { FilterSelect } from "../UI/FilterSelect.jsx";
 import DonutChar from "../UI/DonutChar.jsx";
 import { useEventsReport } from "../hooks/useEventsReport.js";
+import { useSelectedOption } from "../../global/selectedOptionContext.jsx";
 
 export const select = [
   {
@@ -15,28 +16,26 @@ export const select = [
   {
     id: 2,
     name: "Today",
-  }
+  },
 ];
 
 export function Reports() {
-  const [selectedOption, setSelectedOption] = useState(0); // Estado para almacenar la opción seleccionada
+  const { selectedOption, setSelectedOption } = useSelectedOption(); 
+  const { data } = useEventsReport(selectedOption);
 
-  // Llamar al hook useEventsReport con el usuario y la opción seleccionada
-  const { data, isLoading } = useEventsReport(selectedOption);
-
-  // Manejador de cambio de filtro
+  //  Update the selected option when the user changes it
   const handleFilterChange = (event) => {
     const option = event.target.value;
-    setSelectedOption(option); // Actualizar el estado con la opción seleccionada
+    setSelectedOption(option);
   };
 
   return (
     <div className="grid bg-white dark:bg-clr-dark-third rounded-lg p-6 lg:p-4">
       <div className="flex justify-between items-center pb-0">
         <h2 className="fs-med dark:text-white">Events Report</h2>
-        <FilterSelect items={select} onChange={handleFilterChange} /> {/* Agregar onChange para capturar cambios */}
+        <FilterSelect items={select} onChange={handleFilterChange} />
       </div>
-      <DonutChar data={data} responsive={true}/>
+      <DonutChar data={data} responsive={true} />
     </div>
   );
 }
