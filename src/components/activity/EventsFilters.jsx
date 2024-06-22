@@ -11,24 +11,21 @@ export function EventsFilters({
   selectedCategories,
   setSelectedCategories,
   selectedCourses,
-  setSelectedCourses,
   setSelectedGroup,
 }) {
+  // Get user ID from localStorage
+  const user = JSON.parse(localStorage.getItem("user"));
+  const userId = user ? user.id : null;
+
   const {
     data: categories,
-    isLoading: isLoadingCategories,
     error: errorCategories,
   } = useFetchCategories();
 
   const {
     data: courses,
-    isLoading: isLoadingCourses,
     error: errorCourses,
-  } = useFetchCourses(1); // User ID
-
-  if (isLoadingCategories || isLoadingCourses) {
-    return <div>Loading...</div>;
-  }
+  } = useFetchCourses(userId); // Pass the userId to the hook
 
   if (errorCategories || errorCourses) {
     return <div>Error loading filters</div>;
@@ -40,13 +37,6 @@ export function EventsFilters({
     } = event;
     setSelectedCategories(typeof value === "string" ? value.split(",") : value);
     setSelectedGroup(null);
-  };
-
-  const handleCourseChange = (event) => {
-    const {
-      target: { value },
-    } = event;
-    setSelectedCourses(typeof value === "string" ? value.split(",") : value);
   };
 
   const handleGroupChange = (event) => {
