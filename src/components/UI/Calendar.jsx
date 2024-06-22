@@ -12,18 +12,18 @@ import './calendar.css';
 const initialValue = dayjs();
 
 function ServerDay(props) {
-  const { highlightedDays = [], day, outsideCurrentMonth, ...other } = props;
+  const { highlightedDays = [], day, ...other } = props;
 
-  const isSelected =
-    !props.outsideCurrentMonth && highlightedDays.some(highlightedDay => day.isSame(highlightedDay, 'day'));
+  const isSelected = highlightedDays.some(highlightedDay => day.isSame(highlightedDay, 'day'));
 
   return (
     <Badge
-      key={props.day.toString()}
+      key={day.toString()}
       overlap="circular"
-      badgeContent={isSelected ? ' ' : undefined}
-      style={{ zIndex: 0 }}>
-      <PickersDay {...other} outsideCurrentMonth={outsideCurrentMonth} day={day} />
+      badgeContent={isSelected ? '' : undefined}
+      style={{ zIndex: 0 }}
+    >
+      <PickersDay {...other} day={day} />
     </Badge>
   );
 }
@@ -31,19 +31,28 @@ function ServerDay(props) {
 ServerDay.propTypes = {
   highlightedDays: PropTypes.array,
   day: PropTypes.object.isRequired,
-  outsideCurrentMonth: PropTypes.bool.isRequired,
 };
 
 export default function DateCalendarServerRequest() {
   const [highlightedDays, setHighlightedDays] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
 
-  const fetchHighlightedDays = async () => {
-    setIsLoading(true);
+  const fetchHighlightedDays = async (month) => {
     try {
-      const response = await fetch('http://localhost:8000/api/activities/highlighted');
+      setIsLoading(true);
+      
+      // Obtener el primer y último día del mes actual
+      const startOfMonth = dayjs(month).startOf('month').format('YYYY-MM-DD');
+      const endOfMonth = dayjs(month).endOf('month').format('YYYY-MM-DD');
+      
+      // Realizar la llamada al backend para obtener las fechas destacadas del mes actual
+      const response = await fetch(`http://attimobackend.test/api/activities/highlighted?start=${startOfMonth}&end=${endOfMonth}`);
       const data = await response.json();
-      setHighlightedDays(data.map(date => dayjs(date)));
+      
+      // Convertir las fechas a objetos dayjs
+      const formattedDates = data.map(date => dayjs(date));
+      setHighlightedDays(formattedDates);
+      
       setIsLoading(false);
     } catch (error) {
       console.error('Error fetching highlighted days:', error);
@@ -52,31 +61,30 @@ export default function DateCalendarServerRequest() {
   };
 
   React.useEffect(() => {
-    fetchHighlightedDays();
+    fetchHighlightedDays(initialValue);
   }, []);
 
   const handleMonthChange = (date) => {
-    //  actualizar las fechas destacadas al cambiar el mes
+    // Actualizar las fechas destacadas al cambiar de mes
+    fetchHighlightedDays(date);
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      
-        <DateCalendar
-          defaultValue={initialValue}
-          loading={isLoading}
-          onMonthChange={handleMonthChange}
-          renderLoading={() => <DayCalendarSkeleton />}
-          slots={{
-            day: ServerDay,
-          }}
-          slotProps={{
-            day: {
-              highlightedDays,
-            },
-          }}
-        />
-     
+      <DateCalendar
+        defaultValue={initialValue}
+        loading={isLoading}
+        onMonthChange={handleMonthChange}
+        renderLoading={() => <DayCalendarSkeleton />}
+        slots={{
+          day: ServerDay,
+        }}
+        slotProps={{
+          day: {
+            highlightedDays,
+          },
+        }}
+      />
     </LocalizationProvider>
   );
 }

@@ -28,7 +28,7 @@ export function SignUpForm() {
         } else {
             setErrors({ fullname: "Fullname must consist of at least 3 words." });
             setLoading(false);
-            return; // Do not send the form until the fullname is valid
+            return; 
         }
 
         try {
@@ -41,7 +41,6 @@ export function SignUpForm() {
                 const result = await response.json();
                 console.log("User registered successfully:", result);
 
-                // Save the user in localStorage
                 localStorage.setItem("user", JSON.stringify(result.user));
                 navigate("/Questions");
             } else {
@@ -58,7 +57,7 @@ export function SignUpForm() {
                 console.error("Failed to register user:", errorData);
             }
         } catch (error) {
-            setErrors({ form: "An error occurred during registration. Username or email may already be on " });
+            setErrors({ form: "An error occurred during registration. Username or email may already be in use " });
             console.error("Fetch error:", error);
         } finally {
             setLoading(false);
