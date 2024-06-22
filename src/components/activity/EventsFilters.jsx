@@ -53,14 +53,13 @@ export function EventsFilters({
   return (
     <div className="flex md:flex-col justify-between gap-4 my-2 w-full items-center">
       <InputSearch placeholder="Search an event" setSearch={setSearch} />
-      <div className="flex gap-4 items-center">
+      <div className="flex gap-4 items-center md:w-full">
         <p className="dark:text-clr-light-gray lg:hidden">Sort by:</p>
         <MultipleSelectCheckmarks
           items={categories}
           selectedItems={selectedCategories}
           handleChange={handleCategoryChange}
           label="Categories"
-          width={200}
         />
         {selectedCategories.includes("Course") && (
           <SingleSelectDropdown
