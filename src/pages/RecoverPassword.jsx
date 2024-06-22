@@ -13,7 +13,7 @@ export function RecoverPassword() {
 
     return (
         <div className="bg-clr-dark-blue flex justify-center items-center min-h-screen p-6 w-full">
-            <form onSubmit={handleSubmit} autoComplete="off" className="bg-clr-white rounded-xl p-8 max-w-[27rem] grid gap-4">
+            <form onSubmit={handleSubmit} autoComplete="off" className="bg-clr-white rounded-xl p-10 max-w-[27rem] grid gap-4">
                 <div className="text-center">
                     <FormHeading title="Recover Password" subHeading="Enter your data to update your password" />
                 </div>

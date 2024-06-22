@@ -64,7 +64,7 @@ export function SignUpForm() {
             <input type="hidden" name="name" value="" />
             <input type="hidden" name="lastname1" value="" />
             <input type="hidden" name="lastname2" value="" />
-            <SubmitButton value="Sign Up" subHeading="By signing up, I agree to the " linkText="Terms of services" />
+            <SubmitButton value="Sign Up" subHeading="By signing up, I accept the " linkText="Terms of services" />
         </form>
     );
 }

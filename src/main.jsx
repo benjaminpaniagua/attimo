@@ -5,6 +5,7 @@ import { Login } from "./pages/Login.jsx";
 import { RecoverPassword } from "./pages/RecoverPassword.jsx";
 import { Questions } from "./pages/Questions.jsx";
 import { App } from "./pages/App.jsx";
+import ProtectedRoute from "./global/ProtectedRoute.jsx";
 
   ReactDOM.createRoot(document.getElementById("root")).render(
       <BrowserRouter> 
@@ -12,7 +13,7 @@ import { App } from "./pages/App.jsx";
           <Route path="/" element={<Login />}/>
           <Route path="/Questions" element={<Questions />} />
           <Route path="/RecoverPassword" element={<RecoverPassword />} />
-          <Route path="/attimo/*" element={<App />} />
+          <Route path="/attimo/*" element={<ProtectedRoute><App/></ProtectedRoute>} />
           <Route path="/*" element={<Login />} />
         </Routes>
       </BrowserRouter>
