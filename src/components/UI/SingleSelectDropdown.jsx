@@ -1,26 +1,48 @@
-import PropTypes from 'prop-types';
-import { FormControl, InputLabel, Select, MenuItem } from '@mui/material';
+import PropTypes from "prop-types";
+import { FormControl, InputLabel, Select, MenuItem } from "@mui/material";
 
-const SingleSelectDropdown = ({ options, value, onChange, label, placeholder, valueLabel }) => {
+const SingleSelectDropdown = ({
+  options,
+  value,
+  onChange,
+  label,
+  placeholder,
+  valueLabel,
+}) => {
   return (
-    <FormControl sx={{ m: 1, minWidth: 120 }}>
-      <InputLabel shrink={value !== "0" || undefined} style={{ transition: 'opacity 0.3s', opacity: value === "0" ? 0 : 1 }}>
+    <FormControl sx={{ m: 1, minWidth: 120 }} className="z-0 rounded-lg">
+      <InputLabel
+        shrink={value !== "0" || undefined}
+        style={{ transition: "opacity 0.3s", opacity: value === "0" ? 0 : 1 }}
+        className="text-black dark:text-clr-light-gray"
+      >
         {label}
       </InputLabel>
       <Select
         value={value}
         onChange={onChange}
         displayEmpty
-        inputProps={{ 'aria-label': 'Select' }}
+        inputProps={{ "aria-label": "Select" }}
+        className="bg-white dark:bg-clr-dark-gray/30 text-black dark:text-clr-light-gray rounded-lg"
       >
-        <MenuItem value="0">{placeholder}</MenuItem>
+        <MenuItem value="0" className="text-black dark:text-clr-light-gray">
+          {placeholder}
+        </MenuItem>
         {options.map((option) => (
-          <MenuItem key={option.id} value={option.id}>
+          <MenuItem
+            key={option.id}
+            value={option.id}
+            className="text-black dark:text-clr-light-gray"
+          >
             {option.name}
           </MenuItem>
         ))}
       </Select>
-      {value !== "0" && <span>{valueLabel}</span>}
+      {value !== "0" && (
+        <span className="text-black dark:text-clr-light-gray">
+          {valueLabel}
+        </span>
+      )}
     </FormControl>
   );
 };

@@ -1,11 +1,6 @@
-import React from "react";
-import { Search } from "lucide-react";
 import PropTypes from "prop-types";
+import { Search } from "lucide-react";
 import "../../index.css";
-
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
 
 export function InputSearch({ placeholder, setSearch }) {
   const handleInputChange = (event) => {
@@ -13,30 +8,20 @@ export function InputSearch({ placeholder, setSearch }) {
   };
 
   return (
-    <div className="flex justify-between rounded-md overflow-hidden text-clr-dark-bg dark:text-clr-white z-0">
-      <Box
-        component="form"
-        sx={{
-          "& > :not(style)": { m: 1, width: "25ch" },
-        }}
-        noValidate
-        autoComplete="off"
-      >
-        <TextField
-          id="outlined-basic"
-          label={placeholder}
-          variant="outlined"
-          onChange={handleInputChange}
-          InputProps={{
-            endAdornment: (
-              <InputAdornment>
-                <Search size="20" />
-              </InputAdornment>
-            ),
-          }}
+    <form className="flex items-center rounded-lg bg-white  border dark:bg-clr-dark-gray/40 border-gray-300 dark:border-gray-600 focus-within:ring-2 focus-within:ring-blue-500 dark:focus-within:ring-blue-400 h-full p-2">
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={handleInputChange}
+        className="px-3 py-2 bg-transparent text-black dark:text-clr-light-gray focus:outline-none flex-grow"
+      />
+      <div className="p-2 text-black dark:text-clr-light-gray">
+        <Search
+          size="20"
+          className="transition-transform transform hover:scale-110"
         />
-      </Box>
-    </div>
+      </div>
+    </form>
   );
 }
 

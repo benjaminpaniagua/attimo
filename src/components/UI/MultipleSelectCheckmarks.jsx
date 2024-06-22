@@ -1,11 +1,11 @@
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import ListItemText from '@mui/material/ListItemText';
-import Select from '@mui/material/Select';
-import Checkbox from '@mui/material/Checkbox';
-import PropTypes from 'prop-types';
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import ListItemText from "@mui/material/ListItemText";
+import Select from "@mui/material/Select";
+import Checkbox from "@mui/material/Checkbox";
+import PropTypes from "prop-types";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -18,23 +18,42 @@ const MenuProps = {
   },
 };
 
-export default function MultipleSelectCheckmarks({ items, selectedItems, handleChange, label, width = 300 }) {
+export default function MultipleSelectCheckmarks({
+  items,
+  selectedItems,
+  handleChange,
+  label,
+  width = 300,
+}) {
   return (
     <FormControl sx={{ m: 1, width }} className="z-0">
-      <InputLabel id="multiple-checkbox-label">{label}</InputLabel>
+      <InputLabel
+        id="multiple-checkbox-label"
+        className="text-black dark:text-clr-light-gray"
+      >
+        {label}
+      </InputLabel>
       <Select
         labelId="multiple-checkbox-label"
         id="multiple-checkbox"
         multiple
         value={selectedItems}
         onChange={handleChange}
-        input={<OutlinedInput label={label} />}
-        renderValue={(selected) => selected.join(', ')}
+        input={<OutlinedInput label={label} className="rounded-lg" />}
+        renderValue={(selected) => selected.join(", ")}
         MenuProps={MenuProps}
+        className="bg-white dark:bg-clr-dark-gray/30 text-black dark:text-clr-light-gray rounded-lg"
       >
         {items.map((item) => (
-          <MenuItem key={item.id} value={item.name}>
-            <Checkbox checked={selectedItems.indexOf(item.name) > -1} />
+          <MenuItem
+            key={item.id}
+            value={item.name}
+            className="bg-white dark:bg-clr-dark-gray/30 text-black dark:text-clr-light-gray rounded-lg"
+          >
+            <Checkbox
+              checked={selectedItems.indexOf(item.name) > -1}
+              className="text-black dark:text-clr-light-gray"
+            />
             <ListItemText primary={item.name} />
           </MenuItem>
         ))}
