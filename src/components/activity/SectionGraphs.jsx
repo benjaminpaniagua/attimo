@@ -1,23 +1,24 @@
 import DonutChar from "../UI/DonutChar.jsx";
 import BarChart from "../UI/BarChar.jsx";
 import tailwindColors from "../../../tailwind.config.js";
+
 export function Graphs() {
   const typeScholarship = [
     {
       id: 0,
-      value: 12,
+      value: 5,
       label: "No Sch",
       color: tailwindColors.theme.extend.colors["clr-blue"],
     },
     {
       id: 1,
-      value: 19,
+      value: 2,
       label: "Partial Sch",
       color: tailwindColors.theme.extend.colors["clr-light-gray"],
     },
     {
       id: 2,
-      value: 4,
+      value: 2,
       label: "Full Sch",
       color: tailwindColors.theme.extend.colors["clr-dark-pink"],
     },
@@ -26,29 +27,29 @@ export function Graphs() {
   const gender = [
     {
       id: 0,
-      value: 80,
+      value: 4,
       label: "Male",
       color: tailwindColors.theme.extend.colors["clr-blue"],
     },
     {
       id: 1,
-      value: 79,
+      value:4,
       label: "Female",
       color: tailwindColors.theme.extend.colors["clr-dark-pink"],
     },
     {
       id: 2,
-      value: 8,
+      value: 1,
       label: "Undefined",
       color: tailwindColors.theme.extend.colors["clr-light-gray"],
     },
   ];
 
   const hoursSleep = [
-    { id: 0, label: "-4h", value: 49 },
-    { id: 1, label: "4-6h", value: 65 },
-    { id: 2, label: "7-8h", value: 42 },
-    { id: 3, label: "+9h", value: 11 },
+    { id: 0, label: "-4h", value: 0 },   
+    { id: 1, label: "4-6h", value: 3 },  
+    { id: 2, label: "7-8h", value: 5 }, 
+    { id: 3, label: "+9h", value: 1 }, 
   ];
 
   return (

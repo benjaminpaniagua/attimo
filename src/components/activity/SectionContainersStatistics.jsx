@@ -13,7 +13,7 @@ export function StatisticsCards() {
         const stats = await response.json();
 
         const formattedData = [
-          { id: 0, number: stats.totalUsers, description: "Total Users", icon: Users },
+          { id: 0, number: stats.totalUsers, description: "Total Students", icon: Users },
           { id: 1, number: stats.playSports, description: "Play Sports", icon: Dumbbell },
           { id: 2, number: stats.haveAccommodations, description: "Have accommodations", icon: Book },
           { id: 3, number: stats.haveScholarship, description: "Have a scholarship", icon: GraduationCap }
