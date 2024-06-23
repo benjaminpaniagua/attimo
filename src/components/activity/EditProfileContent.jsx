@@ -5,6 +5,7 @@ import useLogin from "../hooks/useLogin.js";
 import { SignInputs } from "../UI/SignInputs.jsx";
 import { ModalButtons } from "../UI/ModalButtons.jsx";
 import PropTypes from "prop-types";
+import defaultImage from "../../assets/imgs/image_card.png";
 
 const EditProfileModal = ({ isOpen, onClose }) => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -15,24 +16,24 @@ const EditProfileModal = ({ isOpen, onClose }) => {
     onClose();
   };
 
-  const handleUpdateProfile = async (event) => {
+const handleUpdateProfile = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
+    formData.append('_method', 'PUT'); // Laravel workaround for PUT with FormData
 
     try {
       const response = await fetch(
         `http://attimobackend.test/api/user/edit/${user.id}`,
         {
-          method: "PUT",
+          method: "POST", 
           body: formData,
         }
       );
       if (response.ok) {
         const result = await response.json();
         console.log("User updated successfully:", result);
-        // Update the user in localStorage
         localStorage.setItem("user", JSON.stringify(result.user));
-        onClose(); 
+        onClose();
       } else {
         const errorData = await response.text();
         console.error("Error updating user:", errorData);
@@ -42,7 +43,7 @@ const EditProfileModal = ({ isOpen, onClose }) => {
       console.error("Fetch error:", error);
       setError("Fetch error. Please check your network connection.");
     }
-  };
+};
 
   return (
     <ReactModal
@@ -79,6 +80,7 @@ const EditProfileModal = ({ isOpen, onClose }) => {
                   type="file"
                   accept=".jpg, .jpeg, .png, .webp"
                   className="w-full cursor-pointer h-full opacity-0 absolute"
+                  name="image" // Asegúrate de incluir el nombre del campo para la imagen
                 />
                 <Pencil className="text-white" />
               </div>
@@ -88,19 +90,19 @@ const EditProfileModal = ({ isOpen, onClose }) => {
         <div className="grid gap-3">
           <SignInputs
             type="text"
-            name="name" 
+            name="name"
             isActive={true}
             defaultValue={user.name}
           />
           <SignInputs
             type="text"
-            name="lastname1" 
+            name="lastname1"
             isActive={true}
             defaultValue={user.lastname1}
           />
           <SignInputs
             type="text"
-            name="lastname2" 
+            name="lastname2"
             isActive={true}
             defaultValue={user.lastname2}
           />
