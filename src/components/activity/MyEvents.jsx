@@ -42,7 +42,7 @@ export function MyEvents() {
     ));
   };
 
-  const filteredData = (selectedGroup ? groupActivities : activities).filter((item) => {
+  const filteredData = (selectedGroup ? groupActivities : activities)?.filter((item) => {
     const matchesSearch = item.name.toLowerCase().includes(search.toLowerCase());
     const matchesCategory = selectedCategories.length === 0 || selectedCategories.includes(item.category);
     const matchesCourse = selectedCourses.length === 0 || selectedCourses.includes(item.course);
@@ -58,12 +58,12 @@ export function MyEvents() {
         <span className="text-clr-blue dark:text-clr-white">
           Error loading events
         </span>
-      ) : (selectedGroup ? groupActivities : activities).length === 0 ? (
-        <EmptyState
-          icon={CalendarOff}
-          title="No events on the horizon!"
-          message="Looks like you have some free time. Relax and enjoy!"
-        />
+        ) : (selectedGroup ? groupActivities : activities).length === 0 ? (
+          <EmptyState
+            icon={CalendarOff}
+            title="No events on the horizon!"
+            message="Looks like you have some free time. Relax and enjoy!"
+          />
       ) : (
         <>
           <EventsFilters
@@ -74,9 +74,17 @@ export function MyEvents() {
             setSelectedCourses={setSelectedCourses}
             setSelectedGroup={setSelectedGroup}
           />
-          <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[50rem] overflow-y-scroll no-scrollbar">
-            {createCardsActivities(filteredData)}
-          </div>
+          {filteredData.length === 0 ? (
+            <EmptyState
+              icon={CalendarOff}
+              title="No events on the horizon!"
+              message="Looks like you have some free time. Relax and enjoy!"
+            />
+          ) : (
+            <div className="grid gap-4 grid-cols-auto-300 tablet:grid-cols-auto-250 w-full max-h-[50rem] overflow-y-scroll no-scrollbar">
+              {createCardsActivities(filteredData)}
+            </div>
+          )}
         </>
       )}
     </>

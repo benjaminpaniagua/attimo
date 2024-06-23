@@ -18,7 +18,7 @@ export function InputSearch({ placeholder, setSearch }) {
       <div className="p-2 text-black dark:text-clr-light-gray">
         <Search
           size="20"
-          className="transition-transform transform hover:scale-110 text-clr-blue"
+          className="transition-transform transform hover:scale-110 text-clr-blue dark:text-clr-light-gray"
         />
       </div>
     </form>
