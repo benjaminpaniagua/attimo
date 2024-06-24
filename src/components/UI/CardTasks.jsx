@@ -21,7 +21,7 @@ export function CardTasks({ taskCompleted, taskRemaining, groups }) {
       <hr className="w-full bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white" />
       <div className="grid grid-cols-1 mb-4">
         <section>
-          <h3 className="dark:text-clr-mint-green mb-4">Groups</h3>
+          <h3 className="dark:text-clr-mint-green mb-4">Enrolled groups</h3>
           <div className="grid h-36 no-scrollbar overflow-y-scroll">
             <div className="grid text-start gap-2 pb-4">
               {groups.length === 0 ? (

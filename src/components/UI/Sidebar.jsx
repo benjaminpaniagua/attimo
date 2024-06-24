@@ -23,6 +23,11 @@ import PropTypes from "prop-types";
 const SidebarContext = createContext();
 
 export default function Sidebar({ children}) {
+  const truncate = (text, maxLength) => {
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength) + "...";
+  };
+
   const user = JSON.parse(localStorage.getItem("user"));
 
   const [expanded, setExpanded] = useState(false);
@@ -220,7 +225,7 @@ export default function Sidebar({ children}) {
             >
               <div className="leading-4">
                 <h4 className="font-semibold">{user.username}</h4>
-                <span className="text-xs">{user.email}</span>
+                <span className="text-xs">{truncate(user.email, 25)}</span>
               </div>
               <MoreVertical
                 size={20}

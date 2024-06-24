@@ -51,8 +51,8 @@ export function EventsFilters({
   )?.name;
 
   return (
-    <div className="flex md:flex-col justify-between gap-4 my-2 w-full items-center">
-      <InputSearch placeholder="Search an event" setSearch={setSearch} />
+    <div className="flex md:flex-col justify-between gap-4 w-full items-center md:gap-2 my-4">
+      <InputSearch placeholder="Search an event" setSearch={setSearch}/>
       <div className="flex gap-4 items-center md:w-full">
         <p className="dark:text-clr-light-gray lg:hidden">Sort by:</p>
         <MultipleSelectCheckmarks

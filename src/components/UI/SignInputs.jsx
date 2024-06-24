@@ -24,6 +24,7 @@ export function SignInputs({ type, name, defaultValue, isActive, isFullname, pla
                 name={name}
                 className={`input-field absolute duration-300 w-full h-full text-[0.95rem] text-clr-dark-blue transition-[0.4s] p-0 border-b-clr-light-gray border-b border-solid bg-none outline-none bg-transparent dark:text-clr-white/80 ${isActive ? 'active' : ''}`}
                 autoComplete="off"
+                maxLength="30"
                 required
                 placeholder={placeholder}
                 defaultValue={defaultValue}

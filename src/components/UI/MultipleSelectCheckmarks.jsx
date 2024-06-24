@@ -24,24 +24,9 @@ export default function MultipleSelectCheckmarks({
   label,
 }) {
   return (
-    <FormControl sx={{ m: 1 }} className={`z-0 w-[12rem] md:w-full`}>
-      <InputLabel
-        id="multiple-checkbox-label"
-        className="text-black dark:text-clr-light-gray"
-      >
-        {label}
-      </InputLabel>
-      <Select
-        labelId="multiple-checkbox-label"
-        id="multiple-checkbox"
-        multiple
-        value={selectedItems}
-        onChange={handleChange}
-        input={<OutlinedInput label={label} className="rounded-lg" />}
-        renderValue={(selected) => selected.join(", ")}
-        MenuProps={MenuProps}
-        className="bg-white dark:bg-clr-dark-gray/30 text-black dark:text-clr-light-gray rounded-lg"
-      >
+    <FormControl sx={{ m: 0 }} className={"z-0 w-[12rem] md:w-full"}>
+      <InputLabel id="multiple-checkbox-label" className="text-black dark:text-clr-light-gray">{label}</InputLabel>
+      <Select labelId="multiple-checkbox-label" id="multiple-checkbox" multiple value={selectedItems} onChange={handleChange} input={<OutlinedInput label={label} className="rounded-lg" />} renderValue={(selected) => selected.join(", ")} MenuProps={MenuProps} className="bg-white dark:bg-clr-dark-gray/30 text-black dark:text-clr-light-gray rounded-lg">
         {items.map((item) => (
           <MenuItem
             key={item.id}

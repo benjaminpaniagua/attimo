@@ -8,7 +8,7 @@ export function InputSearch({ placeholder, setSearch }) {
   };
 
   return (
-    <form className="flex items-center rounded-lg bg-white  border dark:bg-clr-dark-gray/40 border-gray-300 dark:border-gray-600 focus-within:ring-2 focus-within:ring-blue-500 dark:focus-within:ring-blue-400 h-full p-2 sm:w-full">
+    <form className="flex items-center rounded-lg bg-white border dark:bg-clr-dark-gray/40 border-gray-300 dark:border-gray-600 focus-within:ring-1 focus-within:ring-indigo-500 dark:focus-within:ring-indigo-500 h-full p-2 md:w-full">
       <input
         type="text"
         placeholder={placeholder}
