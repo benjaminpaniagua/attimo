@@ -28,18 +28,16 @@ const EditProfileModal = ({ isOpen, onClose }) => {
     }
   };
 
-const handleUpdateProfile = async (event) => {
+  const handleUpdateProfile = async (event) => {
     event.preventDefault();
     const formData = new FormData(event.target);
     formData.append('_method', 'PUT'); // Laravel workaround for PUT with FormData
 
     try {
-      const response = await fetch(`http://attimobackend.test/api/user/edit/${user.id}`,
-        {
-          method: "PUT", 
-          body: formData,
-        }
-      );
+      const response = await fetch(`http://attimobackend.test/api/user/edit/${user.id}`, {
+        method: "POST",
+        body: formData,
+      });
       if (response.ok) {
         const result = await response.json();
         console.log("User updated successfully:", result.user);
@@ -54,12 +52,12 @@ const handleUpdateProfile = async (event) => {
       console.error("Fetch error:", error);
       setError("Fetch error. Please check your network connection.");
     }
-};
+  };
 
   return (
     <ReactModal isOpen={isOpen} onRequestClose={onClose} className="fixed inset-0 flex items-center justify-center" overlayClassName="fixed inset-0">
       <button className="fixed inset-0 bg-black bg-opacity-[0.01]" onClick={onClose}></button>
-      <form onSubmit={handleUpdateProfile} encType="multipart/form-data" className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[28rem] md:w-[26rem] xs:w-[24.3rem] p-8" >
+      <form onSubmit={handleUpdateProfile} encType="multipart/form-data" className="bg-white dark:bg-clr-dark-bg rounded-md shadow-lg absolute left-[5.5rem] bottom-[0rem] w-[28rem] md:w-[26rem] xs:w-[24.3rem] p-8">
         <button onClick={handleClose}>
           <ChevronLeft className="w-10 text-clr-dark-gray dark:text-clr-light-gray"/>
         </button>
@@ -71,7 +69,7 @@ const handleUpdateProfile = async (event) => {
             </div>
             <button className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200">
               <div className="bg-gray-500 opacity-50 rounded-full w-full h-full flex items-center justify-center">
-                <input type="file" accept=".jpg, .jpeg, .png, .webp" className="w-full cursor-pointer h-full opacity-0 absolute" name="image"  onChange={handleImageChange}/>
+                <input type="file" accept=".jpg, .jpeg, .png, .webp" className="w-full cursor-pointer h-full opacity-0 absolute" name="image" onChange={handleImageChange}/>
                 <Pencil className="text-white" />
               </div>
             </button>
