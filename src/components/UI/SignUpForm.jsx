@@ -16,7 +16,6 @@ export function SignUpForm() {
         setErrors({});
 
         const formData = new FormData(event.target);
-
         const fullname = formData.get("fullname");
         const fullnameParts = fullname.split(" ");
 
@@ -78,9 +77,6 @@ export function SignUpForm() {
                 {errors.password && <p className="text-red-500">{errors.password}</p>}
             </div>
             <input type="hidden" name="users_types_id" value={1} />
-            <input type="hidden" name="name" value="" />
-            <input type="hidden" name="lastname1" value="" />
-            <input type="hidden" name="lastname2" value="" />
             <SubmitButton value="Sign Up" subHeading="By signing up, I agree to the " linkText="Terms of services" />
             {errors.form && <p className="text-red-500">{errors.form}</p>}
             {loading && <p>Loading...</p>}
