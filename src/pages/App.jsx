@@ -5,6 +5,7 @@ import { CourseDetails } from "./CourseDetails";
 import { Events } from "./Events";
 import { HomePage } from "./HomePage";
 import { Statistics } from "./Statistics";
+import { ActivityDetails } from "./ActivityDetails.jsx";
 import { SelectedOptionProvider } from "../global/selectedOptionContext.jsx";
 import Modal from 'react-modal';
 
@@ -20,6 +21,7 @@ export function App() {
                     <Route path="/events" element={<Events/>} />
                     <Route path="/statistics" element={<Statistics/>} />
                     <Route path="/courseDetails" element={<CourseDetails/>} />
+                    <Route path="/activityDetails" element={<ActivityDetails/>} />
                     <Route path="/*" element={<HomePage/>} />
                 </Routes>
             </div>

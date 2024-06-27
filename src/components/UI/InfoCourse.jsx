@@ -14,7 +14,7 @@ export function InfoCourse({ title, image, acronyms, teacher, email, consultatio
         <span className="cursor-pointer" onClick={handleBackClick}>&lt; </span>
         {title}
       </h1>
-      <div className="bg-fit rounded-md overflow-hidden h-80">
+      <div className="bg-fit rounded-md overflow-hidden h-[22rem]">
         <img className="w-full h-full object-cover" src={image} alt={title} />
       </div>
       <div className="grid gap-4">
