@@ -36,8 +36,7 @@ export default {
         'clr-dark-pink': 'hsla(331, 48%, 44%, 1)',
         
         'clr-light-bg': 'hsla(253, 22%, 92%, 1)',
-        // 'clr-light-secondary-bg': 'hsla(245, 38%, 87%, 1)'
-        'clr-light-secondary-bg': 'hsla(253, 27%, 90%, 1)',
+        'clr-light-secondary-bg': 'hsla(245, 38%, 87%, 1)',
 
         //Dark Mode
         'clr-dark-bg': 'hsla(210, 11%, 15%, 1)',
