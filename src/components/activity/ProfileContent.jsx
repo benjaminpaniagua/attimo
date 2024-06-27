@@ -12,15 +12,13 @@ export function ProfileContent() {
   const { editModalIsOpen, closeEditModal, handleEditProfileClick } = useEditProfile();
   const userId = user ? user.id : null;
 
-  // Obtener actividades
+  // Obtain activities
   const { data: activitiesData, isLoading: activitiesLoading } = useFetchActivities(userId);
   const activeActivities = activitiesData ? activitiesData.filter((activity) => activity.status === "Active") : [];
   const inactiveActivities = activitiesData ? activitiesData.filter((activity) => activity.status === "Inactive") : [];
 
-  // Obtener grupos
+  // Obtain groups
   const { data: groups, isLoading: groupsLoading } = useFetchGroups(userId);
-
-  // Determinar carga completa
   const isLoading = activitiesLoading || groupsLoading;
 
   return (
@@ -34,7 +32,7 @@ export function ProfileContent() {
         username={user.username}
       />
       {isLoading ? (
-        <Loading /> // Mostrar el componente Loading mientras se cargan los datos
+        <Loading /> 
       ) : (
         <CardTasks
           taskCompleted={inactiveActivities.length}

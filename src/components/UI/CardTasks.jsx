@@ -9,19 +9,19 @@ export function CardTasks({ taskCompleted, taskRemaining, groups }) {
       <hr className="w-full bg-clr-blue dark:bg-clr-white h-1 mx-auto mb-4" />
       <div className="flex mb-4">
         <section className="flex-1 pr-4 relative">
-          <h3 className="dark:text-clr-mint-green p-2">{taskCompleted}</h3>
+          <h3 className="dark:text-clr-white p-2">{taskCompleted}</h3>
           <p className="dark:text-clr-light-gray">Inactive Activities</p>
           <div className="absolute inset-y-0 right-0 w-[0.2rem] bg-clr-blue dark:bg-clr-white "></div>
         </section>
         <section className="flex-1">
-          <h3 className="dark:text-clr-mint-green p-2">{taskRemaining}</h3>
+          <h3 className="dark:text-clr-white p-2">{taskRemaining}</h3>
           <p className="dark:text-clr-light-gray">Remaining Tasks</p>
         </section>
       </div>
       <hr className="w-full bg-clr-blue h-1 mx-auto mb-4 dark:bg-clr-white" />
       <div className="grid grid-cols-1 mb-4">
         <section>
-          <h3 className="dark:text-clr-mint-green mb-4">Enrolled groups</h3>
+          <h3 className="dark:text-clr-white mb-4">Enrolled groups</h3>
           <div className="grid h-36 no-scrollbar overflow-y-scroll">
             <div className="grid text-start gap-2 pb-4">
               {groups.length === 0 ? (

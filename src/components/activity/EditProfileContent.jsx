@@ -43,6 +43,7 @@ const EditProfileModal = ({ isOpen, onClose }) => {
         console.log("User updated successfully:", result.user);
         localStorage.setItem("user", JSON.stringify(result.user));
         onClose();
+        window.location.reload();
       } else {
         const errorData = await response.text();
         console.error("Error updating user:", errorData);
